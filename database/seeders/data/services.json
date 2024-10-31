@@ -1,0 +1,22 @@
+[
+    { "id": 1, "name": "WiFi" },
+    { "id": 2, "name": "Parcheggio gratuito" },
+    { "id": 3, "name": "Piscina" },
+    { "id": 4, "name": "Servizio in camera" },
+    { "id": 5, "name": "Animali ammessi" },
+    { "id": 6, "name": "Ristorante interno" },
+    { "id": 7, "name": "Palestra" },
+    { "id": 8, "name": "Spa e centro benessere" },
+    { "id": 9, "name": "Aria condizionata" },
+    { "id": 10, "name": "Accesso per disabili" },
+    { "id": 11, "name": "Bar" },
+    { "id": 12, "name": "Servizio di lavanderia" },
+    { "id": 13, "name": "Navetta per aeroporto" },
+    { "id": 14, "name": "Colazione inclusa" },
+    { "id": 15, "name": "TV satellitare" },
+    { "id": 16, "name": "Reception 24/7" },
+    { "id": 17, "name": "Area giochi per bambini" },
+    { "id": 18, "name": "Sala riunioni" },
+    { "id": 19, "name": "Servizio di babysitter" },
+    { "id": 20, "name": "Cassaforte in camera" }
+]

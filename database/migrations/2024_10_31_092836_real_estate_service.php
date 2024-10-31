@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',50);
-
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('real_estate_service')) {
+            Schema::create('real_estate_service', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->integer('real_estate_id');
+                $table->integer('service_id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        //
     }
 };

@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('real_estate_subscription', function (Blueprint $table) {
+            $table->id();
+            $table->integer('real_estate_id');
+            $table->integer('subscription_id');
+            $table->timestamp('end_subscription');
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('real_estate_subscription');
     }
 };

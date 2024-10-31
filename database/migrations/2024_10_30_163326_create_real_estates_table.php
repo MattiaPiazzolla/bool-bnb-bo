@@ -20,8 +20,8 @@ return new class extends Migration
             // $table->foreignId('user_id');
             $table->string('address', 255);
             $table->string('city', 50);
-            $table->decimal('latitude',11, 2);
-            $table->decimal('longitude',11, 2);
+            $table->decimal('latitude',8, 6);
+            $table->decimal('longitude',8, 6);
             // $table->foreignId('subscription_id');
             // $table->foreignId('image_id');
             $table->string('portrait', 255)->default('https://placehold.co/600x400/000000/FFF');

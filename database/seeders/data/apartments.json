@@ -1,0 +1,53 @@
+[
+    {
+        "id": 4,
+        "title": "Appartamento vista mare",
+        "description": "Appartamento moderno con vista mozzafiato sul mare, ideale per coppie e famiglie.",
+        "address": "Via Marina 10",
+        "city": "Napoli",
+        "latitude": 40.839901,
+        "longitude": 14.252521,
+        "portrait": "https://example.com/images/appartamento1.jpg",
+        "price": 120,
+        "rooms": 3,
+        "bathrooms": 1,
+        "beds": 2,
+        "square_meter": 85,
+        "structure_types": "appartamento",
+        "avilability": true
+    },
+    {
+        "id": 2,
+        "title": "Casa vacanze in campagna",
+        "description": "Rilassante casa vacanze immersa nel verde, con ampio giardino e piscina.",
+        "address": "Via delle Vigne 45",
+        "city": "Toscana",
+        "latitude": 43.769634,
+        "longitude": 11.255823,
+        "portrait": "https://example.com/images/casavacanze1.jpg",
+        "price": 180,
+        "rooms": 4,
+        "bathrooms": 2,
+        "beds": 5,
+        "square_meter": 150,
+        "structure_types": "casa vacanze",
+        "avilability": true
+    },
+    {
+        "id": 3,
+        "title": "B&B nel centro storico",
+        "description": "Accogliente B&B nel cuore del centro storico, a pochi passi dai principali monumenti.",
+        "address": "Via Roma 20",
+        "city": "Firenze",
+        "latitude": 43.769523,
+        "longitude": 11.255856,
+        "portrait": "https://example.com/images/bb1.jpg",
+        "price": 90,
+        "rooms": 2,
+        "bathrooms": 1,
+        "beds": 2,
+        "square_meter": 60,
+        "structure_types": "b&b",
+        "avilability": true
+    }
+]
