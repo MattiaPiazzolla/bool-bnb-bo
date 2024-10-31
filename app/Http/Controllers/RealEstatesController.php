@@ -14,7 +14,9 @@ class RealEstatesController extends Controller
      */
     public function index()
     {
-        //
+        // recupero tutti gli immobili
+        $real_estates = real_estates::all();
+        return view('real_estates', compact('real_estates'));
     }
 
     /**
@@ -24,7 +26,8 @@ class RealEstatesController extends Controller
      */
     public function create()
     {
-        //
+        // Ritorna la vista create
+        return view('real_estates');
     }
 
     /**
@@ -35,7 +38,7 @@ class RealEstatesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
