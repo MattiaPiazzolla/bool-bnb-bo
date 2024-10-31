@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 150);
             $table->text('description', 500)->nullable();
-            // $table->foreignId('user_id');
+            $table->foreignId('user_id');
             $table->string('address', 255);
             $table->string('city', 50);
             $table->decimal('latitude',8, 6);
