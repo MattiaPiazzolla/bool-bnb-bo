@@ -24,7 +24,7 @@ return new class extends Migration
             $table->decimal('longitude',8, 6);
             // $table->foreignId('subscription_id');
             // $table->foreignId('image_id');
-            $table->string('portrait', 255)->default('https://placehold.co/600x400/000000/FFF');
+            $table->string('portrait', 255)->nullable();
             $table->decimal('price', 8, 2);
             $table->integer('rooms')->nullable();
             $table->integer('bathrooms')->nullable();
