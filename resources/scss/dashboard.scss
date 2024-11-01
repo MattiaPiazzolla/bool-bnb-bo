@@ -1,0 +1,44 @@
+
+//wrapper è la classe che gestisce il contenitore della sezione dasboard. 
+//nota bene, eventuali altezze fisse potrebbero causare problemi.
+.wrapper{
+    height: calc(100vh - 86px);
+    .side-bar{
+        width: 300px;
+        height: 100%;
+        background: $base-black;
+        ul{
+            width:100%;
+            margin-left: 25px;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            &:hover{
+                font-weight: 600;
+                transition: 0.2s;
+            }
+        }
+        .bottom-menu{
+            width: 100%;
+            margin-left: 25px;
+            .img-box{
+                height: 30px;
+                width: 30px;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                    border-radius: 50%;
+                }
+            }
+            span{
+                color: $base-blue;
+                font-size: 1.2rem;
+            }
+            a{
+                color: $base-yellow;
+            }
+        }
+    }
+}
