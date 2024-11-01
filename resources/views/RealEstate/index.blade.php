@@ -1,6 +1,6 @@
 @extends('dashboard')
 @section('main-content')
-    <div class="container">
+    <div class="container p-5">
         @foreach ($real_estates as $real_estate)
             <div class="card">
                 <h3 class="card-header bg-dark text-white text-uppercase">{{ $real_estate->structure_types }}</h3>
