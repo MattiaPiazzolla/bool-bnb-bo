@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\real_estates;
+use App\Models\RealEstate;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\StoreRealEstateRequest; //Importa la classe StoreRealEstateRequest
@@ -21,7 +21,7 @@ class RealEstatesController extends Controller
     public function index()
 {
     // Recupero tutti gli immobili
-    $real_estates = real_estates::all();
+    $real_estates = RealEstate::all();
 
     // Passa la variabile alla vista
     return view('RealEstate.index', compact('real_estates'));
@@ -55,9 +55,10 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function show(real_estates $real_estates)
+    public function show($id)
     {
-        return view('real_estates.show', compact('realEstate'));
+        $real_estate = RealEstate::findOrFail($id);
+        return view('RealEstate.show', compact('real_estate'));
     }
 
     /**
@@ -66,7 +67,7 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function edit(real_estates $real_estates)
+    public function edit(RealEstate $real_estates)
     {
         return view('real_estates.edit', compact('real_estates'));
     }
@@ -90,7 +91,7 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function destroy(real_estates $real_estates)
+    public function destroy(RealEstate $real_estates)
     {
         $real_estates->delete();
         return redirect()->route('real_estates.index')->with('success', 'Real Estate deleted successfully');
