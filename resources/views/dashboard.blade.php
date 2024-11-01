@@ -20,7 +20,11 @@
                     <span>User-001</span>
                     <a href="#">Logout</a>
             </div>
+        </div>
 
+        <div>
+        <!--Sezione dedicata allo yield. Qui vedrai tutto il contenuto effettivo della dashboard-->
+        @yield('content')
         </div>
     </div>
 @endsection
