@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\real_estates;
-
-
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests\StoreRealEstateRequest; //Importa la classe StoreRealEstateRequest
 use App\Http\Requests\UpdateRealEstateRequest; //Importa la classe UpdateRealEstateRequest
 
-use illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class RealEstatesController extends Controller
@@ -20,11 +19,13 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        // recupero tutti gli immobili
-        $real_estates = real_estates::all();
-        return view('RealEstates.index', compact('RealEstates'));
-    }
+{
+    // Recupero tutti gli immobili
+    $real_estates = real_estates::all();
+
+    // Passa la variabile alla vista
+    return view('RealEstate.index', compact('real_estates'));
+}
 
     /**
      * Show the form for creating a new resource.
@@ -43,14 +44,9 @@ class RealEstatesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRealEstateRequest $request)
+    public function store( $request)
     {
-        //usa i dati validati dal request StoreRealEstateRequest
-        $form_data = $request->validate();
-
-        
-        return redirect()->route('real_estates.index')->with('success', 'real_estate creato con successo!');
-       
+    
     }
 
     /**
@@ -82,12 +78,9 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRealEstateRequest $request, RealEstate $realEstate)
+    public function update( $request, $realEstate)
     {
-        // Usa i dati validati dalla request `UpdateRealEstateRequest`
-        $form_data = $request->validate();
-
-        return redirect()->route('real_estates.index')->with('success', 'Real Estate updated successfully');
+       
     }
 
 

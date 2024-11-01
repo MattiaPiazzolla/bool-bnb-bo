@@ -6,7 +6,7 @@
         <div class="side-bar d-flex flex-column justify-content-between py-5">
             <!--sezione menu-->
             <ul class="text-white d-flex flex-column list-unstyled gap-3 py-5">
-                <li><a href="#">I tuoi annunci</a></li>
+                <li><a href="{{ route('admin.RealEstates.index') }}">I tuoi annunci</a></li>
                 <li><a href="#">Metti in evidenza</a></li>
                 <li><a href="#">Messaggi</a></li>
                 <li><a href="#">Statistiche</a></li>
