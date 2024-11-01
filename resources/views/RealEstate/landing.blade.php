@@ -1,4 +1,4 @@
 @extends('dashboard')
-@section('content')
+@section('main-content')
     <h1>sono bellissimo.</h1>
 @endsection

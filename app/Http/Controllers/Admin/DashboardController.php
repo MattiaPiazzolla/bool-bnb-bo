@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('layouts.dashboard', ['landing' => view('admin.landing')]);
+        return view('dashboard', ['landing' => view(' RealEstate.landing')]);
     }
 }
