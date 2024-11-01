@@ -25,6 +25,6 @@
         <div>
         <!--Sezione dedicata allo yield. Qui vedrai tutto il contenuto effettivo della dashboard-->
         @yield('content')
-        </div>
+        </div> 
     </div>
 @endsection
