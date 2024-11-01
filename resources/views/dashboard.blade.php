@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper d-flex">
         <!--sidebar-->
         <div class="side-bar d-flex flex-column justify-content-between py-5">
             <!--sezione menu-->
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="dash-content">
             <!--Sezione dedicata allo yield. Qui vedrai tutto il contenuto effettivo della dashboard-->
             @yield('main-content')
         </div>

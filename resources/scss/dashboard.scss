@@ -2,7 +2,7 @@
 //wrapper è la classe che gestisce il contenitore della sezione dasboard. 
 //nota bene, eventuali altezze fisse potrebbero causare problemi.
 .wrapper{
-    height: calc(100vh - 86px);
+    height: calc(100vh - 82px);
     .side-bar{
         width: 300px;
         height: 100%;
@@ -40,5 +40,8 @@
                 color: $base-yellow;
             }
         }
+    }
+    .dash-content{
+        width: calc(100vw - 300px);
     }
 }

@@ -1,7 +1,9 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <img src="{{ asset('img/houses_img/BOOL-BNB-DB.png') }}" class="logo-config" alt="">
+                    <!-- <img src="{{ asset('img/houses_img/BOOL-BNB-DB.png') }}" class="logo-config" alt=""> -->
+                     <h1 class="logo-config">Bool-b&b</h1>
+                     <!-- Ho momentaneamente sostituito il logo perchè non mi piace lol -->
 
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

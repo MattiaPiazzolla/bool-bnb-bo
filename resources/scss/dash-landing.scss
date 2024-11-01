@@ -1,0 +1,25 @@
+.wrapper{
+    background-color: $base-light;
+    position: relative;
+    .title{
+        font-size: 7rem;
+        color: $base-blue;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    span{
+        font-size: 2.6rem;
+        color: $base-blue;
+    }
+    .icon-config{
+        position: absolute;
+        width: 230px;
+        bottom: 5%;
+        right: 10%;
+        filter: opacity(0.2);
+    }
+}
