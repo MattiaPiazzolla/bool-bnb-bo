@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\real_estates;
 
@@ -23,7 +23,7 @@ class RealEstatesController extends Controller
     {
         // recupero tutti gli immobili
         $real_estates = real_estates::all();
-        return view('real_estates', compact('real_estates'));
+        return view('RealEstates.index', compact('RealEstates'));
     }
 
     /**
