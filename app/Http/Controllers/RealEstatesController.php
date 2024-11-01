@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\real_estates;
+
+
+
+use App\Http\Requests\StoreRealEstateRequest; //Importa la classe StoreRealEstateRequest
+use App\Http\Requests\UpdateRealEstateRequest; //Importa la classe UpdateRealEstateRequest
+
+use illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class RealEstatesController extends Controller
@@ -14,7 +21,9 @@ class RealEstatesController extends Controller
      */
     public function index()
     {
-        //
+        // recupero tutti gli immobili
+        $real_estates = real_estates::all();
+        return view('real_estates', compact('real_estates'));
     }
 
     /**
@@ -24,7 +33,8 @@ class RealEstatesController extends Controller
      */
     public function create()
     {
-        //
+        // Ritorna la vista create
+        return view('real_estates');
     }
 
     /**
@@ -33,9 +43,14 @@ class RealEstatesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRealEstateRequest $request)
     {
-        //
+        //usa i dati validati dal request StoreRealEstateRequest
+        $form_data = $request->validate();
+
+        
+        return redirect()->route('real_estates.index')->with('success', 'real_estate creato con successo!');
+       
     }
 
     /**
@@ -46,7 +61,7 @@ class RealEstatesController extends Controller
      */
     public function show(real_estates $real_estates)
     {
-        //
+        return view('real_estates.show', compact('realEstate'));
     }
 
     /**
@@ -57,7 +72,7 @@ class RealEstatesController extends Controller
      */
     public function edit(real_estates $real_estates)
     {
-        //
+        return view('real_estates.edit', compact('real_estates'));
     }
 
     /**
@@ -67,10 +82,14 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, real_estates $real_estates)
+    public function update(UpdateRealEstateRequest $request, RealEstate $realEstate)
     {
-        //
+        // Usa i dati validati dalla request `UpdateRealEstateRequest`
+        $form_data = $request->validate();
+
+        return redirect()->route('real_estates.index')->with('success', 'Real Estate updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +99,7 @@ class RealEstatesController extends Controller
      */
     public function destroy(real_estates $real_estates)
     {
-        //
+        $real_estates->delete();
+        return redirect()->route('real_estates.index')->with('success', 'Real Estate deleted successfully');
     }
 }
