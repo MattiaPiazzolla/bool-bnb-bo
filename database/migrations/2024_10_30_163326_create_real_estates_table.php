@@ -20,8 +20,8 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('address', 255);
             $table->string('city', 50);
-            $table->decimal('latitude',8, 6);
-            $table->decimal('longitude',8, 6);
+            $table->decimal('latitude', 8, 6)->nullable();
+            $table->decimal('longitude', 8, 6)->nullable();
             // $table->foreignId('subscription_id');
             // $table->foreignId('image_id');
             $table->string('portrait', 255)->nullable();
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->integer('bathrooms')->nullable();
             $table->integer('beds')->nullable();
             $table->integer('square_meter')->nullable();
-            $table->string('structure_types', 50);
+            $table->string('structure_types', 50)->default('Appartamento');
             $table->boolean('avilability')->default(true);
             // $table->foreignId('messages_id');
             // $table->foreignId('services_id');

@@ -1,6 +1,7 @@
 @extends('dashboard')
 @section('main-content')
     <div class="container p-5">
+        <a href="{{ route('admin.RealEstates.create') }}" class="btn btn-warning">Aggiungi immobile</a>
         @foreach ($real_estates as $real_estate)
             <div class="card my-4">
                 <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white text-uppercase">
@@ -14,11 +15,13 @@
                         <p class="card-text">{{ $real_estate->description }}</p>
                         <p class="card-text">{{ $real_estate->address }}, {{ $real_estate->city }}</p>
                         <p class="card-text">{{ $real_estate->price }}€</p>
-                        <p class="card-text">L'immobile è <span></span></p>
+                        <p class="card-text">L'immobile è
+                            {{ $real_estate->avilability == true ? 'disponibile' : 'occupato' }}</p>
                         <div class="buttons-cards d-flex justify-content-around">
                             <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}"
                                 class="btn btn-primary">Dettagli</a>
-                            <a href="#" class="btn btn-warning">Modifica</a>
+                            <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}"
+                                class="btn btn-warning">Modifica</a>
                             <form action="" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -27,8 +30,8 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <img src="{{ !empty($real_estate->portrait) ? $real_estate->portrait : 'https://placehold.co/600x400?text=Copertina' }}"
-                            class="card-img-top" alt="Immobile">
+                        <img src="{{ !empty($real_estate->portrait) ? asset('storage/copertine_immobili/' . $real_estate->portrait) : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
+                            class="card-img-top" alt="{{ $real_estate->title }}">
                     </div>
                 </div>
             </div>

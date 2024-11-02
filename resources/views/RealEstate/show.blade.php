@@ -18,7 +18,7 @@
                 <p><strong>Bedrooms:</strong> {{ $real_estate->beds }}</p>
                 <p><strong>Bagni:</strong> {{ $real_estate->bathrooms }}</p>
                 <p><strong>Metri quadri:</strong> {{ $real_estate->square_meter }} m²</p>
-                <img src="{{ !empty($real_estate->portrait) ? $real_estate->portrait : 'https://placehold.co/600x400?text=Copertina' }}"
+                <img src="{{ !empty($real_estate->portrait) ? $real_estate->portrait : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
                     class="card-img-top" alt="Immobile">
             </div>
         </div>

@@ -9,5 +9,5 @@ class RealEstate extends Model
 {
     use HasFactory;
 
-    protected $table = 'real_estates';
+    protected $fillable = ['title', 'description', 'address', 'city', 'price', 'avilability'];
 }
