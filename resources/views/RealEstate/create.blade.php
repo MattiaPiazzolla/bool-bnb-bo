@@ -109,6 +109,14 @@
                             min="0">
                     </div>
 
+                    <h3>Servizi</h3>
+                    @foreach ($services as $service)
+                        <div>
+                            <input type="checkbox" name="services[]" value="{{ $service->id }}">
+                            <label>{{ $service->name }}</label>
+                        </div>
+                    @endforeach
+
                     <div class="form-group">
                         <label for="portrait">Immagine di Copertina</label>
                         <input type="file" name="portrait" class="form-control" accept="image/*">

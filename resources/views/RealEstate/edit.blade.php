@@ -1,4 +1,5 @@
 @extends('dashboard')
+
 @section('main-content')
     <div class="container">
         <div class="row">
@@ -94,6 +95,24 @@
                     <div class="form-group">
                         <label for="portrait">Nuova Immagine di Copertina</label>
                         <input type="file" name="portrait" class="form-control">
+                    </div>
+
+                    <!-- Sezione per selezionare i servizi -->
+                    <div class="form-group">
+                        <label for="services">Servizi</label>
+                        <div>
+                            @foreach ($all_services as $service)
+                                <div class="form-check">
+                                    <input type="checkbox" name="services[]" value="{{ $service->id }}"
+                                        class="form-check-input" id="service-{{ $service->id }}"
+                                        {{ $real_estate->services->contains($service->id) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="service-{{ $service->id }}">
+                                        {{ $service->name }}
+                                    </label>
+                                </div>
+                            @endforeach
+                        </div>
+                        <small class="form-text text-muted">Seleziona i servizi disponibili per questo immobile.</small>
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Aggiorna Immobile</button>

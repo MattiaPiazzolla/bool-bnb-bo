@@ -4,7 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
+use App\Models\services;
 
 class RealEstate extends Model
 {
@@ -18,8 +21,15 @@ class RealEstate extends Model
         'square_meter', 'structure_types', 'availability'
     ];
 
+    // Relazione con User
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    // Relazione many-to-many con Service
+    public function services(): BelongsToMany
+    {
+        return $this->belongsToMany(services::class, 'real_estate_service', 'real_estate_id', 'service_id');
     }
 }

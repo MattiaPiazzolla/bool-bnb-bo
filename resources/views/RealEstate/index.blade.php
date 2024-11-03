@@ -31,7 +31,8 @@
                     </div>
                     <div class="col-6">
                         <img src="{{ !empty($real_estate->portrait) ? asset('storage/' . $real_estate->portrait) : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
-                            class="card-img-top" alt="{{ $real_estate->title }}">
+                            class="card-img-top" style="aspect-ratio: 1/1 ; object-fit: cover"
+                            alt="{{ $real_estate->title }}">
                     </div>
                 </div>
             </div>
