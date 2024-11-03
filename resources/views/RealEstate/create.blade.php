@@ -5,6 +5,16 @@
             <div class="col-12 p-5">
                 <h1>Crea Nuovo Immobile</h1>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ route('admin.RealEstates.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
@@ -68,10 +78,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="avilability">Disponibilità</label>
-                        <select name="avilability" class="form-control" required>
-                            <option value="1" {{ old('avilability') == 1 ? 'selected' : '' }}>Disponibile</option>
-                            <option value="0" {{ old('avilability') == 0 ? 'selected' : '' }}>Occupato</option>
+                        <label for="availability">Disponibilità</label>
+                        <select name="availability" class="form-control" required>
+                            <option value="1" {{ old('availability') == 1 ? 'selected' : '' }}>Disponibile</option>
+                            <option value="0" {{ old('availability') == 0 ? 'selected' : '' }}>Occupato</option>
                         </select>
                     </div>
 

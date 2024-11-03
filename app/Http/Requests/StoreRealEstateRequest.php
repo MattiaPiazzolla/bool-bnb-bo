@@ -8,7 +8,7 @@ class StoreRealEstateRequest extends FormRequest
 {
     public function authorize()
     {
-        return true; // Assicurati che l'utente sia autorizzato ad effettuare questa richiesta
+        return true; 
     }
 
     public function rules()
@@ -20,12 +20,12 @@ class StoreRealEstateRequest extends FormRequest
             'city' => 'required|string|max:50',
             'price' => 'required|numeric|min:0',
             'structure_types' => 'required|string|max:50',
-            'avilability' => 'required|boolean',
+            'availability' => 'required|boolean',
             'rooms' => 'nullable|integer|min:0',
             'bathrooms' => 'nullable|integer|min:0',
             'beds' => 'nullable|integer|min:0',
             'square_meter' => 'nullable|integer|min:0',
-            'portrait' => 'nullable|image|max:2048', // Se stai gestendo un file immagine
+            'portrait' => 'nullable|image|max:2048', 
         ];
     }
 }

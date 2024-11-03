@@ -15,7 +15,7 @@
         "beds": 2,
         "square_meter": 85,
         "structure_types": "appartamento",
-        "avilability": true
+        "availability": true
     },
     {
         "id": 2,
@@ -33,7 +33,7 @@
         "beds": 5,
         "square_meter": 150,
         "structure_types": "casa vacanze",
-        "avilability": true
+        "availability": true
     },
     {
         "id": 3,
@@ -51,6 +51,6 @@
         "beds": 2,
         "square_meter": 60,
         "structure_types": "b&b",
-        "avilability": true
+        "availability": true
     }
 ]

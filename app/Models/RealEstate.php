@@ -2,12 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class RealEstate extends Model
 {
-    use HasFactory;
+    // Per quando faremo il soft delete
+    // use SoftDeletes; 
 
-    protected $fillable = ['title', 'description', 'address', 'city', 'price', 'avilability'];
+    protected $fillable = [
+        'title', 'description', 'user_id', 'address', 
+        'city', 'latitude', 'longitude', 'portrait', 
+        'price', 'rooms', 'bathrooms', 'beds', 
+        'square_meter', 'structure_types', 'availability'
+    ];
 }

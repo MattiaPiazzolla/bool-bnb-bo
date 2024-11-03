@@ -31,12 +31,13 @@ return new class extends Migration
             $table->integer('beds')->nullable();
             $table->integer('square_meter')->nullable();
             $table->string('structure_types', 50)->default('Appartamento');
-            $table->boolean('avilability')->default(true);
+            $table->boolean('availability')->default(true);
             // $table->foreignId('messages_id');
             // $table->foreignId('services_id');
             // $table->foreignId('views_id');
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

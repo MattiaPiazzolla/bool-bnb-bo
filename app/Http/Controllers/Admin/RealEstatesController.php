@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 
+
 use App\Http\Controllers\Admin\real_estates;
 
 use App\Http\Requests\StoreRealEstateRequest; //Importa la classe StoreRealEstateRequest
@@ -52,45 +53,49 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRealEstateRequest $request)
-{
-    $real_estate = new RealEstate();
-    $real_estate->title = $request->input('title');
-    $real_estate->description = $request->input('description');
-    $real_estate->address = $request->input('address');
-    $real_estate->city = $request->input('city');
-    $real_estate->price = $request->input('price');
-    $real_estate->structure_types = $request->input('structure_types');
-    $real_estate->avilability = $request->input('avilability');
-    $real_estate->rooms = $request->input('rooms');
-    $real_estate->bathrooms = $request->input('bathrooms');
-    $real_estate->beds = $request->input('beds');
-    $real_estate->square_meter = $request->input('square_meter');
-
-    $real_estate->user_id = Auth::id();
-
-    // Chiamata alla funzione per ottenere le coordinate
-    $coordinates = $this->getCoordinates($real_estate->address, $real_estate->city);
-    if ($coordinates) {
-        $real_estate->latitude = $coordinates['latitude'];
-        $real_estate->longitude = $coordinates['longitude'];
-    } else {
-        $real_estate->latitude = null;
-        $real_estate->longitude = null;
+    {
+        $real_estate = new RealEstate();
+        $real_estate->title = $request->input('title');
+        $real_estate->description = $request->input('description');
+        $real_estate->address = $request->input('address');
+        $real_estate->city = $request->input('city');
+        $real_estate->price = $request->input('price');
+        $real_estate->structure_types = $request->input('structure_types');
+        $real_estate->availability = $request->input('availability');
+        $real_estate->rooms = $request->input('rooms');
+        $real_estate->bathrooms = $request->input('bathrooms');
+        $real_estate->beds = $request->input('beds');
+        $real_estate->square_meter = $request->input('square_meter');
+        $real_estate->user_id = Auth::id();
+    
+        // Ottieni le coordinate
+        $coordinates = $this->getCoordinates($real_estate->address, $real_estate->city);
+        if ($coordinates) {
+            $real_estate->latitude = $coordinates['latitude'];
+            $real_estate->longitude = $coordinates['longitude'];
+        }
+    
+        // Salva inizialmente l'immobile per ottenere l'ID
+        $real_estate->save();
+    
+        // Gestione dell’immagine
+        if ($request->hasFile('portrait')) {
+            $file = $request->file('portrait');
+            
+            // Creazione del nome del file con ID e titolo come slug
+            $slugTitle = Str::slug($real_estate->title); // Trasforma il titolo in slug
+            $filename = $real_estate->id . '-' . $slugTitle . '.' . $file->getClientOriginalExtension();
+    
+            // Salva l’immagine nella cartella pubblica con il nome generato
+            $path = $file->storeAs('copertine_immobili', $filename, 'public');
+            $real_estate->portrait = $path; // Salva il percorso nel campo `portrait`
+        }
+    
+        // Salva nuovamente per aggiornare il campo `portrait`
+        $real_estate->save();
+    
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile creato con successo.');
     }
-
-    // Gestione del caricamento dell'immagine di copertina
-    if ($request->hasFile('portrait')) {
-        $file = $request->file('portrait');
-        $filename = $real_estate->id . '-' . Str::slug($real_estate->title) . '.' . $file->getClientOriginalExtension();
-        $path = $file->storeAs('copertine_immobili', $filename, 'public'); // Salva nea cartella 'copertine_immobili'
-
-        $real_estate->portrait = $filename; // Salva il nome del file nel database
-    }
-
-    $real_estate->save(); // Salva l'immobile
-
-    return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile creato con successo.');
-}
     /**
      * Display the specified resource.
      *
@@ -109,10 +114,14 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function edit(RealEstate $real_estates)
-    {
-        return view('real_estates.edit', compact('real_estates'));
-    }
+    public function edit($id)
+{
+    // Trova l'immobile tramite ID
+    $real_estate = RealEstate::findOrFail($id);
+
+    // Ritorna la vista edit con i dati dell'immobile
+    return view('RealEstate.edit', compact('real_estate'));
+}  
 
     /**
      * Update the specified resource in storage.
@@ -121,9 +130,48 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, $realEstate)
+    public function update(Request $request, $id)
     {
-       
+        $real_estate = RealEstate::findOrFail($id);
+    
+        // Valida i dati
+        $validatedData = $request->validate([
+            'title' => 'required|max:150',
+            'description' => 'nullable|max:500',
+            'address' => 'required|string|max:255',
+            'city' => 'required|string|max:50',
+            'price' => 'required|numeric|min:0',
+            'structure_types' => 'required|string|max:50',
+            'availability' => 'required|boolean',
+            'rooms' => 'nullable|integer|min:0',
+            'bathrooms' => 'nullable|integer|min:0',
+            'beds' => 'nullable|integer|min:0',
+            'square_meter' => 'nullable|integer|min:0',
+            'portrait' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048' // Limita il tipo e la dimensione dell’immagine
+        ]);
+    
+        // Aggiorna i dati dell’immobile
+        $real_estate->fill($validatedData);
+    
+        // Gestione dell’immagine
+        if ($request->hasFile('portrait')) {
+            // Elimina la vecchia immagine se esiste
+            if ($real_estate->portrait) {
+                Storage::disk('public')->delete($real_estate->portrait);
+            }
+    
+            // Salva la nuova immagine
+            $file = $request->file('portrait');
+            $filename = $real_estate->id . '-' . \Str::slug($real_estate->title) . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('copertine_immobili', $filename, 'public');
+            $real_estate->portrait = $path;
+        }
+    
+        // Salva i dati aggiornati nel DB
+        $real_estate->save();
+    
+        // Redirect con messaggio di successo
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile aggiornato con successo.');
     }
 
 
@@ -133,10 +181,20 @@ class RealEstatesController extends Controller
      * @param  \App\Models\real_estates  $real_estates
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RealEstate $real_estates)
+    public function destroy($id)
     {
-        $real_estates->delete();
-        return redirect()->route('real_estates.index')->with('success', 'Real Estate deleted successfully');
+        // Trova l'immobile tramite ID
+        $real_estate = RealEstate::findOrFail($id);
+        
+        // Controlla se l'immagine esiste e cancellala
+        if ($real_estate->portrait) {
+            Storage::disk('public')->delete($real_estate->portrait);
+        }
+        
+        // Elimina l'immobile
+        $real_estate->delete();
+    
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile eliminato con successo.');
     }
 
     // funzione per ottenere le coordinate geografiche di un indirizzo

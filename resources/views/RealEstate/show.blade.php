@@ -7,7 +7,7 @@
                     <a href="{{ route('admin.RealEstates.index') }}"><i class="bi bi-arrow-left-short"
                             style="font-size: 2.5rem"></i></a>
                     <h1 class="mx-3">{{ $real_estate->title }}</h1>
-                    <div class="rounded-circle {{ $real_estate->avilability ? 'bg-success' : 'bg-danger' }}"
+                    <div class="rounded-circle {{ $real_estate->availability ? 'bg-success' : 'bg-danger' }}"
                         style="width: 20px; height: 20px;"></div>
                 </div>
                 <h3>{{ $real_estate->structure_types }}</h3>
