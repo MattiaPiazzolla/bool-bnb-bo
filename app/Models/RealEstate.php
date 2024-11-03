@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class RealEstate extends Model
@@ -16,4 +17,9 @@ class RealEstate extends Model
         'price', 'rooms', 'bathrooms', 'beds', 
         'square_meter', 'structure_types', 'availability'
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

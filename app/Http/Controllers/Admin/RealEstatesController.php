@@ -26,14 +26,14 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
-{
-    // Recupero tutti gli immobili
-    $real_estates = RealEstate::all();
-
-    // Passa la variabile alla vista
-    return view('RealEstate.index', compact('real_estates'));
-}
+     public function index()
+     {
+         // Recupera solo gli immobili associati all'utente loggato
+         $real_estates = RealEstate::where('user_id', auth()->id())->get();
+     
+         // Passa la variabile alla vista
+         return view('RealEstate.index', compact('real_estates'));
+     }
 
     /**
      * Show the form for creating a new resource.
