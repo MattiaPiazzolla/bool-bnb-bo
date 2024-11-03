@@ -5,76 +5,63 @@
             <div class="col-12 p-5">
                 <h1>Crea Nuovo Immobile</h1>
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <form action="{{ route('admin.RealEstates.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
                         <label for="title">Titolo</label>
                         <input type="text" name="title" class="form-control" value="{{ old('title') }}" required>
+                        @error('title')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="description">Descrizione</label>
                         <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+                        @error('description')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="address">Indirizzo</label>
                         <input type="text" name="address" class="form-control" value="{{ old('address') }}" required>
+                        @error('address')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="city">Città</label>
                         <input type="text" name="city" class="form-control" value="{{ old('city') }}" required>
+                        @error('city')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="price">Prezzo</label>
                         <input type="number" name="price" class="form-control" value="{{ old('price') }}" required
                             min="0" step="0.01">
+                        @error('price')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="structure_types">Tipologia Struttura</label>
                         <select name="structure_types" class="form-control" required>
-                            <option value="Appartamento" {{ old('structure_types') == 'Appartamento' ? 'selected' : '' }}>
-                                Appartamento</option>
-                            <option value="Villa" {{ old('structure_types') == 'Villa' ? 'selected' : '' }}>Villa</option>
-                            <option value="Casa indipendente"
-                                {{ old('structure_types') == 'Casa indipendente' ? 'selected' : '' }}>Casa indipendente
-                            </option>
-                            <option value="Villetta a schiera"
-                                {{ old('structure_types') == 'Villetta a schiera' ? 'selected' : '' }}>Villetta a schiera
-                            </option>
-                            <option value="Loft" {{ old('structure_types') == 'Loft' ? 'selected' : '' }}>Loft</option>
-                            <option value="Attico" {{ old('structure_types') == 'Attico' ? 'selected' : '' }}>Attico
-                            </option>
-                            <option value="Monolocale" {{ old('structure_types') == 'Monolocale' ? 'selected' : '' }}>
-                                Monolocale</option>
-                            <option value="Bilocale" {{ old('structure_types') == 'Bilocale' ? 'selected' : '' }}>Bilocale
-                            </option>
-                            <option value="Trilocale" {{ old('structure_types') == 'Trilocale' ? 'selected' : '' }}>
-                                Trilocale</option>
-                            <option value="Rustico" {{ old('structure_types') == 'Rustico' ? 'selected' : '' }}>Rustico
-                            </option>
-                            <option value="Cottage" {{ old('structure_types') == 'Cottage' ? 'selected' : '' }}>Cottage
-                            </option>
-                            <option value="Baita" {{ old('structure_types') == 'Baita' ? 'selected' : '' }}>Baita</option>
-                            <option value="Mansarda" {{ old('structure_types') == 'Mansarda' ? 'selected' : '' }}>Mansarda
-                            </option>
-                            <option value="Bungalow" {{ old('structure_types') == 'Bungalow' ? 'selected' : '' }}>Bungalow
-                            </option>
+                            <option value="" disabled {{ old('structure_types') ? '' : 'selected' }}>Seleziona
+                                tipologia</option>
+                            @foreach (['Appartamento', 'Villa', 'Casa indipendente', 'Villetta a schiera', 'Loft', 'Attico', 'Monolocale', 'Bilocale', 'Trilocale', 'Rustico', 'Cottage', 'Baita', 'Mansarda', 'Bungalow'] as $type)
+                                <option value="{{ $type }}"
+                                    {{ old('structure_types') == $type ? 'selected' : '' }}>{{ $type }}</option>
+                            @endforeach
                         </select>
+                        @error('structure_types')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
@@ -83,43 +70,65 @@
                             <option value="1" {{ old('availability') == 1 ? 'selected' : '' }}>Disponibile</option>
                             <option value="0" {{ old('availability') == 0 ? 'selected' : '' }}>Occupato</option>
                         </select>
+                        @error('availability')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="rooms">Numero di Stanze</label>
                         <input type="number" name="rooms" class="form-control" value="{{ old('rooms') }}"
                             min="0">
+                        @error('rooms')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="bathrooms">Numero di Bagni</label>
                         <input type="number" name="bathrooms" class="form-control" value="{{ old('bathrooms') }}"
                             min="0">
+                        @error('bathrooms')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="beds">Numero di Letti</label>
                         <input type="number" name="beds" class="form-control" value="{{ old('beds') }}"
                             min="0">
+                        @error('beds')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="square_meter">Superficie in m²</label>
                         <input type="number" name="square_meter" class="form-control" value="{{ old('square_meter') }}"
                             min="0">
+                        @error('square_meter')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <h3>Servizi</h3>
                     @foreach ($services as $service)
-                        <div>
-                            <input type="checkbox" name="services[]" value="{{ $service->id }}">
-                            <label>{{ $service->name }}</label>
+                        <div class="form-check">
+                            <input type="checkbox" name="services[]" value="{{ $service->id }}" class="form-check-input"
+                                {{ is_array(old('services')) && in_array($service->id, old('services')) ? 'checked' : '' }}>
+                            <label class="form-check-label">{{ $service->name }}</label>
                         </div>
                     @endforeach
+                    @error('services')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <div class="form-group">
                         <label for="portrait">Immagine di Copertina</label>
                         <input type="file" name="portrait" class="form-control" accept="image/*">
+                        @error('portrait')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Crea Immobile</button>

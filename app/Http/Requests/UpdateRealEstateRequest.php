@@ -28,4 +28,23 @@ class UpdateRealEstateRequest extends FormRequest
             'portrait' => 'nullable|image|max:2048', 
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio.',
+            'description.max' => 'La descrizione non può superare i 500 caratteri.',
+            'address.required' => 'L\'indirizzo è obbligatorio.',
+            'city.required' => 'La città è obbligatoria.',
+            'price.required' => 'Il prezzo è obbligatorio.',
+            'structure_types.required' => 'La tipologia di struttura è obbligatoria.',
+            'availability.required' => 'La disponibilità è obbligatoria.',
+            'rooms.integer' => 'Il numero di stanze deve essere un numero intero.',
+            'bathrooms.integer' => 'Il numero di bagni deve essere un numero intero.',
+            'beds.integer' => 'Il numero di letti deve essere un numero intero.',
+            'square_meter.integer' => 'La superficie in metri quadrati deve essere un numero intero.',
+            'portrait.image' => 'Il file deve essere un\'immagine.',
+            'portrait.max' => 'L\'immagine non può superare i 2 MB.',
+        ];
+    }
 }
