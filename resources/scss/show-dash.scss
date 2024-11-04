@@ -1,0 +1,22 @@
+.back-bt{
+    a{
+        text-decoration: none;
+    }
+    span{
+        margin-bottom: 16px;
+    }
+}
+
+.bg-white{
+    span{
+        color: $base-blue;
+        font-size: 14pt;
+    }
+    .img-head{
+        justify-content: end;
+        img{
+            width: 350px;
+            height: 207px;
+        }
+    }
+}
