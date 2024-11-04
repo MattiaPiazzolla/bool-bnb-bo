@@ -35,6 +35,10 @@
                     class="card-img-top" alt="{{ $real_estate->title }}">
 
 
+
+                {{-- Sezione mappa --}}
+                <h4 class="mt-4">Mappa</h4>
+                @include('map')
             </div>
         </div>
     </div>

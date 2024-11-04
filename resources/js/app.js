@@ -23,3 +23,5 @@ deleteButtons.forEach(button => {
         deleteForm.setAttribute('action', deleteUrl); 
     });
 });
+
+

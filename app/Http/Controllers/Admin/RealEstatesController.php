@@ -93,10 +93,13 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $real_estate = RealEstate::with('services')->findOrFail($id);
-        return view('RealEstate.show', compact('real_estate'));
-    }
+{
+    $real_estate = RealEstate::with('services')->findOrFail($id);
+    $latitude = $real_estate->latitude;
+    $longitude = $real_estate->longitude;
+
+    return view('RealEstate.show', compact('real_estate', 'latitude', 'longitude'));
+}
 
     /**
      * Show the form for editing the specified resource.
