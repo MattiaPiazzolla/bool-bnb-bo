@@ -3,10 +3,37 @@
 @import 'dashboard';
 @import 'dash-landing';
 
+
 .logo-config{
     // height: 60px;
     color: $base-blue;
 }
 
 
+// sezione homepage 
+.search-img {
+    width: 150px;
+}
 
+.position {
+    position: relative;
+    top: -280px;
+    left: 600px;
+}
+
+.container-fluid {
+    overflow: hidden;
+}
+
+// searchbar
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group {
+    position: relative;
+    width: 800px;
+    height: 50px;
+}
