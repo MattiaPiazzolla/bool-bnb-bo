@@ -15,7 +15,10 @@
     <div id="map" style="width: 100%; height: 400px"></div>
 </body>
 <script type="text/javascript">
-    let center = [4, 44.4]
+    let latitude = {{ $latitude }};
+    let longitude = {{ $longitude }};
+    let center = [longitude, latitude];
+
     const map = tt.map({
         key: "9Yq5kH65us12yazEXv9SX8bGsAYxX1fL",
         container: 'map',

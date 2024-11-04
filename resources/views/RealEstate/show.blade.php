@@ -32,7 +32,7 @@
                     </ul>
                 @endif
                 <img src="{{ !empty($real_estate->portrait) ? asset('storage/' . $real_estate->portrait) : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
-                    class="card-img-top" alt="{{ $real_estate->title }}">
+                    class="card-img-top card" alt="{{ $real_estate->title }}">
 
 
 
