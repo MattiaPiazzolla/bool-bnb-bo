@@ -35,7 +35,7 @@ return new class extends Migration
             // $table->foreignId('messages_id');
             // $table->foreignId('services_id');
             // $table->foreignId('views_id');
-            
+
             $table->timestamps();
             $table->softDeletes();
         });
