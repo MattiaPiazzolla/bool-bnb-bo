@@ -1,0 +1,24 @@
+
+.card-body{
+    img{
+        width: 300px;
+    }
+    .info-cont{
+        min-width: 400px;
+        p{
+            font-size: 12pt;
+        }
+    }
+    .p-relative{
+        position: relative;
+    }
+    .details{
+        width: 150px;
+    }
+    .buttons-cards{
+        position: absolute;
+        height: 40px;
+        right: 10px;
+        bottom: 0;
+    }
+}
