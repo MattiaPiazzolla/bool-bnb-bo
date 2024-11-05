@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        {{-- <div class="col-md-6 col-12 col-lg-4 col-xl-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="address">Indirizzo</label>
                                 <input type="text" name="address" class="form-control"
@@ -48,9 +48,9 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        {{-- <div class="col-md-6 col-12 col-lg-4 col-xl-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="city">Città</label>
                                 <input type="text" name="city" class="form-control"
@@ -59,7 +59,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-md-6 col-12 col-lg-4 col-xl-3">
                             <div class="form-group">
@@ -186,6 +186,21 @@
                                 @error('services')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="latitude" id="latitude" value="{{ old('latitude') }}">
+                        <input type="hidden" name="longitude" id="longitude" value="{{ old('longitude') }}">
+                        <input type="hidden" name="address" id="address" value="{{ old('address') }}">
+                        <input type="hidden" name="city" id="city" value="{{ old('city') }}">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between my-5 position-relative">
+                                    <div id="searchBoxContainer"
+                                        style="width: 30%; position:absolute; z-index: 1; top: 10px; left: 10px"></div>
+                                    <div id='map' class='map' style="width: 100%; height: 500px"></div>
+                                </div>
                             </div>
                         </div>
 
