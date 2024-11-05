@@ -3,7 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 p-5">
-                <h1>Crea Nuovo Immobile</h1>
+                <div class="d-flex align-items-center">
+                    <a href="{{ route('admin.RealEstates.index') }}">
+                        <i class="bi bi-arrow-left-short" style="font-size: 2.5rem"></i>
+                    </a>
+                    <h1 class="mx-3">Crea Immobile</h1>
+                </div>
 
                 <form action="{{ route('admin.RealEstates.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf

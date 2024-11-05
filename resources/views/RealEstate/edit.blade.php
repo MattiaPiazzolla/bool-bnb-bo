@@ -148,21 +148,26 @@
                             @enderror
                         </div>
 
-                        @if ($real_estate->portrait)
+                        <div class="col-12 col-md-6 mt-5">
                             <div class="form-group">
-                                <label>Immagine Corrente</label>
-                                <img src="{{ asset('storage/' . $real_estate->portrait) }}" class="img-thumbnail"
-                                    width="200" alt="Copertina attuale">
+                                <label class="my-2 fw-bold" for="portrait">Nuova Immagine di Copertina</label>
+                                <input type="file" name="portrait" class="form-control" accept="image/*">
+                                @error('portrait')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
-                        @endif
-
-                        <div class="form-group">
-                            <label class="my-2 fw-bold" for="portrait">Nuova Immagine di Copertina</label>
-                            <input type="file" name="portrait" class="form-control" accept="image/*">
-                            @error('portrait')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
                         </div>
+
+                        <div class="col-12 col-md-6 mt-5">
+                            @if ($real_estate->portrait)
+                                <div class="form-group">
+                                    <label>Immagine Attuale</label>
+                                    <img src="{{ asset('storage/' . $real_estate->portrait) }}" class="img-thumbnail"
+                                        width="200" alt="Copertina attuale">
+                                </div>
+                            @endif
+                        </div>
+
 
                         <div class="form-group">
                             <label class="my-2 fw-bold" for="services">Servizi</label>
