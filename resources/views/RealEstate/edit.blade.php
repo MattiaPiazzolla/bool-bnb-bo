@@ -179,7 +179,11 @@
                                                 class="form-check-input" id="service-{{ $service->id }}"
                                                 {{ $real_estate->services->contains($service->id) ? 'checked' : '' }}>
                                             <label class="form-check-label"
-                                                for="service-{{ $service->id }}">{{ $service->name }}</label>
+                                                for="service-{{ $service->id }}">
+                                                <i class="ms-2 opacity-75 {{ $service->icon }}" ></i>
+                                                {{ $service->name }}
+                                                
+                                            </label>
                                         </div>
                                     </div>
                                 @endforeach

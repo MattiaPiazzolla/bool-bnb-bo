@@ -24,7 +24,7 @@ class RealEstatesController extends Controller
     {
         // Recupera solo gli immobili associati all'utente loggato
         $real_estates = RealEstate::where('user_id', auth()->id())->get();
-        
+
         // Passa la variabile alla vista
         return view('RealEstate.index', compact('real_estates'));
     }
@@ -53,8 +53,17 @@ class RealEstatesController extends Controller
     {
         $real_estate = new RealEstate();
         $real_estate->fill($request->only([
-            'title', 'description', 'address', 'city', 'price', 'structure_types', 
-            'availability', 'rooms', 'bathrooms', 'beds', 'square_meter'
+            'title',
+            'description',
+            'address',
+            'city',
+            'price',
+            'structure_types',
+            'availability',
+            'rooms',
+            'bathrooms',
+            'beds',
+            'square_meter'
         ]));
         $real_estate->user_id = Auth::id();
 
@@ -93,13 +102,13 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-{
-    $real_estate = RealEstate::with('services')->findOrFail($id);
-    $latitude = $real_estate->latitude;
-    $longitude = $real_estate->longitude;
+    {
+        $real_estate = RealEstate::with('services')->findOrFail($id);
+        $latitude = $real_estate->latitude;
+        $longitude = $real_estate->longitude;
 
-    return view('RealEstate.show', compact('real_estate', 'latitude', 'longitude'));
-}
+        return view('RealEstate.show', compact('real_estate', 'latitude', 'longitude'));
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -108,16 +117,16 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-{
-    // Trova l'immobile tramite ID
-    $real_estate = RealEstate::findOrFail($id);
+    {
+        // Trova l'immobile tramite ID
+        $real_estate = RealEstate::findOrFail($id);
 
-    // Ottieni tutti i servizi disponibili
-    $all_services = Services::all();
+        // Ottieni tutti i servizi disponibili, ordinati alfabeticamente per nome
+        $all_services = Services::orderBy('name', 'asc')->get();
 
-    // Ritorna la vista edit con i dati dell'immobile e i servizi disponibili
-    return view('RealEstate.edit', compact('real_estate', 'all_services'));
-}
+        // Ritorna la vista edit con i dati dell'immobile e i servizi disponibili
+        return view('RealEstate.edit', compact('real_estate', 'all_services'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -132,8 +141,17 @@ class RealEstatesController extends Controller
 
         // Aggiorna i dati dell'immobile
         $real_estate->fill($request->only([
-            'title', 'description', 'address', 'city', 'price', 'structure_types', 
-            'availability', 'rooms', 'bathrooms', 'beds', 'square_meter'
+            'title',
+            'description',
+            'address',
+            'city',
+            'price',
+            'structure_types',
+            'availability',
+            'rooms',
+            'bathrooms',
+            'beds',
+            'square_meter'
         ]));
 
         // Gestione dell’immagine
