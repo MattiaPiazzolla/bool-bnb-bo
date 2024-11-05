@@ -156,9 +156,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="d-flex justify-content-between my-5 position-relative">
-                                    <div id="searchBoxContainer"
-                                        style="width: 30%; position:absolute; z-index: 1; top: 10px; left: 10px"></div>
-                                    <div id='map' class='map' style="width: 100%; height: 500px"></div>
+                                    <!-- Contenitore della casella di ricerca -->
+                                    <div id="searchBoxContainer" class="position-absolute  rounded shadow"
+                                        style="z-index: 1; top: 10px; left: 10px; width: 80%; max-width: 300px;">
+                                    </div>
+                                    <!-- Contenitore della mappa -->
+                                    <div id="map" class="map w-100" style="height: 500px;"></div>
                                 </div>
                             </div>
 

@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
         autocompleteOptions: {
             key: "9Yq5kH65us12yazEXv9SX8bGsAYxX1fL", 
             language: "it-IT",
-            countrySet: ["IT"]
+            countrySet: ["IT"],
+            resultSet:'addr'
+
         },
     };
 
