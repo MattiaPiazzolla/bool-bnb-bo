@@ -151,7 +151,9 @@
                                             @foreach ($subscriptions as $subscription)
                                                 <option value="{{ $subscription->id }}"
                                                     {{ old('subscriptions') && in_array($subscription->id, old('subscriptions')) ? 'selected' : '' }}>
-                                                    {{ $subscription->name }}
+                                                    {{ $subscription->name }} ({{ $subscription->price }}&#8364;)
+                                                    {{ $subscription->duration }} ore
+
                                                 </option>
                                             @endforeach
                                         </select>
@@ -218,23 +220,7 @@
                             </div>
                         </div>
 
-                        <input type="hidden" name="latitude" id="latitude" value="{{ old('latitude') }}">
-                        <input type="hidden" name="longitude" id="longitude" value="{{ old('longitude') }}">
-                        <input type="hidden" name="address" id="address" value="{{ old('address') }}">
-                        <input type="hidden" name="city" id="city" value="{{ old('city') }}">
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="d-flex justify-content-between my-5 position-relative">
-                                    <!-- Contenitore della casella di ricerca -->
-                                    <div id="searchBoxContainer" class="position-absolute  rounded shadow"
-                                        style="z-index: 1; top: 10px; left: 10px; width: 80%; max-width: 300px;">
-                                    </div>
-                                    <!-- Contenitore della mappa -->
-                                    <div id="map" class="map w-100" style="height: 500px;"></div>
-                                </div>
-                            </div>
-                        </div>
 
                         <button type="submit" class="btn btn-primary mt-3">Aggiorna Immobile</button>
                     </div>

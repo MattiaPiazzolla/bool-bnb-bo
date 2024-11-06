@@ -16,8 +16,6 @@ class UpdateRealEstateRequest extends FormRequest
         return [
             'title' => 'required|string|max:150',
             'description' => 'nullable|string|max:500',
-            'address' => 'required|string|max:255',
-            'city' => 'required|string|max:50',
             'price' => 'required|numeric|min:0',
             'structure_types' => 'required|string|max:50',
             'availability' => 'required|boolean',
@@ -35,8 +33,6 @@ class UpdateRealEstateRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è obbligatorio.',
             'description.max' => 'La descrizione non può superare i 500 caratteri.',
-            'address.required' => 'L\'indirizzo è obbligatorio.',
-            'city.required' => 'La città è obbligatoria.',
             'price.required' => 'Il prezzo è obbligatorio.',
             'structure_types.required' => 'La tipologia di struttura è obbligatoria.',
             'availability.required' => 'La disponibilità è obbligatoria.',
