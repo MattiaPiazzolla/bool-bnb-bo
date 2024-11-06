@@ -40,8 +40,8 @@
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="availability">Disponibilità</label>
                                 <select name="availability" class="form-control" required>
-                                    <option selected value="1" {{ old('availability') == 1 ? 'selected' : '' }}>
-                                        Disponibile</option>
+                                    <option value="1" {{ old('availability', 1) == 1 ? 'selected' : '' }}>Disponibile
+                                    </option>
                                     <option value="0" {{ old('availability') == 0 ? 'selected' : '' }}>Occupato
                                     </option>
                                 </select>
@@ -55,7 +55,8 @@
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="structure_types">Tipologia Struttura</label>
                                 <select name="structure_types" class="form-control" required>
-                                    <option value="" disabled {{ old('structure_types') ? '' : 'selected' }}>Seleziona
+                                    <option value="" disabled {{ old('structure_types') ? '' : 'selected' }}>
+                                        Seleziona
                                         tipologia</option>
                                     @foreach (['Appartamento', 'Villa', 'Casa indipendente', 'Villetta a schiera', 'Loft', 'Attico', 'Monolocale', 'Bilocale', 'Trilocale', 'Rustico', 'Cottage', 'Baita', 'Mansarda', 'Bungalow'] as $type)
                                         <option value="{{ $type }}"
@@ -113,6 +114,32 @@
                             </div>
                         </div>
 
+                        <div class="col-12 my-3">
+                            <div class="card bg-warning p-3">
+                                <div class="form-group d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <label for="subscriptions">Sponsorizzazione</label>
+                                        <select name="subscriptions[]" id="subscriptions">
+                                            <option value="" selected>Seleziona una sottoscrizione (opzionale)
+                                            </option> <!-- Opzione che permette di non selezionare nulla -->
+                                            @foreach ($subscriptions as $subscription)
+                                                <option value="{{ $subscription->id }}"
+                                                    {{ old('subscriptions') && in_array($subscription->id, old('subscriptions')) ? 'selected' : '' }}>
+                                                    {{ $subscription->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('subscriptions')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <a href="#" class="float-end">
+                                        <div class="btn">Scopri di più sulle Sponsorizzazioni</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="my-2 fw-bold" for="description">Descrizione</label>
                             <textarea name="description" rows="5" class="form-control">{{ old('description') }}</textarea>
@@ -128,7 +155,6 @@
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-
                         <div class="form-group">
                             <label class="my-2 fw-bold" for="services">Servizi</label>
                             <div class="row">
@@ -159,6 +185,9 @@
                                     <!-- Contenitore della casella di ricerca -->
                                     <div id="searchBoxContainer" class="position-absolute  rounded shadow"
                                         style="z-index: 1; top: 10px; left: 10px; width: 80%; max-width: 300px;">
+                                        @error('address')
+                                            <div class="text-white bg-danger p-2">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                     <!-- Contenitore della mappa -->
                                     <div id="map" class="map w-100" style="height: 500px;"></div>

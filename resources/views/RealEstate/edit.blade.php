@@ -140,6 +140,32 @@
                             </div>
                         </div>
 
+                        <div class="col-12 my-3">
+                            <div class="card bg-warning p-3">
+                                <div class="form-group d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <label for="subscriptions">Sponsorizzazione</label>
+                                        <select name="subscriptions[]" id="subscriptions">
+                                            <option value="" selected>Seleziona una sottoscrizione (opzionale)
+                                            </option> <!-- Opzione che permette di non selezionare nulla -->
+                                            @foreach ($subscriptions as $subscription)
+                                                <option value="{{ $subscription->id }}"
+                                                    {{ old('subscriptions') && in_array($subscription->id, old('subscriptions')) ? 'selected' : '' }}>
+                                                    {{ $subscription->name }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('subscriptions')
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <a href="#" class="float-end">
+                                        <div class="btn">Scopri di più sulle Sponsorizzazioni</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label class="my-2 fw-bold" for="description">Descrizione</label>
                             <textarea name="description" rows="5" class="form-control">{{ old('description', $real_estate->description) }}</textarea>
@@ -178,11 +204,10 @@
                                             <input type="checkbox" name="services[]" value="{{ $service->id }}"
                                                 class="form-check-input" id="service-{{ $service->id }}"
                                                 {{ $real_estate->services->contains($service->id) ? 'checked' : '' }}>
-                                            <label class="form-check-label"
-                                                for="service-{{ $service->id }}">
-                                                <i class="ms-2 opacity-75 {{ $service->icon }}" ></i>
+                                            <label class="form-check-label" for="service-{{ $service->id }}">
+                                                <i class="ms-2 opacity-75 {{ $service->icon }}"></i>
                                                 {{ $service->name }}
-                                                
+
                                             </label>
                                         </div>
                                     </div>
