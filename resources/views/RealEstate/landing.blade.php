@@ -6,7 +6,7 @@
         <p class="mb-4">Qui potrai gestire gli annunci per i tuoi immobili, ricevere messaggi da chiunque<br> sia
             interessato e consultare le statistiche relative al tuo annuncio.</p>
         <h2 class="mb-4"><span class="span-dashboard">Cosa aspetti?</span> Pubblica il tuo primo annuncio!</h2>
-        <button class="btn btn-primary">Iniziamo</button>
+        <a href="{{ route('admin.RealEstates.create') }}"><button class="btn btn-primary">Iniziamo</button></a>
         <img src="{{ asset('img/houses_img/houses.png') }}" alt="" class="icon-config">
     </div>
 @endsection
