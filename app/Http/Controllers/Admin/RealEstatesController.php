@@ -56,81 +56,81 @@ class RealEstatesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreRealEstateRequest $request)
-{
-    // Ottieni le coordinate dall'input della mappa
-    $latitude = $request->input('latitude');
-    $longitude = $request->input('longitude');
+    {
+        // Ottieni le coordinate dall'input della mappa
+        $latitude = $request->input('latitude');
+        $longitude = $request->input('longitude');
+        
+        // Recupera i dettagli dell'indirizzo tramite l'API di TomTom
+        $locationDetails = $this->getAddressFromCoordinates($latitude, $longitude);
+        $address = $locationDetails['address'] ?? '';
+        $city = $locationDetails['city'] ?? '';
     
-    // Recupera i dettagli dell'indirizzo tramite l'API di TomTom
-    $locationDetails = $this->getAddressFromCoordinates($latitude, $longitude);
-    $address = $locationDetails['address'] ?? '';
-    $city = $locationDetails['city'] ?? '';
-
-    // Crea e salva l'immobile
-    $real_estate = new RealEstate();
-    $real_estate->fill($request->only([
-        'title', 'price', 'availability', 'structure_types', 'rooms', 
-        'bathrooms', 'beds', 'square_meter', 'description'
-    ]));
+        // Crea e salva l'immobile
+        $real_estate = new RealEstate();
+        $real_estate->fill($request->only([
+            'title', 'price', 'availability', 'structure_types', 'rooms', 
+            'bathrooms', 'beds', 'square_meter', 'description'
+        ]));
+        
+        // Imposta l'indirizzo e la città
+        $real_estate->address = $address;
+        $real_estate->city = $city;
+        $real_estate->latitude = $latitude;
+        $real_estate->longitude = $longitude;
+        $real_estate->user_id = Auth::id();
     
-    // Imposta l'indirizzo e la città
-    $real_estate->address = $address;
-    $real_estate->city = $city;
-    $real_estate->latitude = $latitude;
-    $real_estate->longitude = $longitude;
-    $real_estate->user_id = Auth::id();
-
-    // Salva l'immobile
-    $real_estate->save();
-
-    // Associa i servizi selezionati
-    if ($request->has('services')) {
-        $real_estate->services()->sync($request->input('services'));
-    }
-
-    // Associa le sottoscrizioni, includendo il calcolo della data di fine
-    if ($request->has('subscriptions')) {
-        foreach ($request->input('subscriptions') as $subscription_id) {
-            $subscription = Subscription::find($subscription_id);
-
-            if ($subscription) {
-                $durationInHours = $subscription->duration;
-
-                // Verifica che la durata sia un valore valido
-                if ($durationInHours && $durationInHours > 0) {
-                    // Calcola la data di fine
-                    $end_subscription = Carbon::now()->addHours($durationInHours);
-
-                    // Associa la sottoscrizione all'immobile
-                    $real_estate->subscriptions()->attach($subscription_id, [
-                        'end_subscription' => $end_subscription
-                    ]);
+        // Salva l'immobile
+        $real_estate->save();
+    
+        // Associa i servizi selezionati
+        if ($request->has('services')) {
+            $real_estate->services()->sync($request->input('services'));
+        }
+    
+        // Associa le sottoscrizioni, includendo il calcolo della data di fine
+        if ($request->has('subscriptions')) {
+            foreach ($request->input('subscriptions') as $subscription_id) {
+                $subscription = Subscription::find($subscription_id);
+    
+                if ($subscription) {
+                    $durationInHours = $subscription->duration;
+    
+                    // Verifica che la durata sia un valore valido
+                    if ($durationInHours && $durationInHours > 0) {
+                        // Calcola la data di fine
+                        $end_subscription = Carbon::now()->addHours($durationInHours);
+    
+                        // Associa la sottoscrizione all'immobile
+                        $real_estate->subscriptions()->attach($subscription_id, [
+                            'end_subscription' => $end_subscription
+                        ]);
+                    } else {
+                        // Se la durata non è valida, puoi scegliere di gestire l'errore
+                        return redirect()->route('admin.RealEstates.index')->with('error', 'Durata della sottoscrizione non valida.');
+                    }
                 } else {
-                    // Se la durata non è valida, puoi scegliere di gestire l'errore
-                    return redirect()->route('admin.RealEstates.index')->with('error', 'Durata della sottoscrizione non valida.');
+                    // Se la sottoscrizione non è stata trovata
+                    return redirect()->route('admin.RealEstates.index')->with('error', 'Sottoscrizione non trovata.');
                 }
-            } else {
-                // Se la sottoscrizione non è stata trovata
-                return redirect()->route('admin.RealEstates.index')->with('error', 'Sottoscrizione non trovata.');
             }
         }
+    
+        // Gestione dell'immagine
+        if ($request->hasFile('portrait')) {
+            $file = $request->file('portrait');
+            $slugTitle = Str::slug($real_estate->title);
+            $filename = $real_estate->id . '-' . $slugTitle . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('copertine_immobili', $filename, 'public');
+            $real_estate->portrait = $path;
+        }
+    
+        // Salva l'immobile dopo aver gestito l'immagine
+        $real_estate->save();
+    
+        // Ritorna con il messaggio di successo
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile creato con successo.');
     }
-
-    // Gestione dell'immagine
-    if ($request->hasFile('portrait')) {
-        $file = $request->file('portrait');
-        $slugTitle = Str::slug($real_estate->title);
-        $filename = $real_estate->id . '-' . $slugTitle . '.' . $file->getClientOriginalExtension();
-        $path = $file->storeAs('copertine_immobili', $filename, 'public');
-        $real_estate->portrait = $path;
-    }
-
-    // Salva l'immobile dopo aver gestito l'immagine
-    $real_estate->save();
-
-    // Ritorna con il messaggio di successo
-    return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile creato con successo.');
-}
     /**
      * Display the specified resource.
      *
@@ -223,9 +223,6 @@ class RealEstatesController extends Controller
         $real_estate->portrait = $path;
     }
 
-    // Aggiorna l'immobile
-    $real_estate->save();
-
     // **Aggiornamento delle sottoscrizioni** - rimuove quelle non selezionate e aggiunge le nuove
     if ($request->has('subscriptions')) {
         // 1. Rimuovi tutte le sottoscrizioni precedenti
@@ -236,7 +233,7 @@ class RealEstatesController extends Controller
             $subscription = Subscription::find($subscription_id);
             $durationInHours = $subscription->duration; // Durata della sottoscrizione
             
-            // Calcola la data di fine
+            // Calcola la data di fine sottoscrizione
             $end_subscription = Carbon::now()->addHours($durationInHours);
 
             // Associa le nuove sottoscrizioni
@@ -246,12 +243,17 @@ class RealEstatesController extends Controller
         }
     }
 
-    // Aggiorna i servizi associati (stesso procedimento di "sync" che abbiamo visto in store)
+    // **Gestione dei servizi** - Assicurati che almeno un servizio sia selezionato
     if ($request->has('services')) {
+        // Se ci sono servizi selezionati, associa i servizi all'immobile
         $real_estate->services()->sync($request->input('services'));
     } else {
-        $real_estate->services()->detach(); // Se non vengono selezionati servizi, li rimuove
+        // Se non vengono selezionati servizi, rimuovili
+        $real_estate->services()->detach();
     }
+
+    // Aggiorna l'immobile
+    $real_estate->save();
 
     // Ritorna alla lista con messaggio di successo
     return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile aggiornato con successo.');

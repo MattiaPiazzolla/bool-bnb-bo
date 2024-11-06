@@ -26,6 +26,7 @@ class UpdateRealEstateRequest extends FormRequest
             'beds' => 'nullable|integer|min:0',
             'square_meter' => 'nullable|integer|min:0',
             'portrait' => 'nullable|image|max:2048', 
+            'services' => 'required|array|min:1',
         ];
     }
 
@@ -45,6 +46,9 @@ class UpdateRealEstateRequest extends FormRequest
             'square_meter.integer' => 'La superficie in metri quadrati deve essere un numero intero.',
             'portrait.image' => 'Il file deve essere un\'immagine.',
             'portrait.max' => 'L\'immagine non può superare i 2 MB.',
+            'services.required' => 'Selezionare almeno un servizio.',
+            'services.array' => 'I servizi devono essere un array.',
+            'services.min' => 'Selezionare almeno un servizio.',
         ];
     }
 }
