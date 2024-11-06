@@ -1,0 +1,64 @@
+.bg-wow{
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(114deg, rgba(2,0,36,1) 6%, rgba(9,9,121,1) 24%, rgba(215,109,214,1) 56%, rgba(255,128,232,1) 67%, rgba(128,234,255,1) 92%);
+    border-radius: 30px;
+}
+.title{
+    font-size: 6rem;
+}
+.rainbow{
+    background: linear-gradient(114deg, rgba(2,0,36,1) 21%, rgba(1,0,255,1) 45%, rgba(255,255,255,1) 89%);
+    -webkit-background-clip: text;  
+    background-clip: text; 
+    color: transparent; 
+}
+.rainbow2{
+    background: linear-gradient(114deg, rgba(255,255,255,1) 15%, rgba(1,0,255,1) 45%, rgba(2,0,36,1) 96%);
+    -webkit-background-clip: text;  
+    background-clip: text; 
+    color: transparent; 
+}
+.bg-wow2{
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 1%, rgba(9,9,121,1) 17%, rgba(215,109,214,1) 38%, rgba(255,128,232,1) 51%, rgba(255,255,255,1) 87%); 
+}
+.lineUp {
+    animation: 8s anim-lineUp ease-out;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0.5;
+      transform: translateX(80%);
+    }
+    20% {
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+    .lineUp2 {
+      animation: 8s anim-lineUp2 ease-out;
+    }
+    @keyframes anim-lineUp2 {
+      0% {
+        opacity: 0.5;
+        transform: translateX(-80%);
+      }
+      20% {
+      }
+      50% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+    }

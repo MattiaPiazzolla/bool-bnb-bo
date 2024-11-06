@@ -37,7 +37,7 @@ class RealEstatesController extends Controller
     public function create()
     {
         // Recupera tutti i servizi disponibili
-        $services = Services::all();
+        $services = naServices::orderBy('me', 'asc')->get();
 
         // Ritorna la vista create con i servizi
         return view('RealEstate.create', compact('services'));
@@ -106,6 +106,10 @@ class RealEstatesController extends Controller
     $latitude = $real_estate->latitude;
     $longitude = $real_estate->longitude;
 
+    if ($real_estate->user_id !== Auth::id()) {
+        abort(403, 'Cosa fai? Non è il tuo appartamento :(');
+    }
+
     return view('RealEstate.show', compact('real_estate', 'latitude', 'longitude'));
 }
 
@@ -120,8 +124,12 @@ class RealEstatesController extends Controller
     // Trova l'immobile tramite ID
     $real_estate = RealEstate::findOrFail($id);
 
+    if ($real_estate->user_id !== Auth::id()) {
+        abort(403, 'Cosa fai? Non è il tuo appartamento :(');
+    }
+
     // Ottieni tutti i servizi disponibili
-    $all_services = Services::all();
+    $all_services = Services::orderBy('name', 'asc')->get();
 
     // Ritorna la vista edit con i dati dell'immobile e i servizi disponibili
     return view('RealEstate.edit', compact('real_estate', 'all_services'));
@@ -137,6 +145,10 @@ class RealEstatesController extends Controller
     public function update(UpdateRealEstateRequest $request, $id)
     {
         $real_estate = RealEstate::findOrFail($id);
+
+        if ($real_estate->user_id !== Auth::id()) {
+            abort(403, 'Cosa fai? Non è il tuo appartamento :(');
+        }
 
         // Aggiorna i dati dell'immobile
         $real_estate->fill($request->only([
