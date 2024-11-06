@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', 'Bool-b&b - Office')</title>
 
 
     <!-- Fonts -->
@@ -19,6 +19,7 @@
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
+
 
 <body>
     <div id="app">
