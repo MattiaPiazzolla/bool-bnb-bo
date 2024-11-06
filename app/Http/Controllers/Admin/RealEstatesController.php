@@ -37,7 +37,7 @@ class RealEstatesController extends Controller
     public function create()
     {
         // Recupera tutti i servizi disponibili
-        $services = Services::orderBy('me', 'asc')->get();
+        $services = Services::orderBy('name', 'asc')->get();
 
         // Ritorna la vista create con i servizi
         return view('RealEstate.create', compact('services'));
@@ -120,7 +120,7 @@ class RealEstatesController extends Controller
     $real_estate = RealEstate::findOrFail($id);
 
     // Ottieni tutti i servizi disponibili
-    $all_services = Services::all();
+    $all_services = Services::orderBy('name', 'asc')->get();
 
         // Ritorna la vista edit con i dati dell'immobile e i servizi disponibili
         return view('RealEstate.edit', compact('real_estate', 'all_services'));
