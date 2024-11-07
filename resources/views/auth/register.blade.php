@@ -233,10 +233,10 @@
 
             // Validazione password
             password.addEventListener('input', function() {
-                const isValid = password.value.length >= 6;
+                const isValid = password.value.length >= 8;
                 if (!isValid) {
                     toggleError(password, passwordError, true,
-                        'La password deve essere lunga almeno 6 caratteri.');
+                        'La password deve essere lunga almeno 8 caratteri.');
                 } else {
                     toggleError(password, passwordError, false, '');
                 }

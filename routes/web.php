@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RealEstatesController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\SubscriptionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('/RealEstates', RealEstatesController::class);
+
+    // Rotte per gestire le sponsorizzazioni
+    Route::get('/subscriptions/create', [SubscriptionsController::class, 'create'])->name('subscriptions.create');
+    Route::post('/subscriptions/store', [SubscriptionsController::class, 'store'])->name('subscriptions.store');
 });
 
 Route::middleware('auth')->group(function () {
