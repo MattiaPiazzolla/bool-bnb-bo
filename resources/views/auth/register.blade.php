@@ -93,9 +93,13 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}
                                     *</label>
                                 <div class="col-md-6">
-
-                                    <input id="password" type="password" class="form-control" name="password" required
-                                        autocomplete="new-password">
+                                    <div class="passwd-wrap">
+                                        <input id="password" type="password" class="form-control" name="password" required
+                                            autocomplete="new-password">
+                                        <button type="button" id="showPassword" class="btn">
+                                            <i class="bi-eye"></i>
+                                        </button>
+                                    </div>
                                     <small id="passwordError" class="invalid-feedback"></small>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -111,8 +115,14 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}
                                     *</label>
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
+
+                                    <div class="passwd-wrap">
+                                        <input id="password-confirm" type="password" class="form-control"
+                                            name="password_confirmation" required autocomplete="new-password">
+                                        <button type="button" id="showPassword2" class="btn">
+                                            <i class="bi-eye"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
 

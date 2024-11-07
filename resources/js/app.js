@@ -112,3 +112,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         show_pw_icon.classList = show_pw_icon.classList.contains('bi-eye') ? 'bi-eye-slash' : 'bi-eye'
     })
+
+    const show_pw_btn2 = document.querySelector('#showPassword2')
+    const show_pw_icon2 = show_pw_btn2.querySelector('i')
+    const pw_input2 = document.querySelector('#password-confirm')
+
+    show_pw_btn2.addEventListener('click', () => {
+        pw_input2.type = pw_input2.type === 'password' ? 'text' : 'password'
+
+        show_pw_icon2.classList = show_pw_icon2.classList.contains('bi-eye') ? 'bi-eye-slash' : 'bi-eye'
+    })

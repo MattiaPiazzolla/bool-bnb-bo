@@ -19,10 +19,10 @@
     position: relative; 
 }
 
-#showPassword{
+#showPassword, #showPassword2{
     position: absolute;
     top: 50%;
-    right: 1rem;
+    right: -1rem;
     transform: translateY(-50%);
     cursor: pointer;
     width: 1.5rem;
@@ -34,3 +34,8 @@
 #showPassword:focus{
     border: none;
 }
+
+#showPassword2:focus{
+    border: none;
+}
+
