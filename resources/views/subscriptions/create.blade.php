@@ -77,10 +77,10 @@
             // Funzione per mostrare i placeholder
             function showPlaceholders() {
                 imagePlaceholder.innerHTML = `<div class="placeholder-content">
-                                                <p style="color: #999;">Anteprima immagine</p>
+                                               
                                               </div>`;
                 mapPlaceholder.innerHTML = `<div class="placeholder-content">
-                                              <p style="color: #999;">Posizione immobile</p>
+                                              
                                             </div>`;
             }
 
