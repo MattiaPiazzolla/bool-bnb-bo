@@ -7,7 +7,8 @@
             <!--sezione menu-->
             <ul class="text-white d-flex flex-column list-unstyled gap-3 py-5">
                 <li><a href="{{ route('admin.RealEstates.index') }}">I tuoi annunci</a></li>
-                <li><a href="#">Metti in evidenza</a></li>
+                <li><a href="{{ route('admin.RealEstates.create') }}">Aggiungi immobile</a></li>
+                <li><a href="#"><span class="me-2">Metti in evidenza</span><i class="bi bi-stars"></i></a></li>
                 <li><a href="#">Messaggi</a></li>
                 <li><a href="#">Statistiche</a></li>
             </ul>

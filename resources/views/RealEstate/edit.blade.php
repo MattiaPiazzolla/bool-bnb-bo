@@ -1,23 +1,39 @@
 @extends('dashboard')
 
 @section('main-content')
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 d-flex">
+                <div class="back-bt">
+                    <a href="{{ route('admin.RealEstates.index') }}" class="d-flex align-items-center">
+                        <i class="bi bi-arrow-left-short" style="font-size: 2.5rem"></i>
+                        <span class="text-primary mt-3" style="font-size: 14pt">Indietro</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row">
-            <div class="col-12 p-5">
+            <div class="col-12">
+            <div class="col-12 mt-5 px-5">
                 <div class="d-flex align-items-center">
-                    <a href="{{ route('admin.RealEstates.index') }}">
-                        <i class="bi bi-arrow-left-short" style="font-size: 2.5rem"></i>
-                    </a>
                     <h1 class="mx-3">Modifica Immobile</h1>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container p-5">
+        <div class="row bg-light p-3">
                 <form action="{{ route('admin.RealEstates.update', $real_estate->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <div class="row">
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="title">Titolo</label>
                                 <input type="text" name="title" class="form-control"
@@ -28,7 +44,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="price">Prezzo</label>
                                 <input type="number" name="price" class="form-control"
@@ -39,7 +55,7 @@
                             </div>
                         </div>
 
-                        {{-- <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        {{-- <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="address">Indirizzo</label>
                                 <input type="text" name="address" class="form-control"
@@ -50,7 +66,7 @@
                             </div>
                         </div> --}}
 
-                        {{-- <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        {{-- <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="city">Città</label>
                                 <input type="text" name="city" class="form-control"
@@ -61,7 +77,7 @@
                             </div>
                         </div> --}}
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="availability">Disponibilità</label>
                                 <select name="availability" class="form-control" required>
@@ -78,7 +94,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="structure_types">Tipologia Struttura</label>
                                 <select name="structure_types" class="form-control" required>
@@ -96,7 +112,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
                                 <input type="number" name="rooms" class="form-control"
@@ -107,7 +123,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
                                 <input type="number" name="bathrooms" class="form-control"
@@ -118,7 +134,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
                                 <input type="number" name="beds" class="form-control"
@@ -129,7 +145,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-12 col-lg-4 col-xl-3">
+                        <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="square_meter">Superficie in m²</label>
                                 <input type="number" name="square_meter" class="form-control"
@@ -140,43 +156,17 @@
                             </div>
                         </div>
 
-                        <div class="col-12 my-3">
-                            <div class="card bg-warning p-3">
-                                <div class="form-group d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <label for="subscriptions">Sponsorizzazione</label>
-                                        <select name="subscriptions[]" id="subscriptions">
-                                            <option value="" selected>Seleziona una sottoscrizione (opzionale)
-                                            </option> <!-- Opzione che permette di non selezionare nulla -->
-                                            @foreach ($subscriptions as $subscription)
-                                                <option value="{{ $subscription->id }}"
-                                                    {{ old('subscriptions') && in_array($subscription->id, old('subscriptions')) ? 'selected' : '' }}>
-                                                    {{ $subscription->name }} ({{ $subscription->price }}&#8364;)
-                                                    {{ $subscription->duration }} ore
-
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        @error('subscriptions')
-                                            <div class="text-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                    <a href="#" class="float-end">
-                                        <div class="btn">Scopri di più sulle Sponsorizzazioni</div>
-                                    </a>
-                                </div>
+                        <div class="col-12 mb-2">
+                            <div class="form-group">
+                                <label class="my-2 fw-bold" for="description">Descrizione</label>
+                                <textarea name="description" rows="5" class="form-control">{{ old('description', $real_estate->description) }}</textarea>
+                                @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="my-2 fw-bold" for="description">Descrizione</label>
-                            <textarea name="description" rows="5" class="form-control">{{ old('description', $real_estate->description) }}</textarea>
-                            @error('description')
-                                <div class="text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 mt-5 mb-2">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="portrait">Nuova Immagine di Copertina</label>
                                 <input type="file" name="portrait" class="form-control" accept="image/*">
@@ -186,7 +176,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-6 mt-5">
+                        <div class="col-12 mt-2 mb-5">
                             @if ($real_estate->portrait)
                                 <div class="form-group">
                                     <label>Immagine Attuale</label>
@@ -197,7 +187,7 @@
                         </div>
 
 
-                        <div class="form-group">
+                        <div class="form-group mb-5">
                             <label class="my-2 fw-bold" for="services">Servizi</label>
                             <div class="row">
                                 @foreach ($all_services as $service)

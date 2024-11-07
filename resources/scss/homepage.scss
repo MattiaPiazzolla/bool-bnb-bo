@@ -13,6 +13,12 @@
     background-clip: text; 
     color: transparent; 
 }
+.rainbow3{
+  background: linear-gradient(114deg, rgba(2,0,36,1) 21%, rgba(1,0,255,1) 45%);
+  -webkit-background-clip: text;  
+  background-clip: text; 
+  color: transparent; 
+}
 .rainbow2{
     background: linear-gradient(114deg, rgba(255,255,255,1) 15%, rgba(1,0,255,1) 45%, rgba(2,0,36,1) 96%);
     -webkit-background-clip: text;  

@@ -1,8 +1,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container px-5">
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
                     <!-- <img src="{{ asset('img/houses_img/BOOL-BNB-DB.png') }}" class="logo-config" alt=""> -->
-                     <h1 class="logo-config">Bool-b&b</h1>
+                     <h1 class="logo-config rainbow3">Bool-b&b</h1>
                      <!-- Ho momentaneamente sostituito il logo perchè non mi piace lol -->
 
                     {{-- config('app.name', 'Laravel') --}}
