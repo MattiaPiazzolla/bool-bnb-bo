@@ -28,7 +28,7 @@
                             <h4 class="card-title">{{ $real_estate->title }}</h4>
                             <p class="card-text">{{ $real_estate->description }}</p>
                             <p class="card-text">{{ $real_estate->address }}, {{ $real_estate->city }}</p>
-                            <p class="card-text">{{ $real_estate->price }}€</p>
+                            <p class="card-text">€ {{ $real_estate->price }}</p>
                             <p class="card-text">L'immobile è
                                 {{ $real_estate->availability == true ? 'disponibile' : 'occupato' }}</p>
                             <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}"
