@@ -34,7 +34,7 @@
     <div class="row bg-white mt-5 py-3">
         <div class="col-sm-12 col-lg-6 d-flex flex-column">
                 <span class="text-black"><strong>Indirizzo:</strong> {{ $real_estate->address }}, {{ $real_estate->city }}</span>
-                <span class="text-black"><strong>Prezzo:</strong> €{{ $real_estate->price }}</span>
+                <span class="text-black"><strong>Prezzo:</strong> € {{ $real_estate->price }}</span>
                 <span class="text-black"><strong>Stanze:</strong> {{ $real_estate->rooms }}</span>
                 <span class="text-black"><strong>Camere da letto:</strong> {{ $real_estate->beds }}</span>
                 <span class="text-black"><strong>Bagni:</strong> {{ $real_estate->bathrooms }}</span>
