@@ -1,15 +1,17 @@
 @extends('dashboard')
 
 @section('main-content')
+<div class="bg-light">
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 d-flex justify-content-between align align-items-center">
             <div class="back-bt">
                 <a href="{{ route('admin.RealEstates.index') }}" class="d-flex align-items-center">
                     <i class="bi bi-arrow-left-short" style="font-size: 2.5rem"></i>
                     <span class="text-primary mt-3" style="font-size: 14pt">Indietro</span>
                 </a>
             </div>
+            <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}" style="text-decoration: none"><span class="text-primary mt-3 me-2" style="font-size: 14pt">modifica </span><i class="bi bi-pencil-fill text-primary me-2"></i></a>
         </div>
     </div>
 </div>
@@ -23,7 +25,7 @@
                         style="width: 20px; height: 20px;">
                 </div>
             </div>   
-            <span>{{ $real_estate->structure_types }}</span> 
+            <span class="text-uppercase">{{ $real_estate->structure_types }}</span> 
             <p class="mt-1">{{ $real_estate->description }}</p>
         </div>
         <div class="col-sm-12 col-lg-5 img-head d-flex p-3">
@@ -58,6 +60,7 @@
         </div>
     </div>
 
+</div>
 </div>
 
 @endsection
