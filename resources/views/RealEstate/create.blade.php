@@ -125,7 +125,9 @@
                                             @foreach ($subscriptions as $subscription)
                                                 <option value="{{ $subscription->id }}"
                                                     {{ old('subscriptions') && in_array($subscription->id, old('subscriptions')) ? 'selected' : '' }}>
-                                                    {{ $subscription->name }}
+                                                    {{ $subscription->name }} ({{ $subscription->price }}&#8364;)
+                                                    {{ $subscription->duration }} ore
+
                                                 </option>
                                             @endforeach
                                         </select>
@@ -164,7 +166,9 @@
                                             <input type="checkbox" name="services[]" value="{{ $service->id }}"
                                                 class="form-check-input"
                                                 {{ is_array(old('services')) && in_array($service->id, old('services')) ? 'checked' : '' }}>
-                                            <label class="form-check-label">{{ $service->name }}</label>
+                                            <label class="form-check-label">
+                                                <i class="ms-2 opacity-75 {{ $service->icon }}"></i>
+                                                {{ $service->name }}</label>
                                         </div>
                                     </div>
                                 @endforeach
