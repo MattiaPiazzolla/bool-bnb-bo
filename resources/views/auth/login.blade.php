@@ -33,9 +33,14 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="current-password">
+                                    <div class="passwd-wrap">
+                                        <input id="password" type="password"
+                                            class="form-control @error('password') is-invalid @enderror" name="password"
+                                            required autocomplete="current-password">
+                                        <button type="button" id="showPassword" class="btn">
+                                            <i class="bi-eye"></i>
+                                        </button>
+                                    </div>
                                     <small id="passwordError" class="invalid-feedback"></small>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">

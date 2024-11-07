@@ -101,3 +101,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// OCCHIO LOGIN
+    const show_pw_btn = document.querySelector('#showPassword')
+    const show_pw_icon = show_pw_btn.querySelector('i')
+    const pw_input = document.querySelector('#password')
+
+    show_pw_btn.addEventListener('click', () => {
+        pw_input.type = pw_input.type === 'password' ? 'text' : 'password'
+
+        show_pw_icon.classList = show_pw_icon.classList.contains('bi-eye') ? 'bi-eye-slash' : 'bi-eye'
+    })

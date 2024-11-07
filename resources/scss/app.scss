@@ -14,3 +14,23 @@
 
 
 
+// LOG IN 
+.passwd-wrap{
+    position: relative; 
+}
+
+#showPassword{
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+
+}
+
+#showPassword:focus{
+    border: none;
+}
