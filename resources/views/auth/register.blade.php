@@ -2,13 +2,23 @@
 
 @section('content')
     <div class="container mt-4">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" id="registerForm">
+                        <form method="POST" action="{{ route('register') }}" id="registerForm" enctype="multipart/form-data">
                             @csrf
 
                             <!-- Nome -->
@@ -61,6 +71,7 @@
                                 <div class="col-md-6">
                                     <input id="image" type="file" class="form-control" name="image"
                                         value="{{ old('image') }}" autocomplete="image">
+                                    <small id="imageError" class="invalid-feedback"></small>
                                     @error('image')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -104,7 +115,8 @@
                             <!-- Conferma Password -->
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}
+                                    *</label>
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
@@ -129,6 +141,7 @@
             const name = document.getElementById('name');
             const surname = document.getElementById('surname');
             const dateOfBirth = document.getElementById('date_of_birth');
+            const imageInput = document.getElementById('image');
             const email = document.getElementById('email');
             const password = document.getElementById('password');
             const passwordConfirm = document.getElementById('password-confirm');
@@ -201,6 +214,20 @@
                 }
             });
 
+            // Validazione tipo immagine
+            imageInput.addEventListener('change', function() {
+                const file = imageInput.files[0];
+                if (file) {
+                    const validTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp'];
+                    if (!validTypes.includes(file.type)) {
+                        toggleError(imageInput, document.getElementById('imageError'), true,
+                            'Per favore carica un\'immagine valida (jpeg, png, jpg, gif, webp).');
+                    } else {
+                        toggleError(imageInput, document.getElementById('imageError'), false, '');
+                    }
+                }
+            });
+
             // Validazione email
             email.addEventListener('input', function() {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -251,6 +278,17 @@
                     toggleError(dateOfBirth, dobError, true, 'Devi essere maggiorenne per registrarti.');
                     valid = false;
                 }
+
+                const file = imageInput.files[0];
+                if (file) {
+                    const validTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp'];
+                    if (!validTypes.includes(file.type)) {
+                        toggleError(imageInput, document.getElementById('imageError'), true,
+                            'Per favore carica un\'immagine valida (jpeg, png, jpg, gif, webp).');
+                        valid = false;
+                    }
+                }
+
 
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailRegex.test(email.value)) {

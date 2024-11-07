@@ -24,25 +24,46 @@
             width: 100%;
             margin-left: 25px;
             .img-box{
-                height: 30px;
-                width: 30px;
+                height: 50px;
+                width: 50px;
                 img{
                     width: 100%;
                     object-fit: contain;
                     border-radius: 50%;
+                    background-color: black;
                 }
             }
             span{
                 color: $base-blue;
                 font-size: 1.2rem;
             }
-            a{
-                color: $base-yellow;
-            }
         }
+    }
+    .logout{
+        color: $base-yellow !important;
+        font-size: 1.5rem !important;
     }
     .dash-content{
         width: calc(100vw - 300px);
         overflow-y: scroll;
+    }
+
+    .userNameSidebar{
+        color: $base-blue;
+        font-size: 1.5rem;
+    }
+
+    .initials-avatar {
+        width: 50px;
+        height: 50px;
+        background-color: $base-yellow;
+        color: $base-blue; 
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Rende l'avatar circolare */
+        text-transform: uppercase; /* Trasforma il testo in maiuscolo */
     }
 }

@@ -15,10 +15,25 @@
             <div class="bottom-menu d-flex flex-column justify-content-center">
                 <!--menu d'accesso al logout rapido e al proprio profilo direttamente in sidebar-->
                 <div class="img-box mb-2">
-                    <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="asd">
+                    @if (Auth::user()->image)
+                        <!-- Mostra l'immagine dell'utente se presente -->
+                        <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="Immagine Profilo">
+                    @else
+                        <!-- Visualizza le iniziali dell'utente con CSS -->
+                        <div class="initials-avatar">
+                            {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}{{ strtoupper(substr(Auth::user()->surname, 0, 1)) }}
+                        </div>
+                    @endif
                 </div>
-                <span>{{ Auth::user()->name }}</span>
-                <a href="#">Logout</a>
+                <h4 class="userNameSidebar">{{ Auth::user()->name }}</h4>
+                <!-- Form di logout -->
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="logout"
+                        style="background: none; border: none; color: inherit; cursor: pointer;">
+                        Logout
+                    </button>
+                </form>
             </div>
         </div>
 

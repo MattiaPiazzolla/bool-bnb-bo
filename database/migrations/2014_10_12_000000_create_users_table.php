@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('surname', 50);
             $table->date('date_of_birth');
-            $table->string('image')->default('https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png');
+            $table->string('image')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

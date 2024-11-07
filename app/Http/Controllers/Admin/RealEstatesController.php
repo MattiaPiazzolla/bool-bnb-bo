@@ -31,6 +31,8 @@ class RealEstatesController extends Controller
             ->orderByRaw('(SELECT COUNT(*) FROM real_estate_subscription WHERE real_estate_id = real_estates.id AND end_subscription > NOW()) DESC')
             ->get();
 
+            
+
         // Passa gli immobili alla vista
         return view('RealEstate.index', compact('real_estates'));
     }
