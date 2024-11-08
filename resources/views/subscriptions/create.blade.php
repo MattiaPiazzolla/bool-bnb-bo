@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('dashboard')
 
-@section('content')
+@section('main-content')
     <div class="container">
         <h1>Sponsorizza un immobile</h1>
 
