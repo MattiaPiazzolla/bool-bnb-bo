@@ -66,6 +66,7 @@
                 </div>
             </div>
         </div>
+        <a href="{{ route("admin.subscriptions.braintree") }}">ciao</a>
     </div>
 
     <script>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\RealEstatesController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\SubscriptionsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BraintreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +23,10 @@ Route::get('/', function () {
 });
 
 // Route::get('/dashboard', function () {
-    
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function(){
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('/RealEstates', RealEstatesController::class);
@@ -34,6 +34,9 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     // Rotte per gestire le sponsorizzazioni
     Route::get('/subscriptions/create', [SubscriptionsController::class, 'create'])->name('subscriptions.create');
     Route::post('/subscriptions/store', [SubscriptionsController::class, 'store'])->name('subscriptions.store');
+
+    // Rotta per Braintree
+    Route::any('/subscriptions/braintree', [BraintreeController::class, 'token'])->name('subscriptions.braintree');
 });
 
 Route::middleware('auth')->group(function () {
@@ -43,4 +46,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
