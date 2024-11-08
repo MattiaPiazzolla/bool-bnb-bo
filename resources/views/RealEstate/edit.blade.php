@@ -17,16 +17,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-            <div class="col-12 mt-5 px-5">
-                <div class="d-flex align-items-center">
-                    <h1 class="mx-3">Modifica Immobile</h1>
+                <div class="col-12 mt-5 px-5">
+                    <div class="d-flex align-items-center">
+                        <h1 class="mx-3">Modifica Immobile</h1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container p-5">
-        <div class="row bg-light p-3">
+        <div class="container p-5">
+            <div class="row bg-light p-3">
                 <form action="{{ route('admin.RealEstates.update', $real_estate->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
@@ -210,10 +210,38 @@
                             </div>
                         </div>
 
+                        <input type="hidden" name="latitude" id="latitude"
+                            value="{{ old('latitude', $real_estate->latitude) }}">
+                        <input type="hidden" name="longitude" id="longitude"
+                            value="{{ old('longitude', $real_estate->longitude) }}">
+                        <input type="hidden" name="address" id="address"
+                            value="{{ old('address', $real_estate->address) }}">
+                        <input type="hidden" name="city" id="city"
+                            value="{{ old('city', $real_estate->city) }}">
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="my-2 fw-bold">Modifica Indirizzo</p>
+                                <div class="form-group">
+                                    <span class="my-2 fw-bold">Indirizzo Attuale</span>
+                                    <span class="ms-2">({{ $real_estate->address }}, {{ $real_estate->city }})</span>
+                                </div>
+                                <div class="d-flex justify-content-between my-5 position-relative">
+                                    <!-- Contenitore della casella di ricerca -->
+                                    <div id="searchBoxContainer" class="position-absolute  rounded shadow"
+                                        style="z-index: 1; top: 10px; left: 10px; width: 80%; max-width: 300px;">
+                                        @error('address')
+                                            <div class="text-white bg-danger p-2">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <!-- Contenitore della mappa -->
+                                    <div id="map" class="map w-100" style="height: 500px;"></div>
+                                </div>
+                            </div>
 
 
-                        <button type="submit" class="btn btn-primary mt-3">Aggiorna Immobile</button>
-                    </div>
+                            <button type="submit" class="btn btn-primary mt-3">Aggiorna Immobile</button>
+                        </div>
                 </form>
             </div>
         </div>
