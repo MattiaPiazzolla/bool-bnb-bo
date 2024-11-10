@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\subscriptions;
 use App\Models\RealEstate;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Braintree\Gateway;
 
 class SubscriptionsController extends Controller
 {
@@ -31,18 +30,11 @@ class SubscriptionsController extends Controller
      */
     public function create()
     {
-        // Recupera gli immobili dell'utente senza sottoscrizioni attive
-        $real_estates = RealEstate::where('user_id', auth()->id())
-            ->whereDoesntHave('subscriptions', function ($query) {
-                $query->where('end_subscription', '>', now());
-            })
-            ->orderBy('title', 'asc')
-            ->get();
-    
-        // Recupera tutte le opzioni di sottoscrizione ordinate per prezzo (dal più economico al più caro)
-        $subscriptions = Subscription::orderBy('price', 'asc')->get(); // Assicurati che 'price' sia il nome corretto del campo nel modello Subscription
-    
-        return view('subscriptions.create', compact('real_estates', 'subscriptions'));
+        // Recupera tutti gli immobili e la sottoscrizione che vuoi mostrare
+        $realEstates = RealEstate::all();
+        $subscription = Subscription::first(); // O un altro metodo per ottenere la sottoscrizione desiderata
+
+        return view('subscriptions.show', compact('realEstates', 'subscription'));
     }
 
     /**
@@ -52,68 +44,81 @@ class SubscriptionsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-{
-    $request->validate([
-        'real_estate_id' => 'required|exists:real_estates,id',
-        'subscription_id' => 'required|exists:subscriptions,id',
-    ]);
+    {
+        $request->validate([
+            'real_estate_id' => 'required|exists:real_estates,id',
+            'subscription_id' => 'required|exists:subscriptions,id',
+        ]);
 
-    // Logica per salvare la sponsorizzazione (ad esempio, creando una relazione nella tabella pivot)
-    $subscription = Subscription::find($request->subscription_id);
-    $real_estate = RealEstate::find($request->real_estate_id);
+        // Logica per salvare la sponsorizzazione (ad esempio, creando una relazione nella tabella pivot)
+        $subscription = Subscription::find($request->subscription_id);
+        $real_estate = RealEstate::find($request->real_estate_id);
 
-    // Salva la sponsorizzazione (esempio con relazione many-to-many)
-    $real_estate->subscriptions()->attach($subscription);
+        // Salva la sponsorizzazione (esempio con relazione many-to-many)
+        // Assicurati che tu abbia una relazione many-to-many definita nel modello RealEstate (subscriptions)
+        $real_estate->subscriptions()->attach($subscription);
 
-    return redirect()->route('admin.subscriptions.index')->with('success', 'Immobile sponsorizzato con successo');
-}
+        return redirect()->route('admin.subscriptions.index')->with('success', 'Immobile sponsorizzato con successo');
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\subscriptions  $subscriptions
+     * @param  \App\Models\Subscription  $subscription
      * @return \Illuminate\Http\Response
      */
     public function show(Subscription $subscription)
     {
-        // Recupera tutti gli immobili disponibili (puoi aggiungere filtri se necessario)
-        $real_estates = RealEstate::all();
+        $gateway = new \Braintree\Gateway([
+            'environment' => env('BRAINTREE_ENVIRONMENT'),
+            'merchantId' => env("BRAINTREE_MERCHANT_ID"),
+            'publicKey' => env("BRAINTREE_PUBLIC_KEY"),
+            'privateKey' => env("BRAINTREE_PRIVATE_KEY")
+        ]);
     
-        // Mostra la vista con i dettagli della sponsorizzazione e gli immobili
-        return view('subscriptions.show', compact('subscription', 'real_estates'));
+        // Genera il token client di Braintree
+        $clientToken = $gateway->clientToken()->generate();
+    
+        // Recupera gli immobili non ancora sponsorizzati e appartenenti all'utente autenticato
+        $realEstates = RealEstate::where('user_id', auth()->id())  // Filtra per immobile dell'utente autenticato
+                                 ->whereDoesntHave('subscriptions')  // Esclude gli immobili già sponsorizzati
+                                 ->get();
+    
+        // Mostra la vista con gli immobili non sponsorizzati, la sottoscrizione e il token di Braintree
+        return view('subscriptions.show', compact('subscription', 'realEstates', 'clientToken'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\subscriptions  $subscriptions
+     * @param  \App\Models\Subscription  $subscription
      * @return \Illuminate\Http\Response
      */
-    public function edit(subscriptions $subscriptions)
+    public function edit(Subscription $subscription)
     {
-        //
+        // Mostra la vista per la modifica di una sottoscrizione (se applicabile)
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\subscriptions  $subscriptions
+     * @param  \App\Models\Subscription  $subscription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, subscriptions $subscriptions)
+    public function update(Request $request, Subscription $subscription)
     {
-        //
+        // Logica per aggiornare una sottoscrizione esistente
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\subscriptions  $subscriptions
+     * @param  \App\Models\Subscription  $subscription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(subscriptions $subscriptions)
+    public function destroy(Subscription $subscription)
     {
-        //
+        // Logica per eliminare una sottoscrizione
     }
 }

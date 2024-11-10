@@ -1,26 +1,34 @@
 @extends('dashboard')
+
 @section('main-content')
     <div class="container p-5">
         <a href="{{ route('admin.RealEstates.create') }}" class="btn btn-primary">Aggiungi immobile</a>
         @foreach ($real_estates as $real_estate)
             <!-- Controlla se l'immobile ha almeno una sottoscrizione attiva -->
             @php
-                $isSponsored = $real_estate->subscriptions->isNotEmpty();
+                // Verifica se l'immobile ha almeno una sottoscrizione
+$isSponsored = $real_estate->subscriptions->isNotEmpty();
+
+// Imposta la data di fine della sponsorizzazione se esiste
+$endSubscription = null;
+if ($isSponsored) {
+    // Assumiamo che l'immobile possa avere più sponsorizzazioni, quindi prendo la prima
+                    $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
+                }
             @endphp
 
             <div class="card my-4 {{ $isSponsored ? 'border-warning border-5' : '' }}">
-                <div
-                    class="card-header d-flex align-items-center bg-white position-relative">
+                <div class="card-header d-flex align-items-center bg-white position-relative">
                     <div class="d-flex me-2">
-                    <h5 class="m-0 me-4 text-uppercase">{{ $real_estate->structure_types }}</h5>
-                    <span class="card-text text-success">L'immobile è
-                                {{ $real_estate->availability == true ? 'disponibile' : 'occupato' }}</span>
+                        <h5 class="m-0 me-4 text-uppercase">{{ $real_estate->structure_types }}</h5>
+                        <span class="card-text text-success">L'immobile è
+                            {{ $real_estate->availability == true ? 'disponibile' : 'occupato' }}</span>
                     </div>
                     <div class="rounded-circle {{ $real_estate->availability ? 'bg-success' : 'bg-danger' }}"
                         style="width: 20px; height: 20px;"></div>
-                        <span
-                            class="position-absolute top-0 end-0 text-warning p-2 rounded me-2 {{ $isSponsored ? 'd-block' : 'd-none' }}">
-                            Sponsorizzato</span>
+                    <span
+                        class="position-absolute top-0 end-0 text-warning p-2 rounded me-2 {{ $isSponsored ? 'd-block' : 'd-none' }}">
+                        Sponsorizzato</span>
                 </div>
                 <div class="card-body row d-flex">
                     <div class="col-12 d-flex position-relative">
@@ -30,14 +38,20 @@
                         </div>
                         <div class="d-flex flex-column info-cont mx-4">
                             <h4 class="card-title">{{ $real_estate->title }}</h4>
-                            <!-- description sarà disponibile solo nella show -->
-                            <!-- <p class="card-text">{{ $real_estate->description }}</p> -->
                             <span class="card-text">{{ $real_estate->address }}, {{ $real_estate->city }}</span>
                             <span class="card-text mb-1">€ {{ $real_estate->price }}</span>
+
+                            <!-- Mostra la data di fine sponsorizzazione, se presente -->
+                            @if ($isSponsored && $endSubscription)
+                                <span class="card-text mt-2 text-muted">
+                                    La sponsorizzazione termina il
+                                    {{ \Carbon\Carbon::parse($endSubscription)->format('d-m-Y') }}
+                                </span>
+                            @endif
                         </div>
                         <div class="buttons-cards d-flex mt-5">
                             <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}"
-                            class="btn btn-primary details me-1">Visualizza</a>
+                                class="btn btn-primary details me-1">Visualizza</a>
                             <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}"
                                 class="me-1 btn btn-primary me-3"><i class="bi bi-pencil-fill"></i></a>
                             <button type="button" class="btn btn-danger delete-real-estate"

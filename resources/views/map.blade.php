@@ -24,7 +24,7 @@
                 key: "9Yq5kH65us12yazEXv9SX8bGsAYxX1fL",
                 container: 'map',
                 center: center,
-                zoom: 10
+                zoom: 15
             });
 
             map.on('load', () => {

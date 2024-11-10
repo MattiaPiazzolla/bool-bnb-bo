@@ -110,16 +110,29 @@ class RealEstatesController extends Controller
      */
     public function show($id)
     {
-        $real_estate = RealEstate::with('services')->findOrFail($id);
-
+        // Recupera l'immobile con i servizi e le sottoscrizioni (con la data di fine)
+        $real_estate = RealEstate::with(['subscriptions' => function ($query) {
+            // Include la colonna 'end_subscription' dalla tabella pivot
+            $query->withPivot('end_subscription');
+        }])->findOrFail($id);
+    
+        // Controllo permessi
         if ($real_estate->user_id !== Auth::id()) {
             abort(403, 'Non hai il permesso di visualizzare questo immobile.');
         }
-
+    
+        // Estrai la data di fine sponsorizzazione dalla prima sottoscrizione attiva
+        $endSubscription = null;
+        if ($real_estate->subscriptions->isNotEmpty()) {
+            $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
+        }
+    
+        // Recupera latitudine e longitudine
         $latitude = $real_estate->latitude;
         $longitude = $real_estate->longitude;
-
-        return view('RealEstate.show', compact('real_estate', 'latitude', 'longitude'));
+    
+        // Passa l'immobile, la latitudine, longitudine e la data di fine della sponsorizzazione alla vista
+        return view('RealEstate.show', compact('real_estate', 'endSubscription', 'latitude', 'longitude'));
     }
 
     /**
