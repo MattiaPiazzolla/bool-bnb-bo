@@ -17,7 +17,11 @@ class SubscriptionsController extends Controller
      */
     public function index()
     {
-        //
+        // Recupera tutte le sponsorizzazioni
+        $subscriptions = Subscription::all();
+    
+        // Mostra la vista con l'elenco delle sponsorizzazioni
+        return view('subscriptions.index', compact('subscriptions'));
     }
 
     /**
@@ -49,25 +53,19 @@ class SubscriptionsController extends Controller
      */
     public function store(Request $request)
 {
-    // Validazione dei campi
     $request->validate([
         'real_estate_id' => 'required|exists:real_estates,id',
         'subscription_id' => 'required|exists:subscriptions,id',
     ]);
 
-    $real_estate = RealEstate::where('id', $request->input('real_estate_id'))
-        ->where('user_id', auth()->id())
-        ->firstOrFail();
+    // Logica per salvare la sponsorizzazione (ad esempio, creando una relazione nella tabella pivot)
+    $subscription = Subscription::find($request->subscription_id);
+    $real_estate = RealEstate::find($request->real_estate_id);
 
-    $subscription = Subscription::findOrFail($request->input('subscription_id'));
-    $end_subscription = Carbon::now()->addHours($subscription->duration);
+    // Salva la sponsorizzazione (esempio con relazione many-to-many)
+    $real_estate->subscriptions()->attach($subscription);
 
-    // Associa la sottoscrizione all'immobile con la data di fine
-    $real_estate->subscriptions()->attach($subscription->id, [
-        'end_subscription' => $end_subscription,
-    ]);
-
-    return redirect()->route('admin.RealEstates.index')->with('success', 'Sponsorizzazione aggiunta con successo.');
+    return redirect()->route('admin.subscriptions.index')->with('success', 'Immobile sponsorizzato con successo');
 }
 
     /**
@@ -76,9 +74,13 @@ class SubscriptionsController extends Controller
      * @param  \App\Models\subscriptions  $subscriptions
      * @return \Illuminate\Http\Response
      */
-    public function show(subscriptions $subscriptions)
+    public function show(Subscription $subscription)
     {
-        //
+        // Recupera tutti gli immobili disponibili (puoi aggiungere filtri se necessario)
+        $real_estates = RealEstate::all();
+    
+        // Mostra la vista con i dettagli della sponsorizzazione e gli immobili
+        return view('subscriptions.show', compact('subscription', 'real_estates'));
     }
 
     /**

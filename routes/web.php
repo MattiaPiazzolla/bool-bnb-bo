@@ -32,8 +32,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
     Route::resource('/RealEstates', RealEstatesController::class);
 
     // Rotte per gestire le sponsorizzazioni
+    Route::get('/subscriptions', [SubscriptionsController::class, 'index'])->name('subscriptions.index');
     Route::get('/subscriptions/create', [SubscriptionsController::class, 'create'])->name('subscriptions.create');
     Route::post('/subscriptions/store', [SubscriptionsController::class, 'store'])->name('subscriptions.store');
+    Route::get('/subscriptions/{subscription}', [SubscriptionsController::class, 'show'])->name('subscriptions.show');
 
     // Rotta per Braintree
     Route::any('/subscriptions/braintree', [BraintreeController::class, 'token'])->name('subscriptions.braintree');
