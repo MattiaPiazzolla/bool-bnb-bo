@@ -1,7 +1,7 @@
 @extends('dashboard')
 
 @section('main-content')
-    <div class="container py-5">
+    <div class="container p-5">
         <h1 class="text-center mb-4">Sponsorizza un immobile</h1>
 
         <form action="{{ route('admin.subscriptions.braintree') }}" method="POST" id="payment-form">
