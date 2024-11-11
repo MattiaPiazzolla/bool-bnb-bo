@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class services extends Model
+class services extends Model  // Mantieni il nome 'services' in minuscolo
 {
+    protected $table = 'services';  // Specifica esplicitamente il nome della tabella
+
     protected $fillable = [
         'name',
     ];

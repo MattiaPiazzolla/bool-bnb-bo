@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\RealEstate;
-use App\Http\Resources\RealEstateResource; // Se usi risorse
+use App\Http\Resources\RealEstateResource; 
 use Illuminate\Http\Request;
 
 class RealEstateController extends Controller
