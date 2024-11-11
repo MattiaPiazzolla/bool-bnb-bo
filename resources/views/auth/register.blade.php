@@ -6,6 +6,11 @@
 
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <div class="alert alert-warning" role="alert">
+                    I campi contrassegnati con * sono obbligatori
+                </div>
+            </div>
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Registrati') }}</div>
 
