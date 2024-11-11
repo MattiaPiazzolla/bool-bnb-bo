@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -23,14 +22,22 @@ class BraintreeController extends Controller
         // Se c'è il nonce (che proviene dalla transazione di pagamento)
         if ($request->input('nonce') != null) {
             $nonceFromTheClient = $request->input('nonce');
-            $realEstateId = $request->input('real_estate_id'); // Assicurati che l'immobile sia passato nel form
+            $realEstateId = $request->input('real_estate_id');
+            $subscriptionId = $request->input('subscription_id');
 
             // Recupera l'immobile selezionato
             $realEstate = RealEstate::findOrFail($realEstateId);
 
+            // Recupera la sottoscrizione selezionata dall'utente
+            $subscription = Subscription::findOrFail($subscriptionId);
+
+            // Imposta dinamicamente il prezzo e la durata
+            $amount = $subscription->price;  // Imposta il prezzo della transazione
+            $duration = $subscription->duration;  // Numero di giorni per la sponsorizzazione
+
             // Esegui la transazione
             $result = $gateway->transaction()->sale([
-                'amount' => '10.00', // Aggiungi il prezzo corretto dinamicamente
+                'amount' => $amount,  // Usa il prezzo dinamico
                 'paymentMethodNonce' => $nonceFromTheClient,
                 'options' => [
                     'submitForSettlement' => true
@@ -39,11 +46,8 @@ class BraintreeController extends Controller
 
             // Se la transazione è stata completata con successo
             if ($result->success) {
-                // Recupera la sottoscrizione associata (ad esempio, la più economica, o quella selezionata nel form)
-                $subscription = Subscription::findOrFail($request->input('subscription_id'));
-
-                // Calcola la data di fine della sottoscrizione (ad esempio, 30 giorni da oggi)
-                $endSubscription = Carbon::now()->addDays(30); // Modifica la durata se necessario
+                // Calcola la data di fine della sottoscrizione in base alla durata
+                $endSubscription = Carbon::now()->addDays($duration);
 
                 // Inserisci nella tabella ponte real_estate_subscription
                 $realEstate->subscriptions()->attach($subscription, [
