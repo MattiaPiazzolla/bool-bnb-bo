@@ -37,7 +37,7 @@ class BraintreeController extends Controller
 
             // Esegui la transazione
             $result = $gateway->transaction()->sale([
-                'amount' => $amount,  // Usa il prezzo dinamico
+                'amount' => $amount, 
                 'paymentMethodNonce' => $nonceFromTheClient,
                 'options' => [
                     'submitForSettlement' => true
