@@ -36,22 +36,22 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="title">Titolo</label>
-                                <input type="text" name="title" class="form-control"
+                                <input type="text" id="title" name="title" class="form-control"
                                     value="{{ old('title', $real_estate->title) }}" required>
-                                @error('title')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <div id="title-error" class="text-danger" style="display: none;">
+                                    Il titolo deve contenere almeno 3 caratteri.
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="price">Prezzo</label>
-                                <input type="number" name="price" class="form-control"
-                                    value="{{ old('price', $real_estate->price) }}" required min="0" step="1">
-                                @error('price')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" id="price" name="price" class="form-control"
+                                    value="{{ old('price', $real_estate->price) }}" required>
+                                <div id="price-error" class="text-danger" style="display: none;">
+                                    Il prezzo deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
@@ -115,44 +115,44 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
-                                <input type="number" name="rooms" class="form-control"
-                                    value="{{ old('rooms', $real_estate->rooms) }}" min="0">
-                                @error('rooms')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" id="rooms" name="rooms" class="form-control"
+                                    value="{{ old('rooms', $real_estate->rooms) }}" required>
+                                <div id="rooms-error" class="text-danger" style="display: none;">
+                                    Il numero di stanze deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
-                                <input type="number" name="bathrooms" class="form-control"
-                                    value="{{ old('bathrooms', $real_estate->bathrooms) }}" min="0">
-                                @error('bathrooms')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" id="bathrooms" name="bathrooms" class="form-control"
+                                    value="{{ old('bathrooms', $real_estate->bathrooms) }}" required>
+                                <div id="bathrooms-error" class="text-danger" style="display: none;">
+                                    Il numero di bagni deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
-                                <input type="number" name="beds" class="form-control"
-                                    value="{{ old('beds', $real_estate->beds) }}" min="0">
-                                @error('beds')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" id="beds" name="beds" class="form-control"
+                                    value="{{ old('beds', $real_estate->beds) }}" required>
+                                <div id="beds-error" class="text-danger" style="display: none;">
+                                    Il numero di letti deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="square_meter">Superficie in m²</label>
-                                <input type="number" name="square_meter" class="form-control"
-                                    value="{{ old('square_meter', $real_estate->square_meter) }}" min="0">
-                                @error('square_meter')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                                <input type="text" id="square_meter" name="square_meter" class="form-control"
+                                    value="{{ old('square_meter', $real_estate->square_meter) }}" required>
+                                <div id="square_meter-error" class="text-danger" style="display: none;">
+                                    La superficie deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
@@ -199,14 +199,13 @@
                                             <label class="form-check-label" for="service-{{ $service->id }}">
                                                 <i class="ms-2 opacity-75 {{ $service->icon }}"></i>
                                                 {{ $service->name }}
-
                                             </label>
                                         </div>
                                     </div>
                                 @endforeach
-                                @error('services')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
+                            </div>
+                            <div id="services-error" class="text-danger" style="display: none;">
+                                Devi selezionare almeno un servizio.
                             </div>
                         </div>
 
@@ -246,4 +245,78 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Funzione di validazione per i campi con valori numerici
+        function validateNumberInput(id, errorId) {
+            const input = document.getElementById(id);
+            const errorDiv = document.getElementById(errorId);
+
+            input.addEventListener('input', function() {
+
+                // Ottieni il valore del campo
+                const value = input.value;
+
+                // Controlla se il valore è un numero valido e maggiore di 0
+                if (value <= 0 || isNaN(value) || value === '') {
+                    errorDiv.style.display = 'block';
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+            });
+        }
+
+        // Funzione di validazione per il campo "title"
+        document.getElementById('title').addEventListener('input', function() {
+            const titleInput = document.getElementById('title');
+            const errorDiv = document.getElementById('title-error');
+            if (titleInput.value.length < 3) {
+                errorDiv.style.display = 'block';
+            } else {
+                errorDiv.style.display = 'none';
+            }
+        });
+
+        // Aggiungi la validazione per i campi numerici
+        validateNumberInput('price', 'price-error');
+        validateNumberInput('rooms', 'rooms-error');
+        validateNumberInput('bathrooms', 'bathrooms-error');
+        validateNumberInput('beds', 'beds-error');
+        validateNumberInput('square_meter', 'square_meter-error');
+
+        // Validazione del modulo prima dell'invio
+        document.querySelector('form').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Verifica ogni campo numerico
+            const fields = ['price', 'rooms', 'bathrooms', 'beds', 'square_meter'];
+            fields.forEach(field => {
+                const input = document.getElementById(field);
+                const errorDiv = document.getElementById(`${field}-error`);
+                const value = input.value;
+
+                if (value <= 0 || isNaN(value) || value === '') {
+                    errorDiv.style.display = 'block';
+                    isValid = false;
+                } else {
+                    errorDiv.style.display = 'none';
+                }
+            });
+
+            // Verifica anche il campo "title"
+            const titleInput = document.getElementById('title');
+            const titleErrorDiv = document.getElementById('title-error');
+            if (titleInput.value.length < 3) {
+                titleErrorDiv.style.display = 'block';
+                isValid = false;
+            } else {
+                titleErrorDiv.style.display = 'none';
+            }
+
+            // Se uno dei campi non è valido, impedisci l'invio del modulo
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
 @endsection
