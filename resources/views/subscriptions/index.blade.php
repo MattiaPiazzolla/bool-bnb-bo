@@ -2,7 +2,7 @@
 
 @section('main-content')
     <div class="container p-5">
-        <h1 class="py-3">Elenco delle Sponsorizzazioni</h1>
+        <h1 class="py-3">Seleziona la sponsorizzazione che fa per te</h1>
 
         {{-- Sezione di promozione generale --}}
         <div class="py-5">
@@ -58,6 +58,10 @@
 
         .benefits_list ul li {
             margin: 5px 0;
+        }
+
+        .benefits_list ul li i {
+            margin-right: 10px;
         }
     </style>
 @endsection
