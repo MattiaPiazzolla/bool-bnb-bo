@@ -51,9 +51,14 @@ class MessageController extends Controller
      * @param  \App\Models\messages  $messages
      * @return \Illuminate\Http\Response
      */
-    public function show(messages $messages)
+    public function show(Message $message)
     {
-        //
+        // Verifica se il messaggio appartiene all'utente autenticato
+        if ($message->realEstate->user_id != Auth::id()) {
+            abort(403, 'Accesso non autorizzato');
+        }
+
+        return view('messages.show', compact('message'));
     }
 
     /**

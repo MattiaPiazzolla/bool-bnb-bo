@@ -24,10 +24,11 @@
                         <td>{{ $message->phone }}</td>
                         <td>{{ $message->message }}</td>
                         <td>
-                            <!-- Bottone per aprire la modale di conferma -->
+                            <a href="{{ route('admin.messages.show', $message->id) }}" class="btn btn-primary"><i
+                                    class="bi bi-eye"></i></a>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                 data-id="{{ $message->id }}">
-                                Elimina
+                                <i class="bi bi-trash"></i>
                             </button>
                         </td>
                     </tr>

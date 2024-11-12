@@ -43,6 +43,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
 
     // Rotte per la gestione dei messaggi
     Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::get('/messages/{message}', [MessageController::class, 'show'])->name('messages.show');
     Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
 });
 
