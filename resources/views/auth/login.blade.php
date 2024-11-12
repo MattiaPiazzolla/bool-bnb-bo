@@ -32,10 +32,6 @@
                                 <div class="d-flex">
                                 <label for="password"
                                 class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                                <button type="button" id="showPassword" class="btn">
-                                            <i class="bi-eye"></i>
-                                        </button>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="passwd-wrap">
                                         <input id="password" type="password"
@@ -49,6 +45,11 @@
                                         </span>
                                     @enderror
                                 </div>
+                                <button type="button" id="showPassword" class="btn">
+                                            <i class="bi-eye"></i>
+                                        </button>
+                                </div>
+                                
                             </div>
 
                             <div class="mb-4 row">
