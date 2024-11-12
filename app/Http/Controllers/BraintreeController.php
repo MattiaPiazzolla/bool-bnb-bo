@@ -33,7 +33,7 @@ class BraintreeController extends Controller
 
             // Imposta dinamicamente il prezzo e la durata
             $amount = $subscription->price;  // Imposta il prezzo della transazione
-            $duration = $subscription->duration;  // Numero di giorni per la sponsorizzazione
+            $duration = $subscription->duration;  // Numero di ore per la sponsorizzazione
 
             // Esegui la transazione
             $result = $gateway->transaction()->sale([
@@ -46,8 +46,8 @@ class BraintreeController extends Controller
 
             // Se la transazione è stata completata con successo
             if ($result->success) {
-                // Calcola la data di fine della sottoscrizione in base alla durata
-                $endSubscription = Carbon::now()->addDays($duration);
+                // Calcola la data di fine della sottoscrizione in base alla durata in ore
+                $endSubscription = Carbon::now()->addHours($duration);
 
                 // Inserisci nella tabella ponte real_estate_subscription
                 $realEstate->subscriptions()->attach($subscription, [
