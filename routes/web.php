@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\SubscriptionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BraintreeController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,10 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
 
     // Rotta per Braintree
     Route::any('/subscriptions/braintree', [BraintreeController::class, 'token'])->name('subscriptions.braintree');
+
+    // Rotte per la gestione dei messaggi
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
+    Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
 });
 
 Route::middleware('auth')->group(function () {

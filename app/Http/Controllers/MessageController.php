@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\messages;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
-class MessagesController extends Controller
+use App\Http\Controllers\Controller;
+
+
+class MessageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        $messages = messages::all();
-        return view('messages', compact('messages'));
+        $messages = Message::all();
+        return view('messages.index', compact('messages'));
     }
 
     /**
@@ -79,8 +82,9 @@ class MessagesController extends Controller
      * @param  \App\Models\messages  $messages
      * @return \Illuminate\Http\Response
      */
-    public function destroy(messages $messages)
+    public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return redirect()->route('messages.index')->with('success', 'Messaggio eliminato con successo!');
     }
 }
