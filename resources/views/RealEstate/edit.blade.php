@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="container p-5">
+        <div class="container p-md-5">
             <div class="row bg-light p-3">
                 <form action="{{ route('admin.RealEstates.update', $real_estate->id) }}" method="POST"
                     enctype="multipart/form-data">

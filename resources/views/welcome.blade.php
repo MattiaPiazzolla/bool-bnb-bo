@@ -2,12 +2,12 @@
 @section('content')
 <div class="container">
         <div class="row">
-            <div class="col-12 p-5">
+            <div class="col-12 py-5 p-md-5">
                 <div class="bg-wow p-5 lineUp2">
                     <h1 class="title text-white lineUp">Benvenuto <br>
                     nel back-office di <br>
                 Bool-b&b</h1>
-                <span class="text-white lineUp2" style="font-size: 1.5rem">Se hai bisogno di pubblicare un annuncio per affittare il tuo appartamento, sei nel posto giusto!</span>
+                <span class="text-white lineUp2">Se hai bisogno di pubblicare un annuncio per affittare il tuo appartamento, sei nel posto giusto!</span>
                 </div>
             </div>
         </div>
@@ -17,6 +17,21 @@
                         <h2 class="mb-5 text-center lineUp">
                             Mettiti in contatto con migliaia di possibili clienti!
                         </h2> 
+                    </div>
+
+                    <div class="d-flex flex-column mb-5 align-items-center justify-content-center">
+                        <h3 class="mb-3">Entra a far parte di Boolb&b</h3>
+                        @guest
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">
+                                    <button class="btn-wow mb-3">Registrati</button>
+                                </a>
+                            @endif
+                        @else
+                            <a href="{{ route('admin.RealEstates.create') }}">
+                                <button class="btn-wow mb-3">Pubblica un annuncio</button>
+                            </a>
+                        @endguest
                     </div>
 
                     <div class="bg-wow2 p-5">
@@ -36,7 +51,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <span style="font-size: 3rem;" class="me-5">Le basi dell'ospitalità</span>
+                        <span class="accordion-title me-5">Le basi dell'ospitalità</span>
                     </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -58,7 +73,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    <span style="font-size: 3rem;" class="me-5">Regole e leggi</span>
+                    <span class="accordion-title me-5">Regole e leggi</span>
                     </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -71,10 +86,10 @@
                     </span></div>
                     </div>
                 </div>
-                <div class="accordion-item">
+                <div class="accordion-item mb-5">
                     <h2 class="accordion-header">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    <span style="font-size: 3rem;" class="me-5">Co-host</span>
+                    <span class="accordion-title me-5">Co-host</span>
                     </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">

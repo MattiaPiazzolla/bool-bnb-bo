@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div class="container p-5">
+        <div class="container p-md-5">
             <div class="row bg-white">
                 <div class="col-sm-12 col-lg-7 p-3">
                     <div class="d-flex align-items-center">

@@ -2,9 +2,9 @@
 //wrapper è la classe che gestisce il contenitore della sezione dasboard. 
 //nota bene, eventuali altezze fisse potrebbero causare problemi.
 .wrapper{
-    height: calc(100vh - 82px);
+    height: calc(100vh - 72px);
     .side-bar{
-        width: 300px;
+        width: 85px;
         height: 100%;
         background: #242526;
         border-top-right-radius: 15px;
@@ -14,8 +14,18 @@
         }
         a{
             text-decoration: none;
+            width: 100%;
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+                margin-left: 7px;
+            }
+            span{
+                display: none;
+            }
         }
         .bottom-menu{
             width: 100%;
@@ -35,19 +45,19 @@
         font-size: 1.5rem !important;
     }
     .dash-content{
-        width: calc(100vw - 300px);
+        width: calc(100vw - 85px);
         overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .userNameSidebar{
-        color: white;
-        font-size: 1rem;
+        display: none;
     }
 
     .initials-avatar {
-        width: 50px;
-        height: 50px;
-        background: $base-blue;
+        width: 100%;
+        height: 100%;
+        background: none;
         color: white; 
         font-size: 24px;
         font-weight: bold;
@@ -60,6 +70,8 @@
 
     .side-cont-alwayson{
         background-color: #3A3B3C;
+        height: 50px;
+        background-color: $base-blue;
         border-radius: 15px;
     }
 
@@ -68,6 +80,85 @@
             transition: 0.8s;
             background-color: #3A3B3C;
             border-radius: 15px;
+        }
+    }
+}
+
+//mediaqueries
+@media(min-width:992px){
+    .wrapper{
+        height: calc(100vh - 82px);
+        .side-bar{
+            width: 300px;
+            height: 100%;
+            background: #242526;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            ul{
+                width:100%;
+            }
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+                span{
+                    display: block;
+                }
+            }
+            .bottom-menu{
+                width: 100%;
+                .img-box{
+                    height: 50px;
+                    width: 50px;
+                    img{
+                        width: 100%;
+                        object-fit: contain;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .logout{
+            color: $base-yellow !important;
+            font-size: 1.5rem !important;
+        }
+        .dash-content{
+            width: calc(100vw - 300px);
+            overflow-y: scroll;
+        }
+    
+        .userNameSidebar{
+            display: block;
+            color: white;
+            font-size: 1rem;
+        }
+    
+        .initials-avatar {
+            width: 50px;
+            height: 50px;
+            background: $base-blue;
+            color: white; 
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15%; /* Rende l'avatar circolare */
+            text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+        }
+    
+        .side-cont-alwayson{
+            background-color: #3A3B3C;
+            height: 60px;
+            border-radius: 15px;
+        }
+    
+        .side-cont{
+            &:hover{
+                transition: 0.8s;
+                background-color: #3A3B3C;
+                border-radius: 15px;
+            }
         }
     }
 }
