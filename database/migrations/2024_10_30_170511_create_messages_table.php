@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('surname',50);
-            $table->string('email',50)->unique();
-            $table->string('phone',15)->unique();
+            $table->string('email',50);
+            $table->string('phone',15);
             $table->text('message', 500);
             $table->integer('real_estate_id');
 
