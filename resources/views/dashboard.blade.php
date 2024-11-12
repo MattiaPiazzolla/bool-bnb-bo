@@ -39,7 +39,7 @@
                         <span class="text-white">Metti in evidenza</span>
                     </a>
 
-                    <a href="#" class="d-flex side-cont p-2 mb-3">
+                    <a href="{{ route('admin.messages.index') }}" class="d-flex side-cont p-2 mb-3">
                         <i class="bi bi-chat-left-dots-fill me-2"></i>
                         <span class="text-white">Messaggi</span>
                     </a>
