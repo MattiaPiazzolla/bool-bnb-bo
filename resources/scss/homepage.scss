@@ -3,12 +3,16 @@
     background: rgb(2,0,36);
     background: linear-gradient(114deg, rgba(2,0,36,1) 6%, rgba(9,9,121,1) 24%, rgba(215,109,214,1) 56%, rgba(255,128,232,1) 67%, rgba(128,234,255,1) 92%);
     border-radius: 30px;
+
+    span{
+      font-size: 1.5rem;
+    }
 }
 .title{
-    font-size: 6rem;
+  font-size: 3rem;
 }
 .rainbow{
-    background: linear-gradient(114deg, rgba(2,0,36,1) 21%, rgba(1,0,255,1) 45%, rgba(255,255,255,1) 89%);
+    background: linear-gradient(114deg, rgba(2,0,36,1) 21%, rgba(1,0,255,1) 45%, rgb(190, 190, 190) 89%);
     -webkit-background-clip: text;  
     background-clip: text; 
     color: transparent; 
@@ -20,7 +24,7 @@
   color: transparent; 
 }
 .rainbow2{
-    background: linear-gradient(114deg, rgba(255,255,255,1) 15%, rgba(1,0,255,1) 45%, rgba(2,0,36,1) 96%);
+    background: linear-gradient(114deg, rgb(190, 190, 190) 15%, rgba(1,0,255,1) 45%, rgba(2,0,36,1) 96%);
     -webkit-background-clip: text;  
     background-clip: text; 
     color: transparent; 
@@ -68,4 +72,42 @@
         transform: translateX(0%);
       }
     }
-  
+    .accordion-title{
+      font-size: 1.7rem;
+    }
+    /*bottone home*/
+    .btn-wow {
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      margin: 20px;
+      height: 55px;
+      text-align: center;
+      border: none;
+      border-radius: 50px;
+      background-size: 300% 100%;
+      background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645); 
+      box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75); 
+      transition: background-position .4s ease-in-out;
+    }
+    
+    .btn-wow:hover {
+      background-position: 100% 0; 
+    }
+    
+    .btn-wow:focus {
+      outline: none;
+    }
+
+  /*queeriess*/
+
+  @media (min-width: 1024px){
+  .title{
+    font-size: 6rem;
+  }
+  .accordion-title{
+    font-size: 3rem;
+  }
+}

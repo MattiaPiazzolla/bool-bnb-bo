@@ -1,7 +1,7 @@
 @extends('dashboard')
 
 @section('main-content')
-    <div class="container p-5">
+    <div class="container p-md-5">
         <h1 class="text-center mb-4">Sponsorizza un immobile</h1>
 
         <form action="{{ route('admin.subscriptions.braintree') }}" method="POST" id="payment-form">
@@ -30,9 +30,9 @@
                         </select>
 
                         <!-- Informazioni sull'immobile selezionato -->
-                        <div id="real-estate-info" class="mt-4 d-none">
+                        <div id="real-estate-info" class="mt-2 mt-md-4 d-none">
                             <h4>Informazioni Immobile Selezionato</h4>
-                            <img id="real-estate-image" src="" alt="Immagine immobile" class="img-fluid mb-3"
+                            <img id="real-estate-image" src="" alt="Immagine immobile" class="img-md-fluid mb-md-3"
                                 style="max-height: 200px; border-radius: 8px;">
                             <ul>
                                 <li><strong>Titolo:</strong> <span id="real-estate-title"></span></li>
@@ -86,6 +86,10 @@
 
         #real-estate-info ul li {
             margin: 5px 0;
+        }
+
+        @media(min-width:996px){
+
         }
     </style>
 

@@ -53,7 +53,7 @@
             </div>
 
             <form action="{{ route('logout') }}" method="POST" style="display: inline;"
-                class="d-flex side-cont-alwayson p-2">
+                class="d-none d-lg-flex side-cont-alwayson p-2">
                 @csrf
                 <button type="submit" class="logout" style="background: none; border: none; cursor: pointer;">
                     <i class="bi bi-box-arrow-left me-2"></i>

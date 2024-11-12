@@ -1,8 +1,5 @@
 
 .card-body{
-    img{
-        width: 150px;
-    }
     .info-cont{
         min-width: 400px;
         p{
@@ -15,15 +12,22 @@
     .details{
         width: 150px;
     }
+}
+
+
+.sponsored-card {
+    border: 10px solid yellow;
+}
+
+//queeries
+@media(min-width:768px){
     .buttons-cards{
         position: absolute;
         height: 40px;
         right: 10px;
         bottom: 0;
     }
-}
-
-
-.sponsored-card {
-    border: 10px solid yellow;
+    img{
+        width: 150px;
+    }
 }

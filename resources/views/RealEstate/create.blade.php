@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-12 p-5">
+            <div class="col-12 p-md-5">
                 <div class="d-flex align-items-center">
                     <h1 class="mx-3 mb-5">Crea Immobile</h1>
                 </div>
