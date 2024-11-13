@@ -13,6 +13,14 @@ card-body{
         width: 150px;
     }
 }
+.border-wow{
+    border: 4px solid transparent;
+    border-image: linear-gradient(114deg,rgb(38, 38, 159) 4%, rgba(128,234,255,1) 92%) 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.415);
+}
+.text-adv{
+    color: linear-gradient(114deg,rgb(38, 38, 159) 4%, rgba(128,234,255,1) 92%) 1;
+}
 
 
 .sponsored-card {

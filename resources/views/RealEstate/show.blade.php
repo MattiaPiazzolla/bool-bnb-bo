@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="row bg-white mt-5 py-3">
+            <div class="row bg-white mt-5 py-3 mb-5">
                 <div class="col-sm-12 col-lg-6 d-flex flex-column">
                     <span class="text-black"><strong>Indirizzo:</strong> {{ $real_estate->address }},
                         {{ $real_estate->city }}</span>
@@ -71,6 +71,22 @@
                 <div class="col-sm-12 col-lg-6">
                     {{-- Sezione mappa --}}
                     @include('map')
+                </div>
+            </div>
+
+            <div class="row bg-white">
+                <!--statistiche-->
+                <div class="col-sm-12 col-lg-7 p-3 d-flex flex-column">
+                    <div class="mb-2">
+                        <h1 class="me-3 mb-1">Statistiche</h1>
+                        <p>Qui puoi visualizzare l'andamento del tuo post. Attualmente questa sezione è in sviluppo. Vedrai soltanto il numero di visite e di messaggi ricevuti per questo immobile</p>
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <span class="text-black">Numero di visite: <span>0</span></span>
+                        <span class="text-black">Numero di messaggi ricevuti: <span>0</span></span>
+                        <span class="text-black">Sponsorizzazione attivate: <span>0</span></span>
+                    </div>
+
                 </div>
             </div>
         </div>
