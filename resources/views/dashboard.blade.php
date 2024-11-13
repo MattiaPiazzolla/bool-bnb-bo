@@ -22,24 +22,31 @@
                         <h4 class="userNameSidebar mt-2">{{ Auth::user()->name }}</h4>
                     </div>
                 </div>
+
+
+
                 <!--sezione menu-->
                 <ul class="text-white d-flex flex-column list-unstyled mt-5 gap-4">
-                    <a href="{{ route('admin.RealEstates.index') }}" class="d-flex side-cont p-2 mb-3">
+                    <a href="{{ route('admin.RealEstates.index') }}"
+                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.RealEstates.index') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-substack me-2"></i>
                         <span class="text-white">I tuoi annunci</span>
                     </a>
 
-                    <a href="{{ route('admin.RealEstates.create') }}" class="d-flex side-cont p-2 mb-3">
+                    <a href="{{ route('admin.RealEstates.create') }}"
+                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.RealEstates.create') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-plus-circle-fill me-2"></i>
                         <span class="text-white">Aggiungi immobile</span>
                     </a>
 
-                    <a href="{{ route('admin.subscriptions.index') }}" class="d-flex side-cont p-2 mb-3">
+                    <a href="{{ route('admin.subscriptions.index') }}"
+                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.subscriptions.index') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-badge-ad-fill me-2"></i>
                         <span class="text-white">Metti in evidenza</span>
                     </a>
 
-                    <a href="{{ route('admin.messages.index') }}" class="d-flex side-cont p-2 mb-3">
+                    <a href="{{ route('admin.messages.index') }}"
+                        class="d-flex side-cont p-2 mb-3  {{ request()->routeIs('admin.messages.index') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-chat-left-dots-fill me-2"></i>
                         <span class="text-white">Messaggi</span>
                     </a>
