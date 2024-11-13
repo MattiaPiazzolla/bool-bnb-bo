@@ -3,16 +3,16 @@
 @section('main-content')
     <div class="container py-5 p-md-5">
         <a href="{{ route('admin.RealEstates.create') }}" class="btn btn-primary">Aggiungi immobile</a>
+
         @foreach ($real_estates as $real_estate)
             <!-- Controlla se l'immobile ha almeno una sottoscrizione attiva -->
             @php
                 // Verifica se l'immobile ha almeno una sottoscrizione
-$isSponsored = $real_estate->subscriptions->isNotEmpty();
+                $isSponsored = $real_estate->subscriptions->isNotEmpty();
 
-// Imposta la data di fine della sponsorizzazione se esiste
-$endSubscription = null;
-if ($isSponsored) {
-    // Assumiamo che l'immobile possa avere più sponsorizzazioni, quindi prendo la prima
+                // Imposta la data di fine della sponsorizzazione se esiste
+                $endSubscription = null;
+                if ($isSponsored) {
                     $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
                 }
             @endphp
@@ -48,16 +48,42 @@ if ($isSponsored) {
                                     {{ \Carbon\Carbon::parse($endSubscription)->format('d-m-Y') }}
                                 </span>
                             @endif
+                            <div class="buttons-cards d-flex mt-4 mt-md-5">
+                                <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}" class="btn btn-primary details me-5 me-md-1">Visualizza</a>
+                                <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}" class="me-1 btn btn-primary me-2 me-md-3">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <button type="button" class="btn btn-danger delete-real-estate" data-url="/admin/RealEstates/{{ $real_estate->id }}">
+                                    <i class="bi bi-trash3-fill"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="buttons-cards d-flex mt-4 mt-md-5">
-                            <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}"
-                                class="btn btn-primary details me-5 me-md-1">Visualizza</a>
-                            <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}"
-                                class="me-1 btn btn-primary me-2 me-md-3"><i class="bi bi-pencil-fill"></i></a>
-                            <button type="button" class="btn btn-danger delete-real-estate"
-                                data-url="/admin/RealEstates/{{ $real_estate->id }}">
-                                <i class="bi bi-trash3-fill"></i></button>
-                        </div>
+                        {{-- <div class="buttons-cards d-flex mt-4 mt-md-5">
+                            @if($real_estate->trashed())
+                                <!-- Pulsante per ripristinare un immobile eliminato -->
+                                <form action="{{ route('admin.RealEstates.restore', $real_estate->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('PUT')
+                                    <button type="submit" class="btn btn-warning me-2">Ripristina</button>
+                                </form>
+
+                                <!-- Pulsante per eliminare definitivamente un immobile -->
+                                <form action="{{ route('admin.RealEstates.forceDelete', $real_estate->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Elimina Definitivamente</button>
+                                </form>
+                            @else
+                                <!-- Pulsante per visualizzare e modificare un immobile attivo -->
+                                <a href="{{ route('admin.RealEstates.show', $real_estate->id) }}" class="btn btn-primary details me-5 me-md-1">Visualizza</a>
+                                <a href="{{ route('admin.RealEstates.edit', $real_estate->id) }}" class="me-1 btn btn-primary me-2 me-md-3">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                                <button type="button" class="btn btn-danger delete-real-estate" data-url="/admin/RealEstates/{{ $real_estate->id }}">
+                                    <i class="bi bi-trash3-fill"></i>
+                                </button>
+                            @endif
+                        </div> --}}
                     </div>
                 </div>
             </div>

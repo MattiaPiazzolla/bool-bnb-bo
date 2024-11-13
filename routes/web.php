@@ -7,6 +7,7 @@ use App\Http\Controllers\SubscriptionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BraintreeController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\RealEstateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +53,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::patch('/profile/update-picture', [ProfileController::class, 'updatePicture'])->name('profile.updatePicture');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('RealEstates', RealEstatesController::class);
+    Route::put('RealEstates/{id}/restore', [RealEstatesController::class, 'restore'])->name('RealEstates.restore');
+    Route::delete('RealEstates/{id}/forceDelete', [RealEstatesController::class, 'forceDelete'])->name('RealEstates.forceDelete');
 });
 
 require __DIR__ . '/auth.php';

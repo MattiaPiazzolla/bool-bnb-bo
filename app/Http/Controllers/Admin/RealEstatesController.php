@@ -31,9 +31,18 @@ class RealEstatesController extends Controller
             ->orderByRaw('(SELECT COUNT(*) FROM real_estate_subscription WHERE real_estate_id = real_estates.id AND end_subscription > NOW()) DESC')
             ->get();
 
-            
+
 
         // Passa gli immobili alla vista
+        return view('RealEstate.index', compact('real_estates'));
+
+        // Recupera tutti gli immobili dell'utente, inclusi quelli eliminati
+        $real_estates = RealEstate::withTrashed()
+            ->where('user_id', Auth::id())
+            ->with('subscriptions', 'services')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         return view('RealEstate.index', compact('real_estates'));
     }
 
@@ -64,8 +73,15 @@ class RealEstatesController extends Controller
         // Crea e salva l'immobile
         $real_estate = new RealEstate();
         $real_estate->fill($request->only([
-            'title', 'price', 'availability', 'structure_types', 'rooms', 
-            'bathrooms', 'beds', 'square_meter', 'description'
+            'title',
+            'price',
+            'availability',
+            'structure_types',
+            'rooms',
+            'bathrooms',
+            'beds',
+            'square_meter',
+            'description'
         ]));
         $real_estate->address = $address;
         $real_estate->city = $city;
@@ -115,22 +131,22 @@ class RealEstatesController extends Controller
             // Include la colonna 'end_subscription' dalla tabella pivot
             $query->withPivot('end_subscription');
         }])->findOrFail($id);
-    
+
         // Controllo permessi
         if ($real_estate->user_id !== Auth::id()) {
             abort(403, 'Non hai il permesso di visualizzare questo immobile.');
         }
-    
+
         // Estrai la data di fine sponsorizzazione dalla prima sottoscrizione attiva
         $endSubscription = null;
         if ($real_estate->subscriptions->isNotEmpty()) {
             $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
         }
-    
+
         // Recupera latitudine e longitudine
         $latitude = $real_estate->latitude;
         $longitude = $real_estate->longitude;
-    
+
         // Passa l'immobile, la latitudine, longitudine e la data di fine della sponsorizzazione alla vista
         return view('RealEstate.show', compact('real_estate', 'endSubscription', 'latitude', 'longitude'));
     }
@@ -164,9 +180,17 @@ class RealEstatesController extends Controller
         }
 
         $real_estate->fill($request->only([
-            'title', 'description', 'address', 'city', 'price', 
-            'structure_types', 'availability', 'rooms', 'bathrooms', 
-            'beds', 'square_meter'
+            'title',
+            'description',
+            'address',
+            'city',
+            'price',
+            'structure_types',
+            'availability',
+            'rooms',
+            'bathrooms',
+            'beds',
+            'square_meter'
         ]));
 
         // Gestione immagine
@@ -217,6 +241,11 @@ class RealEstatesController extends Controller
             Storage::disk('public')->delete($real_estate->portrait);
         }
 
+        // Metodo per la soft delete
+        if ($real_estate->user_id !== Auth::id()) {
+            abort(403, 'Non hai il permesso di eliminare questo immobile.');
+        }
+
         $real_estate->services()->detach();
         $real_estate->subscriptions()->detach();
         $real_estate->delete();
@@ -244,5 +273,37 @@ class RealEstatesController extends Controller
             }
         }
         return [];
+    }
+
+    // Metodo per il ripristino di un immobile soft-deleted
+    public function restore($id)
+    {
+        $real_estate = RealEstate::withTrashed()->findOrFail($id);
+
+        if ($real_estate->user_id !== Auth::id()) {
+            abort(403, 'Non hai il permesso di ripristinare questo immobile.');
+        }
+
+        $real_estate->restore();
+
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile ripristinato con successo.');
+    }
+
+    // Metodo per la cancellazione definitiva
+    public function forceDelete($id)
+    {
+        $real_estate = RealEstate::withTrashed()->findOrFail($id);
+
+        if ($real_estate->user_id !== Auth::id()) {
+            abort(403, 'Non hai il permesso di eliminare definitivamente questo immobile.');
+        }
+
+        if ($real_estate->portrait) {
+            Storage::disk('public')->delete($real_estate->portrait);
+        }
+
+        $real_estate->forceDelete();
+
+        return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile eliminato definitivamente.');
     }
 }
