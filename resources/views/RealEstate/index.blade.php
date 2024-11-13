@@ -17,7 +17,7 @@ if ($isSponsored) {
                 }
             @endphp
 
-            <div class="card my-4 {{ $isSponsored ? 'border-warning border-5' : '' }}">
+            <div class="card my-4 {{ $isSponsored ? 'border-wow' : '' }}">
                 <div class="card-header d-flex align-items-center bg-white position-relative">
                     <div class="d-flex flex-column flex-md-row align-items-md-center">
                         <h5 class="m-0 me-4 text-uppercase">{{ $real_estate->structure_types }}</h5>
@@ -27,7 +27,7 @@ if ($isSponsored) {
                         style="width: 20px; height: 20px;"></div>
                     </div>
                     <span
-                        class="position-absolute top-0 end-0 text-warning p-2 rounded me-2 {{ $isSponsored ? 'd-block' : 'd-none' }}">
+                        class="position-absolute top-0 end-0 text-black p-2 rounded me-2 {{ $isSponsored ? 'd-block' : 'd-none' }}">
                         Sponsorizzato</span>
                 </div>
                 <div class="card-body row d-flex">
@@ -44,8 +44,8 @@ if ($isSponsored) {
                             <!-- Mostra la data di fine sponsorizzazione, se presente -->
                             @if ($isSponsored && $endSubscription)
                                 <span class="card-text mt-2 text-muted">
-                                    La sponsorizzazione termina il
-                                    {{ \Carbon\Carbon::parse($endSubscription)->format('d-m-Y') }}
+                                    <strong>La sponsorizzazione termina il
+                                    {{ \Carbon\Carbon::parse($endSubscription)->format('d-m-Y') }}</strong>
                                 </span>
                             @endif
                         </div>
