@@ -8,10 +8,8 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                    <th>Messaggio</th>
+                    <th>Immobile</th>
+                    <th>Data</th>
                     <th>Azioni</th>
                 </tr>
             </thead>
@@ -19,10 +17,10 @@
                 @forelse ($messages as $message)
                     <tr>
                         <td>{{ $message->name }}</td>
-                        <td>{{ $message->surname }}</td>
-                        <td>{{ $message->email }}</td>
-                        <td>{{ $message->phone }}</td>
-                        <td>{{ $message->message }}</td>
+                        <td>{{ $message->realEstate->title }}</td>
+                        <td>{{ $message->created_at->toFormattedDateString('it') }}
+                            ({{ $message->created_at->format('H:i') }})
+                        </td>
                         <td>
                             <a href="{{ route('admin.messages.show', $message->id) }}" class="btn btn-primary"><i
                                     class="bi bi-eye"></i></a>
