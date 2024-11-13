@@ -13,7 +13,7 @@ class RealEstateController extends Controller
     public function index()
     {
         // Recupera tutti gli immobili con le sponsorizzazioni e i servizi associati
-        $realEstates = RealEstate::with(['subscriptions', 'services'])->get();
+        $realEstates = RealEstate::with(['subscriptions', 'services'])->orderByRaw('(SELECT COUNT(*) FROM real_estate_subscription WHERE real_estate_id = real_estates.id AND end_subscription > NOW()) DESC')->get();
 
         // Restituisce i dati in formato JSON
         return response()->json($realEstates);
