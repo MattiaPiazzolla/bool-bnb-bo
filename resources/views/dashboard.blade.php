@@ -28,7 +28,7 @@
                 <!--sezione menu-->
                 <ul class="text-white d-flex flex-column list-unstyled mt-5 gap-4">
                     <a href="{{ route('admin.RealEstates.index') }}"
-                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.RealEstates.index') ? 'side-cont-alwayson' : '' }}">
+                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.RealEstates.index', 'admin.RealEstates.show') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-substack me-2"></i>
                         <span class="text-white">I tuoi annunci</span>
                     </a>
@@ -40,13 +40,13 @@
                     </a>
 
                     <a href="{{ route('admin.subscriptions.index') }}"
-                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.subscriptions.index') ? 'side-cont-alwayson' : '' }}">
+                        class="d-flex side-cont p-2 mb-3 {{ request()->routeIs('admin.subscriptions.index', 'admin.subscriptions.show') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-badge-ad-fill me-2"></i>
                         <span class="text-white">Metti in evidenza</span>
                     </a>
 
                     <a href="{{ route('admin.messages.index') }}"
-                        class="d-flex side-cont p-2 mb-3  {{ request()->routeIs('admin.messages.index') ? 'side-cont-alwayson' : '' }}">
+                        class="d-flex side-cont p-2 mb-3  {{ request()->routeIs('admin.messages.index', 'admin.messages.show') ? 'side-cont-alwayson' : '' }}">
                         <i class="bi bi-chat-left-dots-fill me-2"></i>
                         <span class="text-white">Messaggi</span>
                     </a>

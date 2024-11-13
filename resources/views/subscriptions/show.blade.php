@@ -88,9 +88,7 @@
             margin: 5px 0;
         }
 
-        @media(min-width:996px){
-
-        }
+        @media(min-width:996px) {}
     </style>
 
     <script>
