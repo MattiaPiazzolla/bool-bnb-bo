@@ -2,6 +2,11 @@
 
 @section('main-content')
     <div class="container py-5 p-md-5">
+
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
         <a href="{{ route('admin.RealEstates.create') }}" class="btn btn-primary">Aggiungi immobile</a>
         @foreach ($real_estates as $real_estate)
             <!-- Controlla se l'immobile ha almeno una sottoscrizione attiva -->
@@ -23,8 +28,8 @@ if ($isSponsored) {
                         <h5 class="m-0 me-4 text-uppercase">{{ $real_estate->structure_types }}</h5>
                         <span class="card-text text-success me-2">L'immobile è
                             {{ $real_estate->availability == true ? 'disponibile' : 'occupato' }}</span>
-                            <div class="d-none d-md-block rounded-circle {{ $real_estate->availability ? 'bg-success' : 'bg-danger' }}"
-                        style="width: 20px; height: 20px;"></div>
+                        <div class="d-none d-md-block rounded-circle {{ $real_estate->availability ? 'bg-success' : 'bg-danger' }}"
+                            style="width: 20px; height: 20px;"></div>
                     </div>
                     <span
                         class="position-absolute top-0 end-0 text-warning p-2 rounded me-2 {{ $isSponsored ? 'd-block' : 'd-none' }}">

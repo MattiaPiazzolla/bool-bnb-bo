@@ -55,7 +55,7 @@ class BraintreeController extends Controller
                 ]);
 
                 // Reindirizza con un messaggio di successo
-                return redirect()->route('admin.subscriptions.index')->with('success', 'Pagamento completato con successo e immobile sponsorizzato!');
+                return redirect()->route('admin.RealEstates.index')->with('success', 'Pagamento completato con successo e immobile sponsorizzato!');
             } else {
                 // Se la transazione fallisce
                 return redirect()->route('admin.subscriptions.index')->with('error', 'Errore nel pagamento. Riprova.');

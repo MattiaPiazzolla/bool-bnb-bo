@@ -70,6 +70,7 @@
         </div>
 
         <div class="dash-content">
+
             <!--Sezione dedicata allo yield. Qui vedrai tutto il contenuto effettivo della dashboard-->
             @yield('main-content')
         </div>
