@@ -3,7 +3,8 @@
 @section('main-content')
     <div class="container p-3 p-md-5">
         <h1 class="mb-4">Messaggi</h1>
-        @if ('messages' > 0)
+
+        @if ($messages->isNotEmpty())
             <!-- La tabella dei messaggi -->
             <div class="d-flex flex-column">
                 @foreach ($messages as $message)
@@ -21,43 +22,44 @@
                             </span>
                         </div>
                         <div class="card-footer bg-white text-end">
-                                <a href="{{ route('admin.messages.show', $message->id) }}" class="btn btn-primary me-2">Visualizza</a>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                    data-id="{{ $message->id }}">
-                                    Elimina
-                                </button>
-                        </div>
-                    </div>   
-                @endforeach
-            </div>
-            
-
-            <!-- La modale di conferma esterna alla tabella -->
-            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="deleteModalLabel">Conferma eliminazione</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Sei sicuro di voler eliminare questo messaggio? Questa azione non può essere annullata.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                            <form id="deleteForm" action="" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Elimina</button>
-                            </form>
+                            <a href="{{ route('admin.messages.show', $message->id) }}"
+                                class="btn btn-primary me-2">Visualizza</a>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#deleteModal" data-id="{{ $message->id }}">
+                                Elimina
+                            </button>
                         </div>
                     </div>
-                </div>
-            @else
+                @endforeach
+            </div>
+        @else
+            <!-- Fallback quando non ci sono messaggi -->
             <div>
                 <span class="text-secondary">Non ci sono ancora messaggi qui..</span>
             </div>
-            @endif
+        @endif
+
+        <!-- La modale di conferma esterna alla tabella -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel">Conferma eliminazione</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Sei sicuro di voler eliminare questo messaggio? Questa azione non può essere annullata.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                        <form id="deleteForm" action="" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Script per gestire l'aggiornamento del form con l'ID del messaggio -->

@@ -14,7 +14,7 @@ class ViewsController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
