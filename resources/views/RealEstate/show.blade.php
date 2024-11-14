@@ -28,7 +28,10 @@
                             style="width: 20px; height: 20px;">
                         </div>
                     </div>
-                    <span class="text-uppercase">{{ $real_estate->structure_types }}</span>
+                    @if ($endSubscription)
+                    <h5 class="text-success mb-2">Immobile sponsorizzato!</h5>
+                    @endif
+                    <span class="text-uppercase mb-3">{{ $real_estate->structure_types }}</span>
                     <p class="mt-1">{{ $real_estate->description }}</p>
                 </div>
                 <div class="col-sm-12 col-lg-5 img-head d-flex p-3">
