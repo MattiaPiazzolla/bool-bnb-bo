@@ -47,7 +47,7 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="price">Prezzo</label>
-                                <input type="text" id="price" name="price" class="form-control"
+                                <input type="number" min="0" id="price" name="price" class="form-control"
                                     value="{{ old('price', $real_estate->price) }}" required>
                                 <div id="price-error" class="text-danger" style="display: none;">
                                     Il prezzo deve essere un numero positivo.
@@ -115,8 +115,8 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
-                                <input type="text" id="rooms" name="rooms" class="form-control"
-                                    value="{{ old('rooms', $real_estate->rooms) }}" required>
+                                <input type="number" min="1" max="10" id="rooms" name="rooms"
+                                    class="form-control" value="{{ old('rooms', $real_estate->rooms) }}" required>
                                 <div id="rooms-error" class="text-danger" style="display: none;">
                                     Il numero di stanze deve essere un numero positivo.
                                 </div>
@@ -126,8 +126,8 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
-                                <input type="text" id="bathrooms" name="bathrooms" class="form-control"
-                                    value="{{ old('bathrooms', $real_estate->bathrooms) }}" required>
+                                <input type="number" id="bathrooms" min="1" max="10" name="bathrooms"
+                                    class="form-control" value="{{ old('bathrooms', $real_estate->bathrooms) }}" required>
                                 <div id="bathrooms-error" class="text-danger" style="display: none;">
                                     Il numero di bagni deve essere un numero positivo.
                                 </div>
@@ -137,8 +137,8 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
-                                <input type="text" id="beds" name="beds" class="form-control"
-                                    value="{{ old('beds', $real_estate->beds) }}" required>
+                                <input type="number" min="1" max="10" id="beds" name="beds"
+                                    class="form-control" value="{{ old('beds', $real_estate->beds) }}" required>
                                 <div id="beds-error" class="text-danger" style="display: none;">
                                     Il numero di letti deve essere un numero positivo.
                                 </div>
@@ -148,7 +148,8 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="square_meter">Superficie in m²</label>
-                                <input type="text" id="square_meter" name="square_meter" class="form-control"
+                                <input type="number" min="20" max="1000" id="square_meter"
+                                    name="square_meter" class="form-control"
                                     value="{{ old('square_meter', $real_estate->square_meter) }}" required>
                                 <div id="square_meter-error" class="text-danger" style="display: none;">
                                     La superficie deve essere un numero positivo.
