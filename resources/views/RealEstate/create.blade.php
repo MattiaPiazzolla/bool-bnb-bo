@@ -36,8 +36,8 @@
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="price">Prezzo</label>
-                                <input type="text" id="price" name="price" class="form-control"
-                                    value="{{ old('price') }}" required>
+                                <input type="number" id="price" name="price" class="form-control"
+                                    value="{{ old('price') }}" min="0" required>
                                 <div id="price-error" class="text-danger" style="display: none;">Il prezzo deve contenere
                                     solo numeri positivi.</div>
                             </div>
@@ -80,8 +80,8 @@
                             <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                                 <div class="form-group">
                                     <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
-                                    <input type="text" id="rooms" name="rooms" class="form-control"
-                                        value="{{ old('rooms') }}" required>
+                                    <input type="number" id="rooms" name="rooms" class="form-control"
+                                        value="{{ old('rooms') }}" required min="0" max="10">
                                     <div id="rooms-error" class="text-danger" style="display: none;">Inserisci un numero
                                         valido per le stanze.</div>
                                 </div>
@@ -90,8 +90,8 @@
                             <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                                 <div class="form-group">
                                     <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
-                                    <input type="text" id="bathrooms" name="bathrooms" class="form-control"
-                                        value="{{ old('bathrooms') }}" required>
+                                    <input type="number" min="1" default max="10" id="bathrooms"
+                                        name="bathrooms" class="form-control" value="{{ old('bathrooms', 1) }}" required>
                                     <div id="bathrooms-error" class="text-danger" style="display: none;">Inserisci un numero
                                         valido per i bagni.</div>
                                 </div>
@@ -100,8 +100,8 @@
                             <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                                 <div class="form-group">
                                     <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
-                                    <input type="text" id="beds" name="beds" class="form-control"
-                                        value="{{ old('beds') }}" required>
+                                    <input type="number" min="1" max="10" id="beds" name="beds"
+                                        class="form-control" value="{{ old('beds', 1) }}" required>
                                     <div id="beds-error" class="text-danger" style="display: none;">Inserisci un numero
                                         valido per i letti.</div>
                                 </div>
@@ -110,8 +110,9 @@
                             <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                                 <div class="form-group">
                                     <label class="my-2 fw-bold" for="square_meter">Superficie in m²</label>
-                                    <input type="text" id="square_meter" name="square_meter" class="form-control"
-                                        value="{{ old('square_meter') }}" required>
+                                    <input type="number" min="20" max="1000" id="square_meter"
+                                        name="square_meter" class="form-control" value="{{ old('square_meter', 20) }}"
+                                        required>
                                     <div id="square_meter-error" class="text-danger" style="display: none;">Inserisci un
                                         numero valido per la superficie.</div>
                                 </div>
