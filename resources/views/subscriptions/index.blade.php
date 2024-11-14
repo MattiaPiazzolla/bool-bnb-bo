@@ -2,18 +2,18 @@
 
 @section('main-content')
     <div class="container p-3 p-md-5">
-        <h1 class="py-3">Seleziona la sponsorizzazione che fa per te</h1>
+        <h1 class="mb-2">Seleziona la sponsorizzazione che fa per te</h1>
 
         {{-- Sezione di promozione generale --}}
-        <div class="py-md-5">
-            <h4 class="">Fai brillare il tuo immobile!</h4>
+        <div class="">
+            <h4 class="mb-2">Fai brillare il tuo immobile!</h4>
             <p>Le nostre sponsorizzazioni aumentano la visibilità del tuo immobile, facendolo emergere tra le offerte.</p>
             <p>Scegli un pacchetto che si adatta alle tue esigenze e fai crescere i contatti in modo rapido ed efficace!</p>
         </div>
 
         <div class="row g-5">
             @foreach ($subscriptions as $subscription)
-                <div class="col-md-4 mb-md-3">
+                <div class="col-md-6 col-xl-4 mb-md-3">
                     <div class="card">
                         <div class="card-body d-flex flex-column justify-content-between">
                             <h4 class="card-title text-center mt-3 fw-bold">{{ $subscription->name }}</h4>

@@ -2,7 +2,7 @@
 
 @section('main-content')
     <div class="container p-md-5">
-        <h1 class="text-center mb-4">Sponsorizza un immobile</h1>
+        <h1 class="text-center mb-5">Sponsorizza un immobile</h1>
 
         <form action="{{ route('admin.subscriptions.braintree') }}" method="POST" id="payment-form">
             @csrf
@@ -13,7 +13,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <label for="real_estate_id">Seleziona l'immobile che desideri sponsorizzare</label>
+                        <label for="real_estate_id" class="mb-3">Seleziona l'immobile che desideri sponsorizzare</label>
                         <select name="real_estate_id" id="real_estate_id" class="form-control" required>
                             <option value="">-- Seleziona un immobile --</option>
                             @foreach ($realEstates as $realEstate)
