@@ -7,7 +7,7 @@
             <!-- La tabella dei messaggi -->
             <div class="d-flex flex-column">
                 @foreach ($messages as $message)
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-header bg-white">
                             <span>Da: {{ $message->name }} {{ $message->surname }}</span>
                         </div>
