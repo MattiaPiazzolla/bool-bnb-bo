@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use App\Http\Requests\StoreRealEstateRequest;
 use App\Http\Requests\UpdateRealEstateRequest;
 
+
 class RealEstatesController extends Controller
 {
     /**
@@ -123,33 +124,26 @@ class RealEstatesController extends Controller
 
     /**
      * Display the specified resource.
-     */
-    public function show($id)
-    {
-        // Recupera l'immobile con i servizi e le sottoscrizioni (con la data di fine)
-        $real_estate = RealEstate::with(['subscriptions' => function ($query) {
-            // Include la colonna 'end_subscription' dalla tabella pivot
-            $query->withPivot('end_subscription');
-        }])->findOrFail($id);
+     */public function show($id)
+{
+    // Recupera l'immobile con le sottoscrizioni, servizi e messaggi
+    $real_estate = RealEstate::with(['subscriptions' => function ($query) {
+        $query->withPivot('end_subscription');
+    }, 'views', 'messages'])->findOrFail($id);
 
-        // Controllo permessi
-        if ($real_estate->user_id !== Auth::id()) {
-            abort(403, 'Non hai il permesso di visualizzare questo immobile.');
-        }
-
-        // Estrai la data di fine sponsorizzazione dalla prima sottoscrizione attiva
-        $endSubscription = null;
-        if ($real_estate->subscriptions->isNotEmpty()) {
-            $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
-        }
-
-        // Recupera latitudine e longitudine
-        $latitude = $real_estate->latitude;
-        $longitude = $real_estate->longitude;
-
-        // Passa l'immobile, la latitudine, longitudine e la data di fine della sponsorizzazione alla vista
-        return view('RealEstate.show', compact('real_estate', 'endSubscription', 'latitude', 'longitude'));
+    // Controllo permessi
+    if ($real_estate->user_id !== Auth::id()) {
+        abort(403, 'Non hai il permesso di visualizzare questo immobile.');
     }
+
+    // Estrai la data di fine sponsorizzazione dalla prima sottoscrizione attiva
+    $endSubscription = null;
+    if ($real_estate->subscriptions->isNotEmpty()) {
+        $endSubscription = $real_estate->subscriptions->first()->pivot->end_subscription;
+    }
+
+    return view('RealEstate.show', compact('real_estate', 'endSubscription'));
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -306,4 +300,14 @@ class RealEstatesController extends Controller
 
         return redirect()->route('admin.RealEstates.index')->with('success', 'Immobile eliminato definitivamente.');
     }
+    public function recordView($id)
+{
+    $real_estate = RealEstate::findOrFail($id);
+
+    // Aggiungi una visualizzazione per l'immobile
+    $view = new View();
+    $view->real_estate_id = $real_estate->id;
+    $view->ip_address = request()->ip(); // Ottieni l'IP dell'utente
+    $view->save();
+}
 }

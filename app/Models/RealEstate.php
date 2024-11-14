@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Subscription; // Aggiungi l'importazione per Subscription
-use App\Models\Services; // Se usi il modello per i servizi
+use App\Models\Subscription; 
+use App\Models\Services; 
+use App\Models\View;
 
 class RealEstate extends Model
 {
@@ -50,5 +51,15 @@ class RealEstate extends Model
         return $this->belongsToMany(Subscription::class, 'real_estate_subscription')
             ->withPivot('end_subscription')  // Per includere la colonna 'end_subscription' nella tabella ponte
             ->withTimestamps();  // Per tracciare i timestamp di creazione e aggiornamento
+    }
+
+    public function messages()
+{
+    return $this->hasMany(Message::class, 'real_estate_id');
+}
+
+    public function views()
+    {
+        return $this->hasMany(View::class, 'real_estate_id');
     }
 }
