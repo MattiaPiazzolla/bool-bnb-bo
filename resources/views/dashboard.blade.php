@@ -51,11 +51,6 @@
                         <span class="text-white">Messaggi</span>
                     </a>
 
-                    <a href="#" class="d-flex side-cont p-2 mb-3">
-                        <i class="bi bi-bar-chart-fill me-2"></i>
-                        <span class="text-white">Statistiche</span>
-                    </a>
-
                 </ul>
             </div>
 
