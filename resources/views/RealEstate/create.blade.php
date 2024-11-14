@@ -24,27 +24,34 @@
                     class="bg-light">
                     @csrf
                     <div class="row p-3">
+                        <div class="col-12 mb-3">
+                            <div class="alert alert-warning" role="alert">
+                                I campi contrassegnati con * sono obbligatori
+                            </div>
+                        </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
-                                <label class="my-2 fw-bold" for="title">Titolo</label>
+                                <label class="my-2 fw-bold" for="title">Titolo *</label>
                                 <input type="text" id="title" name="title" class="form-control"
                                     value="{{ old('title') }}" required>
-                                <div id="title-error" class="text-danger" style="display: none;">Il titolo deve contenere
-                                    almeno 3 caratteri.</div>
+                                    <div id="title-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il titolo deve essere lungo almeno 3 caratteri.
+                                    </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
-                                <label class="my-2 fw-bold" for="price">Prezzo</label>
+                                <label class="my-2 fw-bold" for="price">Prezzo *</label>
                                 <input type="number" id="price" name="price" class="form-control"
                                     value="{{ old('price') }}" min="0" required>
-                                <div id="price-error" class="text-danger" style="display: none;">Il prezzo deve contenere
-                                    solo numeri positivi.</div>
+                                    <div id="price-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il prezzo deve essere un numero positivo.
+                                    </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                             <div class="form-group">
-                                <label class="my-2 fw-bold" for="availability">Disponibilità</label>
+                                <label class="my-2 fw-bold" for="availability">Disponibilità *</label>
                                 <select name="availability" class="form-control" required>
                                     <option value="1" {{ old('availability', 1) == 1 ? 'selected' : '' }}>Disponibile
                                     </option>
@@ -60,7 +67,7 @@
                         <div class="row p-3">
                             <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
                                 <div class="form-group">
-                                    <label class="my-2 fw-bold" for="structure_types">Tipologia Struttura</label>
+                                    <label class="my-2 fw-bold" for="structure_types">Tipologia Struttura *</label>
                                     <select name="structure_types" class="form-control" required>
                                         <option value="" disabled {{ old('structure_types') ? '' : 'selected' }}>
                                             Seleziona
@@ -82,8 +89,9 @@
                                     <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
                                     <input type="number" id="rooms" name="rooms" class="form-control"
                                         value="{{ old('rooms') }}" required min="0" max="10">
-                                    <div id="rooms-error" class="text-danger" style="display: none;">Inserisci un numero
-                                        valido per le stanze.</div>
+                                        <div id="rooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il numero deve essere valido.
+                                    </div>
                                 </div>
                             </div>
 
@@ -92,8 +100,9 @@
                                     <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
                                     <input type="number" min="1" default max="10" id="bathrooms"
                                         name="bathrooms" class="form-control" value="{{ old('bathrooms', 1) }}" required>
-                                    <div id="bathrooms-error" class="text-danger" style="display: none;">Inserisci un numero
-                                        valido per i bagni.</div>
+                                        <div id="bathrooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il numero deve essere valido.
+                                    </div>
                                 </div>
                             </div>
 
@@ -102,8 +111,9 @@
                                     <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
                                     <input type="number" min="1" max="10" id="beds" name="beds"
                                         class="form-control" value="{{ old('beds', 1) }}" required>
-                                    <div id="beds-error" class="text-danger" style="display: none;">Inserisci un numero
-                                        valido per i letti.</div>
+                                        <div id="beds-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il numero deve essere valido.
+                                    </div>
                                 </div>
                             </div>
 
@@ -113,8 +123,9 @@
                                     <input type="number" min="20" max="1000" id="square_meter"
                                         name="square_meter" class="form-control" value="{{ old('square_meter', 20) }}"
                                         required>
-                                    <div id="square_meter-error" class="text-danger" style="display: none;">Inserisci un
-                                        numero valido per la superficie.</div>
+                                    <div id="square_meter-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Il numero deve essere valido.
+                                    </div>
                                 </div>
                             </div>
 
@@ -141,7 +152,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="my-2 fw-bold" for="services">Servizi</label>
+                                <label class="my-2 fw-bold" for="services">Servizi *</label>
                                 <div class="row">
                                     @foreach ($services as $service)
                                         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -156,8 +167,9 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    <div id="services-error" class="text-danger" style="display: none;">Seleziona almeno
-                                        un servizio.</div>
+                                    <div id="services-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                        Seleziona almeno un servizio.
+                                    </div>
                                 </div>
                             </div>
 
