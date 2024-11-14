@@ -21,8 +21,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Rotta per ottenere tutti gli immobili
 Route::get('real-estates', [RealEstateController::class, 'index']);
+
+// Rotta per ottenere i dettagli di un immobile specifico
 Route::get('real-estates/{id}', [RealEstateController::class, 'show']);
+
+// Rotta per ottenere la lista dei servizi
 Route::get('/services', [ServiceController::class, 'index']);
 
+// Rotta per inviare un messaggio
 Route::post('/messages', [MessageController::class, 'store']);
+
+// Rotta per registrare una visualizzazione di un immobile
+Route::post('real-estates/{id}/view', [RealEstateController::class, 'storeView']);

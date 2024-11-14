@@ -86,7 +86,7 @@
                             soltanto il numero di visite e di messaggi ricevuti per questo immobile</p>
                     </div>
                     <div class="d-flex flex-column gap-2">
-                        <span class="text-black">Numero di visite: <span>0</span></span>
+                        <span class="text-black">Numero di visite: <span>{{ $real_estate->views->count() }}</span></span>
                         <span class="text-black">Numero di messaggi ricevuti:
                             <span>{{ $real_estate->messages->count() }}</span></span>
                         <span class="text-black">Sponsorizzazione attivate:<span>

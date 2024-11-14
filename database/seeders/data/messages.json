@@ -1,0 +1,1563 @@
+[
+    {
+        "name": "Giovanni",
+        "surname": "Rossi",
+        "email": "giovanni.rossi@example.com",
+        "phone": "1234567890",
+        "message": "Mi piacerebbe avere più informazioni su questo immobile. È disponibile per una visita?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-01T12:30:00",
+        "updated_at": "2024-01-01T12:30:00"
+    },
+    {
+        "name": "Maria",
+        "surname": "Bianchi",
+        "email": "maria.bianchi@example.com",
+        "phone": "0987654321",
+        "message": "Vorrei sapere se l'immobile è dotato di riscaldamento autonomo.",
+        "real_estate_id": 1,
+        "created_at": "2024-01-02T18:15:00",
+        "updated_at": "2024-01-02T18:15:00"
+    },
+    {
+        "name": "Luca",
+        "surname": "Verdi",
+        "email": "luca.verdi@example.com",
+        "phone": "1122334455",
+        "message": "Posso vedere l'immobile la prossima settimana?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-05T09:30:00",
+        "updated_at": "2024-01-05T09:30:00"
+    },
+    {
+        "name": "Elena",
+        "surname": "Neri",
+        "email": "elena.neri@example.com",
+        "phone": "5566778899",
+        "message": "Qual è la superficie dell'immobile? Mi interessa molto.",
+        "real_estate_id": 2,
+        "created_at": "2024-01-07T11:45:00",
+        "updated_at": "2024-01-07T11:45:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Galli",
+        "email": "marco.galli@example.com",
+        "phone": "6677889900",
+        "message": "L'immobile è arredato o vuoto?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-10T16:00:00",
+        "updated_at": "2024-01-10T16:00:00"
+    },
+    {
+        "name": "Sara",
+        "surname": "Russo",
+        "email": "sara.russo@example.com",
+        "phone": "2233445566",
+        "message": "Vorrei sapere se ci sono negozi nelle vicinanze.",
+        "real_estate_id": 3,
+        "created_at": "2024-01-12T14:45:00",
+        "updated_at": "2024-01-12T14:45:00"
+    },
+    {
+        "name": "Antonio",
+        "surname": "Moretti",
+        "email": "antonio.moretti@example.com",
+        "phone": "3344556677",
+        "message": "Posso avere più dettagli sul piano dell'immobile?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-13T09:10:00",
+        "updated_at": "2024-01-13T09:10:00"
+    },
+    {
+        "name": "Laura",
+        "surname": "Santi",
+        "email": "laura.santi@example.com",
+        "phone": "4455667788",
+        "message": "C'è un garage incluso con l'immobile?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-15T15:50:00",
+        "updated_at": "2024-01-15T15:50:00"
+    },
+    {
+        "name": "Paolo",
+        "surname": "De Luca",
+        "email": "paolo.deluca@example.com",
+        "phone": "5566778899",
+        "message": "Mi interesserebbe acquistare questa proprietà, è disponibile per un incontro?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-18T13:30:00",
+        "updated_at": "2024-01-18T13:30:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Lombardi",
+        "email": "francesca.lombardi@example.com",
+        "phone": "6677889900",
+        "message": "Mi potreste dare informazioni sulla spesa condominiale dell'immobile?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-20T17:00:00",
+        "updated_at": "2024-01-20T17:00:00"
+    },
+    {
+        "name": "Giuseppe",
+        "surname": "Cavalli",
+        "email": "giuseppe.cavalli@example.com",
+        "phone": "7788990011",
+        "message": "L'immobile è ancora disponibile? Ho bisogno di ulteriori dettagli.",
+        "real_estate_id": 5,
+        "created_at": "2024-02-01T08:20:00",
+        "updated_at": "2024-02-01T08:20:00"
+    },
+    {
+        "name": "Simona",
+        "surname": "Ferrari",
+        "email": "simona.ferrari@example.com",
+        "phone": "8899001122",
+        "message": "Vorrei visitare l'immobile questo weekend, è possibile?",
+        "real_estate_id": 5,
+        "created_at": "2024-02-02T10:35:00",
+        "updated_at": "2024-02-02T10:35:00"
+    },
+    {
+        "name": "Carlo",
+        "surname": "Giordano",
+        "email": "carlo.giordano@example.com",
+        "phone": "9900112233",
+        "message": "C'è un giardino privato nell'immobile?",
+        "real_estate_id": 5,
+        "created_at": "2024-02-05T14:00:00",
+        "updated_at": "2024-02-05T14:00:00"
+    },
+    {
+        "name": "Alessandro",
+        "surname": "Martini",
+        "email": "alessandro.martini@example.com",
+        "phone": "1011121314",
+        "message": "Quanto è grande l'immobile? Ho bisogno di maggiori informazioni.",
+        "real_estate_id": 1,
+        "created_at": "2024-02-08T11:20:00",
+        "updated_at": "2024-02-08T11:20:00"
+    },
+    {
+        "name": "Monica",
+        "surname": "Corsi",
+        "email": "monica.corsi@example.com",
+        "phone": "1213141516",
+        "message": "L'immobile è disponibile per un affitto a lungo termine?",
+        "real_estate_id": 2,
+        "created_at": "2024-02-10T09:05:00",
+        "updated_at": "2024-02-10T09:05:00"
+    },
+    {
+        "name": "Roberto",
+        "surname": "Scolari",
+        "email": "roberto.scolari@example.com",
+        "phone": "1314151617",
+        "message": "Vorrei ricevere un preventivo per l'immobile. È ancora in vendita?",
+        "real_estate_id": 2,
+        "created_at": "2024-02-12T12:40:00",
+        "updated_at": "2024-02-12T12:40:00"
+    },
+    {
+        "name": "Valentina",
+        "surname": "Gatti",
+        "email": "valentina.gatti@example.com",
+        "phone": "1416171819",
+        "message": "Quali sono le condizioni di pagamento per l'immobile?",
+        "real_estate_id": 3,
+        "created_at": "2024-02-15T14:50:00",
+        "updated_at": "2024-02-15T14:50:00"
+    },
+    {
+        "name": "Giulio",
+        "surname": "Sallustio",
+        "email": "giulio.sallustio@example.com",
+        "phone": "1517181920",
+        "message": "Posso sapere se l'immobile è ristrutturato recentemente?",
+        "real_estate_id": 3,
+        "created_at": "2024-02-18T16:25:00",
+        "updated_at": "2024-02-18T16:25:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Tosti",
+        "email": "giovanni.tosti@example.com",
+        "phone": "1618192021",
+        "message": "Mi sembra interessante, ci sono delle scuole nei dintorni?",
+        "real_estate_id": 4,
+        "created_at": "2024-02-21T13:10:00",
+        "updated_at": "2024-02-21T13:10:00"
+    },
+    {
+        "name": "Elisa",
+        "surname": "Di Marco",
+        "email": "elisa.dimarco@example.com",
+        "phone": "1719202122",
+        "message": "Mi potete dire se ci sono impianti di aria condizionata?",
+        "real_estate_id": 5,
+        "created_at": "2024-02-23T09:15:00",
+        "updated_at": "2024-02-23T09:15:00"
+    },
+    {
+        "name": "Alessio",
+        "surname": "Ferrero",
+        "email": "alessio.ferrero@example.com",
+        "phone": "1819212223",
+        "message": "Quando posso programmare una visita all'immobile?",
+        "real_estate_id": 5,
+        "created_at": "2024-02-25T10:30:00",
+        "updated_at": "2024-02-25T10:30:00"
+    },
+    {
+        "name": "Giuseppe",
+        "surname": "Cavalli",
+        "email": "giuseppe.cavalli@example.com",
+        "phone": "1921222324",
+        "message": "L'immobile è ancora disponibile? Ho bisogno di ulteriori dettagli.",
+        "real_estate_id": 5,
+        "created_at": "2024-02-28T15:45:00",
+        "updated_at": "2024-02-28T15:45:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Lombardi",
+        "email": "francesca.lombardi@example.com",
+        "phone": "2022232425",
+        "message": "Mi potreste dare informazioni sulla spesa condominiale dell'immobile?",
+        "real_estate_id": 5,
+        "created_at": "2024-03-02T12:00:00",
+        "updated_at": "2024-03-02T12:00:00"
+    },
+    {
+        "name": "Paolo",
+        "surname": "De Luca",
+        "email": "paolo.deluca@example.com",
+        "phone": "2123242526",
+        "message": "Mi interesserebbe acquistare questa proprietà,è disponibile per un incontro?",
+        "real_estate_id": 4,
+        "created_at": "2024-03-05T18:30:00",
+        "updated_at": "2024-03-05T18:30:00"
+    },
+    {
+        "name": "Roberto",
+        "surname": "Scolari",
+        "email": "roberto.scolari@example.com",
+        "phone": "2324252627",
+        "message": "Vorrei ricevere un preventivo per l'immobile. È ancora in vendita?",
+        "real_estate_id": 2,
+        "created_at": "2024-03-08T09:45:00",
+        "updated_at": "2024-03-08T09:45:00"
+    },{
+        "name": "Marco",
+        "surname": "Rossi",
+        "email": "marco.rossi@example.com",
+        "phone": "1234567890",
+        "message": "Posso sapere se l'immobile è dotato di una piscina?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-03T10:10:00",
+        "updated_at": "2024-01-03T10:10:00"
+    },
+    {
+        "name": "Giulia",
+        "surname": "Bianchi",
+        "email": "giulia.bianchi@example.com",
+        "phone": "2233445566",
+        "message": "L'appartamento ha una cucina separata?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-04T11:45:00",
+        "updated_at": "2024-01-04T11:45:00"
+    },
+    {
+        "name": "Federico",
+        "surname": "Verdi",
+        "email": "federico.verdi@example.com",
+        "phone": "3344556677",
+        "message": "C'è la possibilità di acquistare l'immobile arredato?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-05T15:00:00",
+        "updated_at": "2024-01-05T15:00:00"
+    },
+    {
+        "name": "Roberta",
+        "surname": "Neri",
+        "email": "roberta.neri@example.com",
+        "phone": "4455667788",
+        "message": "Quanti piani ha l'immobile? È presente un ascensore?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-06T17:30:00",
+        "updated_at": "2024-01-06T17:30:00"
+    },
+    {
+        "name": "Alessandro",
+        "surname": "Galli",
+        "email": "alessandro.galli@example.com",
+        "phone": "5566778899",
+        "message": "Ci sono ristrutturazioni previste in questo immobile?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-08T12:10:00",
+        "updated_at": "2024-01-08T12:10:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Russo",
+        "email": "lucia.russo@example.com",
+        "phone": "6677889900",
+        "message": "C'è un garage disponibile? Quali sono le condizioni?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-09T14:20:00",
+        "updated_at": "2024-01-09T14:20:00"
+    },
+    {
+        "name": "Gianluca",
+        "surname": "Moretti",
+        "email": "gianluca.moretti@example.com",
+        "phone": "7788990011",
+        "message": "L'immobile è dotato di impianto di riscaldamento centralizzato?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-10T10:30:00",
+        "updated_at": "2024-01-10T10:30:00"
+    },
+    {
+        "name": "Simone",
+        "surname": "Santi",
+        "email": "simone.santi@example.com",
+        "phone": "8899001122",
+        "message": "È previsto un aumento delle spese condominiali nel prossimo anno?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-11T13:40:00",
+        "updated_at": "2024-01-11T13:40:00"
+    },
+    {
+        "name": "Claudia",
+        "surname": "De Luca",
+        "email": "claudia.deluca@example.com",
+        "phone": "9900112233",
+        "message": "Ci sono negozi o supermercati nelle vicinanze?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-13T09:15:00",
+        "updated_at": "2024-01-13T09:15:00"
+    },
+    {
+        "name": "Giuseppe",
+        "surname": "Lombardi",
+        "email": "giuseppe.lombardi@example.com",
+        "phone": "1011121314",
+        "message": "Qual è la superficie totale dell'immobile?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-14T10:25:00",
+        "updated_at": "2024-01-14T10:25:00"
+    },
+    {
+        "name": "Lorenzo",
+        "surname": "Cavalli",
+        "email": "lorenzo.cavalli@example.com",
+        "phone": "1112131415",
+        "message": "L'immobile ha una vista panoramica?",
+        "real_estate_id": 5,
+        "created_at": "2024-01-15T14:00:00",
+        "updated_at": "2024-01-15T14:00:00"
+    },
+    {
+        "name": "Sara",
+        "surname": "Ferrari",
+        "email": "sara.ferrari@example.com",
+        "phone": "1213141516",
+        "message": "Mi piacerebbe visitare l'immobile. È disponibile sabato?",
+        "real_estate_id": 5,
+        "created_at": "2024-01-16T16:20:00",
+        "updated_at": "2024-01-16T16:20:00"
+    },
+    {
+        "name": "Alessio",
+        "surname": "Giordano",
+        "email": "alessio.giordano@example.com",
+        "phone": "1314151617",
+        "message": "L'immobile è situato in una zona tranquilla?",
+        "real_estate_id": 5,
+        "created_at": "2024-01-17T17:35:00",
+        "updated_at": "2024-01-17T17:35:00"
+    },
+    {
+        "name": "Valentina",
+        "surname": "Martini",
+        "email": "valentina.martini@example.com",
+        "phone": "1416171819",
+        "message": "Posso avere informazioni sul sistema di sicurezza dell'immobile?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-18T13:45:00",
+        "updated_at": "2024-01-18T13:45:00"
+    },
+    {
+        "name": "Carlo",
+        "surname": "Corsi",
+        "email": "carlo.corsi@example.com",
+        "phone": "1516171819",
+        "message": "È possibile negoziare il prezzo di vendita dell'immobile?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-19T11:30:00",
+        "updated_at": "2024-01-19T11:30:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Scolari",
+        "email": "francesca.scolari@example.com",
+        "phone": "1617181920",
+        "message": "L'immobile è dotato di un balcone?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-21T10:50:00",
+        "updated_at": "2024-01-21T10:50:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Sallustio",
+        "email": "giovanni.sallustio@example.com",
+        "phone": "1718192021",
+        "message": "C'è la possibilità di avere un posto auto privato?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-23T12:05:00",
+        "updated_at": "2024-01-23T12:05:00"
+    },
+    {
+        "name": "Alessandra",
+        "surname": "Tosti",
+        "email": "alessandra.tosti@example.com",
+        "phone": "1819202122",
+        "message": "Mi servirebbero delle informazioni sulla zona circostante.",
+        "real_estate_id": 3,
+        "created_at": "2024-01-24T14:30:00",
+        "updated_at": "2024-01-24T14:30:00"
+    },
+    {
+        "name": "Claudio",
+        "surname": "Di Marco",
+        "email": "claudio.dimarco@example.com",
+        "phone": "1920212223",
+        "message": "Quante stanze ha l'immobile?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-25T10:20:00",
+        "updated_at": "2024-01-25T10:20:00"
+    },
+    {
+        "name": "Ilaria",
+        "surname": "Mancini",
+        "email": "ilaria.mancini@example.com",
+        "phone": "2021222324",
+        "message": "L'immobile è adatto per una famiglia con bambini?",
+        "real_estate_id": 4,
+        "created_at": "2024-01-26T11:50:00",
+        "updated_at": "2024-01-26T11:50:00"
+    },
+    {
+        "name": "Laura",
+        "surname": "Gambino",
+        "email": "laura.gambino@example.com",
+        "phone": "2122232425",
+        "message": "Ci sono lavori di ristrutturazione già fatti o previsti?",
+        "real_estate_id": 5,
+        "created_at": "2024-01-27T15:40:00",
+        "updated_at": "2024-01-27T15:40:00"
+    },
+    {
+        "name": "Andrea",
+        "surname": "Fabbri",
+        "email": "andrea.fabbri@example.com",
+        "phone": "2223242526",
+        "message": "L'immobile ha un giardino privato?",
+        "real_estate_id": 5,
+        "created_at": "2024-01-28T09:10:00",
+        "updated_at": "2024-01-28T09:10:00"
+    },
+    {
+        "name": "Simona",
+        "surname": "Grandi",
+        "email": "simona.grandi@example.com",
+        "phone": "2324252627",
+        "message": "C'è un supermercato nelle vicinanze?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-29T13:25:00",
+        "updated_at": "2024-01-29T13:25:00"
+    },
+    {
+        "name": "Matteo",
+        "surname": "Della Torre",
+        "email": "matteo.dellatorre@example.com",
+        "phone": "2425262728",
+        "message": "Quando posso fare una visita all'immobile?",
+        "real_estate_id": 2,
+        "created_at": "2024-01-30T14:35:00",
+        "updated_at": "2024-01-30T14:35:00"
+    },
+    {
+        "name": "Giorgia",
+        "surname": "Bianchi",
+        "email": "giorgia.bianchi@example.com",
+        "phone": "2526272829",
+        "message": "Posso avere maggiori informazioni sul piano dell'immobile?",
+        "real_estate_id": 3,
+        "created_at": "2024-01-31T11:15:00",
+        "updated_at": "2024-01-31T11:15:00"
+    },    
+    {
+        "name": "Giuseppe",
+        "surname": "Cavalli",
+        "email": "giuseppe.cavalli@example.com",
+        "phone": "2627282930",
+        "message": "L'immobile ha un giardino privato?",
+        "real_estate_id": 4,
+        "created_at": "2024-02-01T10:45:00",
+        "updated_at": "2024-02-01T10:45:00"
+    },
+
+    {
+        "name": "Giuseppe",
+        "surname": "Rossi",
+        "email": "giuseppe.rossi@example.com",
+        "phone": "3451234567",
+        "message": "Buongiorno, sono interessato all'immobile e vorrei maggiori informazioni.",
+        "real_estate_id": 5,
+        "created_at": "2024-01-05T14:30:00",
+        "updated_at": "2024-01-05T14:30:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Bianchi",
+        "email": "lucia.bianchi@example.com",
+        "phone": "3348765432",
+        "message": "Vorrei sapere se l'immobile è ancora disponibile.",
+        "real_estate_id": 6,
+        "created_at": "2024-02-12T11:00:00",
+        "updated_at": "2024-02-12T11:00:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Verdi",
+        "email": "marco.verdi@example.com",
+        "phone": "3336543210",
+        "message": "Salve, desidero informazioni sul prezzo di affitto dell'immobile.",
+        "real_estate_id": 7,
+        "created_at": "2024-03-22T09:15:00",
+        "updated_at": "2024-03-22T09:15:00"
+    },
+    {
+        "name": "Alessandra",
+        "surname": "Galli",
+        "email": "alessandra.galli@example.com",
+        "phone": "3459876543",
+        "message": "L'immobile mi sembra interessante, potete inviarmi il piano delle stanze?",
+        "real_estate_id": 8,
+        "created_at": "2024-04-10T15:30:00",
+        "updated_at": "2024-04-10T15:30:00"
+    },
+    {
+        "name": "Francesco",
+        "surname": "Migliori",
+        "email": "francesco.migliori@example.com",
+        "phone": "3421112233",
+        "message": "C'è la possibilità di avere una visita dell'immobile?",
+        "real_estate_id": 9,
+        "created_at": "2024-05-05T13:45:00",
+        "updated_at": "2024-05-05T13:45:00"
+    },
+    {
+        "name": "Elena",
+        "surname": "Russo",
+        "email": "elena.russo@example.com",
+        "phone": "3385566778",
+        "message": "Sto cercando un immobile in affitto, questo potrebbe essere perfetto per le mie esigenze.",
+        "real_estate_id": 10,
+        "created_at": "2024-06-14T10:20:00",
+        "updated_at": "2024-06-14T10:20:00"
+    },
+    {
+        "name": "Antonio",
+        "surname": "Lombardi",
+        "email": "antonio.lombardi@example.com",
+        "phone": "3202233445",
+        "message": "Salve, vorrei sapere se l'immobile è ancora disponibile per affitto.",
+        "real_estate_id": 5,
+        "created_at": "2024-07-05T08:30:00",
+        "updated_at": "2024-07-05T08:30:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "De Luca",
+        "email": "francesca.deluca@example.com",
+        "phone": "3245554433",
+        "message": "Ho visto l'immobile online e sono interessata a vederlo di persona.",
+        "real_estate_id": 6,
+        "created_at": "2024-08-18T12:40:00",
+        "updated_at": "2024-08-18T12:40:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Moretti",
+        "email": "giovanni.moretti@example.com",
+        "phone": "3457654433",
+        "message": "L'immobile sembra essere ciò che cerco, per favore fammi sapere come procedere.",
+        "real_estate_id": 7,
+        "created_at": "2024-09-01T16:00:00",
+        "updated_at": "2024-09-01T16:00:00"
+    },
+    {
+        "name": "Paola",
+        "surname": "Santoro",
+        "email": "paola.santoro@example.com",
+        "phone": "3373344556",
+        "message": "Potete darmi maggiori dettagli sulle condizioni dell'immobile?",
+        "real_estate_id": 8,
+        "created_at": "2024-10-03T14:50:00",
+        "updated_at": "2024-10-03T14:50:00"
+    },
+    {
+        "name": "Giorgio",
+        "surname": "Conti",
+        "email": "giorgio.conti@example.com",
+        "phone": "3391234567",
+        "message": "Buongiorno, vorrei una visita dell'immobile.",
+        "real_estate_id": 9,
+        "created_at": "2024-11-10T09:00:00",
+        "updated_at": "2024-11-10T09:00:00"
+    },
+    {
+        "name": "Caterina",
+        "surname": "Ferrari",
+        "email": "caterina.ferrari@example.com",
+        "phone": "3312334455",
+        "message": "Questo immobile sembra perfetto per la mia famiglia, vorrei maggiori dettagli.",
+        "real_estate_id": 10,
+        "created_at": "2024-12-15T13:30:00",
+        "updated_at": "2024-12-15T13:30:00"
+    },
+    {
+        "name": "Luca",
+        "surname": "Tassi",
+        "email": "luca.tassi@example.com",
+        "phone": "3451237890",
+        "message": "Salve, vorrei avere maggiori informazioni sull'immobile in affitto.",
+        "real_estate_id": 1,
+        "created_at": "2024-01-05T08:40:00",
+        "updated_at": "2024-01-05T08:40:00"
+    },
+    {
+        "name": "Anna",
+        "surname": "Giorgi",
+        "email": "anna.giorgi@example.com",
+        "phone": "3348761234",
+        "message": "Questo appartamento mi sembra interessante, potrei sapere se è disponibile?",
+        "real_estate_id": 2,
+        "created_at": "2024-02-15T12:20:00",
+        "updated_at": "2024-02-15T12:20:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Bruni",
+        "email": "giovanni.bruni@example.com",
+        "phone": "3201112233",
+        "message": "Buongiorno, sono interessato all'immobile e vorrei fissare un appuntamento.",
+        "real_estate_id": 3,
+        "created_at": "2024-03-10T16:00:00",
+        "updated_at": "2024-03-10T16:00:00"
+    },
+    {
+        "name": "Elisa",
+        "surname": "Ricci",
+        "email": "elisa.ricci@example.com",
+        "phone": "3359876543",
+        "message": "L'immobile è ancora disponibile? Vorrei maggiori dettagli.",
+        "real_estate_id": 4,
+        "created_at": "2024-04-01T10:30:00",
+        "updated_at": "2024-04-01T10:30:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Ferrari",
+        "email": "marco.ferrari@example.com",
+        "phone": "3451230987",
+        "message": "Buongiorno, vorrei sapere se l'immobile è ancora in vendita.",
+        "real_estate_id": 5,
+        "created_at": "2024-05-12T09:15:00",
+        "updated_at": "2024-05-12T09:15:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Gallo",
+        "email": "francesca.gallo@example.com",
+        "phone": "3301122334",
+        "message": "Salve, sono interessata a questo immobile. Potete inviarmi ulteriori foto?",
+        "real_estate_id": 6,
+        "created_at": "2024-06-19T13:30:00",
+        "updated_at": "2024-06-19T13:30:00"
+    },
+    {
+        "name": "Sergio",
+        "surname": "Conti",
+        "email": "sergio.conti@example.com",
+        "phone": "3459876541",
+        "message": "Ciao, vorrei sapere se c'è la possibilità di fare una visita nell'immobile.",
+        "real_estate_id": 7,
+        "created_at": "2024-07-25T14:50:00",
+        "updated_at": "2024-07-25T14:50:00"
+    },
+    {
+        "name": "Paola",
+        "surname": "Ricci",
+        "email": "paola.ricci@example.com",
+        "phone": "3304445556",
+        "message": "L'immobile mi interessa, ma volevo sapere se accettano animali.",
+        "real_estate_id": 8,
+        "created_at": "2024-08-08T15:00:00",
+        "updated_at": "2024-08-08T15:00:00"
+    },
+    {
+        "name": "Alessandro",
+        "surname": "Perri",
+        "email": "alessandro.perri@example.com",
+        "phone": "3234567890",
+        "message": "Vorrei maggiori dettagli sull'immobile, in particolare sulla zona e i servizi vicini.",
+        "real_estate_id": 9,
+        "created_at": "2024-09-05T17:00:00",
+        "updated_at": "2024-09-05T17:00:00"
+    },
+    {
+        "name": "Caterina",
+        "surname": "Della Torre",
+        "email": "caterina.torre@example.com",
+        "phone": "3323456789",
+        "message": "L'immobile è molto bello, vorrei ricevere più informazioni sui costi e le modalità di pagamento.",
+        "real_estate_id": 10,
+        "created_at": "2024-10-10T11:15:00",
+        "updated_at": "2024-10-10T11:15:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Mancini",
+        "email": "lucia.mancini@example.com",
+        "phone": "3362112233",
+        "message": "Sono interessata a vedere l'immobile di persona, quando posso venire?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-18T10:00:00",
+        "updated_at": "2024-01-18T10:00:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Moretti",
+        "email": "marco.moretti@example.com",
+        "phone": "3384567890",
+        "message": "Mi piacerebbe visitare l'immobile, quando è possibile fissare un appuntamento?",
+        "real_estate_id": 2,
+        "created_at": "2024-02-25T14:10:00",
+        "updated_at": "2024-02-25T14:10:00"
+    },
+    {
+        "name": "Giulia",
+        "surname": "De Santis",
+        "email": "giulia.desantis@example.com",
+        "phone": "3214445556",
+        "message": "Salve, sono interessata a questo immobile. Potete fornirmi ulteriori dettagli?",
+        "real_estate_id": 3,
+        "created_at": "2024-03-15T16:30:00",
+        "updated_at": "2024-03-15T16:30:00"
+    },
+    {
+        "name": "Luca",
+        "surname": "Barbieri",
+        "email": "luca.barbieri@example.com",
+        "phone": "3338765432",
+        "message": "Sono molto interessato a questo immobile. Quando posso vederlo?",
+        "real_estate_id": 4,
+        "created_at": "2024-04-22T11:20:00",
+        "updated_at": "2024-04-22T11:20:00"
+    },
+    {
+        "name": "Federica",
+        "surname": "Giuliani",
+        "email": "federica.giuliani@example.com",
+        "phone": "3345556677",
+        "message": "Mi piacerebbe avere maggiori informazioni sulla disponibilità di parcheggio.",
+        "real_estate_id": 5,
+        "created_at": "2024-05-06T10:15:00",
+        "updated_at": "2024-05-06T10:15:00"
+    },
+    {
+        "name": "Davide",
+        "surname": "Longo",
+        "email": "davide.longo@example.com",
+        "phone": "3451239876",
+        "message": "Buongiorno, sono interessato all'immobile. È possibile programmare una visita?",
+        "real_estate_id": 6,
+        "created_at": "2024-06-17T12:00:00",
+        "updated_at": "2024-06-17T12:00:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Lupi",
+        "email": "giovanni.lupi@example.com",
+        "phone": "3234567890",
+        "message": "Salve, vorrei sapere se c'è un giardino nell'immobile.",
+        "real_estate_id": 7,
+        "created_at": "2024-07-12T15:40:00",
+        "updated_at": "2024-07-12T15:40:00"
+    },
+    {
+        "name": "Michela",
+        "surname": "Silvestri",
+        "email": "michela.silvestri@example.com",
+        "phone": "3345678901",
+        "message": "Sto cercando una casa in questa zona. Mi piacerebbe maggiori dettagli sul prezzo.",
+        "real_estate_id": 8,
+        "created_at": "2024-08-20T17:30:00",
+        "updated_at": "2024-08-20T17:30:00"
+    },
+    {
+        "name": "Sabrina",
+        "surname": "De Angelis",
+        "email": "sabrina.deangelis@example.com",
+        "phone": "3212345678",
+        "message": "Vorrei sapere se c'è un'area verde nelle vicinanze.",
+        "real_estate_id": 9,
+        "created_at": "2024-09-08T09:10:00",
+        "updated_at": "2024-09-08T09:10:00"
+    },
+    {
+        "name": "Nicolò",
+        "surname": "Ghetti",
+        "email": "nicolo.ghetti@example.com",
+        "phone": "3315556667",
+        "message": "Salve, sono interessato all'immobile. È possibile fissare una visita?",
+        "real_estate_id": 10,
+        "created_at": "2024-10-15T13:45:00",
+        "updated_at": "2024-10-15T13:45:00"
+    },
+    {
+        "name": "Giorgio",
+        "surname": "Tavella",
+        "email": "giorgio.tavella@example.com",
+        "phone": "3398765432",
+        "message": "L'immobile mi interessa, quando posso venire a visitarlo?",
+        "real_estate_id": 1,
+        "created_at": "2024-11-12T08:30:00",
+        "updated_at": "2024-11-12T08:30:00"
+    },
+    {
+        "name": "Alessandra",
+        "surname": "Mazzini",
+        "email": "alessandra.mazzini@example.com",
+        "phone": "3374445556",
+        "message": "Sono molto interessata, quando posso fare una visita?",
+        "real_estate_id": 2,
+        "created_at": "2024-12-05T14:10:00",
+        "updated_at": "2024-12-05T14:10:00"
+    },
+    {
+        "name": "Simone",
+        "surname": "Bernardi",
+        "email": "simone.bernardi@example.com",
+        "phone": "3341112233",
+        "message": "Vorrei maggiori dettagli sull'immobile, in particolare sulla disponibilità di parcheggio.",
+        "real_estate_id": 3,
+        "created_at": "2024-01-20T17:25:00",
+        "updated_at": "2024-01-20T17:25:00"
+    },
+
+    {
+        "name": "Giorgio",
+        "surname": "Tavella",
+        "email": "giorgio.tavella@example.com",
+        "phone": "3398765432",
+        "message": "L'immobile mi interessa, quando posso venire a visitarlo?",
+        "real_estate_id": 1,
+        "created_at": "2024-11-12T08:30:00",
+        "updated_at": "2024-11-12T08:30:00"
+    },
+    {
+        "name": "Alessandra",
+        "surname": "Mazzini",
+        "email": "alessandra.mazzini@example.com",
+        "phone": "3374445556",
+        "message": "Sono molto interessata, quando posso fare una visita?",
+        "real_estate_id": 2,
+        "created_at": "2024-12-05T14:10:00",
+        "updated_at": "2024-12-05T14:10:00"
+    },
+    {
+        "name": "Simone",
+        "surname": "Bernardi",
+        "email": "simone.bernardi@example.com",
+        "phone": "3341112233",
+        "message": "Vorrei maggiori dettagli sull'immobile, in particolare sulla disponibilità di parcheggio.",
+        "real_estate_id": 3,
+        "created_at": "2024-01-20T17:25:00",
+        "updated_at": "2024-01-20T17:25:00"
+    },
+    {
+        "name": "Luca",
+        "surname": "Russo",
+        "email": "luca.russo@example.com",
+        "phone": "3201234567",
+        "message": "Mi piacerebbe vedere l'immobile, come posso organizzare una visita?",
+        "real_estate_id": 4,
+        "created_at": "2024-02-10T16:00:00",
+        "updated_at": "2024-02-10T16:00:00"
+    },
+    {
+        "name": "Sara",
+        "surname": "Giordano",
+        "email": "sara.giordano@example.com",
+        "phone": "3387654321",
+        "message": "Sono molto interessata a questo immobile, vorrei fissare un appuntamento.",
+        "real_estate_id": 5,
+        "created_at": "2024-03-15T09:30:00",
+        "updated_at": "2024-03-15T09:30:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Ferrari",
+        "email": "marco.ferrari@example.com",
+        "phone": "3319876543",
+        "message": "Vorrei maggiori informazioni sul prezzo e le condizioni di affitto.",
+        "real_estate_id": 6,
+        "created_at": "2024-04-01T14:45:00",
+        "updated_at": "2024-04-01T14:45:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Conti",
+        "email": "francesca.conti@example.com",
+        "phone": "3458765432",
+        "message": "Mi interessa questo immobile, quando posso venire a vederlo?",
+        "real_estate_id": 7,
+        "created_at": "2024-05-12T17:05:00",
+        "updated_at": "2024-05-12T17:05:00"
+    },
+    {
+        "name": "Andrea",
+        "surname": "Bianchi",
+        "email": "andrea.bianchi@example.com",
+        "phone": "3209876543",
+        "message": "Vorrei avere più dettagli riguardo ai costi per l'affitto.",
+        "real_estate_id": 8,
+        "created_at": "2024-06-10T11:00:00",
+        "updated_at": "2024-06-10T11:00:00"
+    },
+    {
+        "name": "Chiara",
+        "surname": "Ricci",
+        "email": "chiara.ricci@example.com",
+        "phone": "3365555555",
+        "message": "Posso venire a visitare l'immobile questa settimana?",
+        "real_estate_id": 9,
+        "created_at": "2024-07-05T13:10:00",
+        "updated_at": "2024-07-05T13:10:00"
+    },
+    {
+        "name": "Francesco",
+        "surname": "Verdi",
+        "email": "francesco.verdi@example.com",
+        "phone": "3384455667",
+        "message": "Sono interessato a questo immobile, vorrei fare una visita.",
+        "real_estate_id": 10,
+        "created_at": "2024-08-10T15:30:00",
+        "updated_at": "2024-08-10T15:30:00"
+    },
+    {
+        "name": "Giulia",
+        "surname": "Romano",
+        "email": "giulia.romano@example.com",
+        "phone": "3391234567",
+        "message": "Ho visto l'immobile e mi interessa molto. Posso organizzare una visita?",
+        "real_estate_id": 11,
+        "created_at": "2024-09-14T17:50:00",
+        "updated_at": "2024-09-14T17:50:00"
+    },
+    {
+        "name": "Paolo",
+        "surname": "Marini",
+        "email": "paolo.marini@example.com",
+        "phone": "3272345678",
+        "message": "L'immobile è ancora disponibile? Vorrei visitarlo.",
+        "real_estate_id": 12,
+        "created_at": "2024-10-01T08:40:00",
+        "updated_at": "2024-10-01T08:40:00"
+    },
+    {
+        "name": "Marta",
+        "surname": "De Luca",
+        "email": "marta.deluca@example.com",
+        "phone": "3338887777",
+        "message": "Posso ricevere maggiori informazioni sulla zona in cui si trova l'immobile?",
+        "real_estate_id": 13,
+        "created_at": "2024-11-05T09:30:00",
+        "updated_at": "2024-11-05T09:30:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Alberti",
+        "email": "giovanni.alberti@example.com",
+        "phone": "3286754321",
+        "message": "Quando è possibile visitare l'immobile? Sono molto interessato.",
+        "real_estate_id": 14,
+        "created_at": "2024-12-01T13:40:00",
+        "updated_at": "2024-12-01T13:40:00"
+    },
+    {
+        "name": "Stefania",
+        "surname": "Galli",
+        "email": "stefania.galli@example.com",
+        "phone": "3391122334",
+        "message": "Mi interessa l'immobile. Potremmo fissare una visita?",
+        "real_estate_id": 15,
+        "created_at": "2024-01-10T11:15:00",
+        "updated_at": "2024-01-10T11:15:00"
+    },
+    {
+        "name": "Luigi",
+        "surname": "Pellegrini",
+        "email": "luigi.pellegrini@example.com",
+        "phone": "3334567890",
+        "message": "Vorrei sapere se l'immobile è ancora disponibile per una visita.",
+        "real_estate_id": 16,
+        "created_at": "2024-02-20T15:25:00",
+        "updated_at": "2024-02-20T15:25:00"
+    },
+    {
+        "name": "Alice",
+        "surname": "Rossi",
+        "email": "alice.rossi@example.com",
+        "phone": "3206543210",
+        "message": "Mi interessa molto, posso venire a vedere l'immobile il prima possibile?",
+        "real_estate_id": 17,
+        "created_at": "2024-03-15T12:35:00",
+        "updated_at": "2024-03-15T12:35:00"
+    },
+    {
+        "name": "Giorgia",
+        "surname": "Moretti",
+        "email": "giorgia.moretti@example.com",
+        "phone": "3342345678",
+        "message": "Vorrei maggiori dettagli riguardo alla disponibilità dell'immobile.",
+        "real_estate_id": 18,
+        "created_at": "2024-04-25T14:00:00",
+        "updated_at": "2024-04-25T14:00:00"
+    },
+    {
+        "name": "Federico",
+        "surname": "Longo",
+        "email": "federico.longo@example.com",
+        "phone": "3363332222",
+        "message": "Posso ricevere maggiori informazioni sull'immobile?",
+        "real_estate_id": 19,
+        "created_at": "2024-05-10T10:30:00",
+        "updated_at": "2024-05-10T10:30:00"
+    },
+    {
+        "name": "Carla",
+        "surname": "Giuliani",
+        "email": "carla.giuliani@example.com",
+        "phone": "3389988777",
+        "message": "L'immobile mi interessa molto, posso visitarlo la prossima settimana?",
+        "real_estate_id": 20,
+        "created_at": "2024-06-18T09:00:00",
+        "updated_at": "2024-06-18T09:00:00"
+    },
+    {
+        "name": "Davide",
+        "surname": "Barbieri",
+        "email": "davide.barbieri@example.com",
+        "phone": "3279876543",
+        "message": "Sono interessato all'immobile, quando posso venire a vederlo?",
+        "real_estate_id": 21,
+        "created_at": "2024-07-07T08:40:00",
+        "updated_at": "2024-07-07T08:40:00"
+    },
+    {
+        "name": "Matteo",
+        "surname": "Sarti",
+        "email": "matteo.sarti@example.com",
+        "phone": "3246543210",
+        "message": "Mi piacerebbe fissare una visita per l'immobile.",
+        "real_estate_id": 22,
+        "created_at": "2024-08-05T16:10:00",
+        "updated_at": "2024-08-05T16:10:00"
+    },
+    {
+        "name": "Elena",
+        "surname": "Marchetti",
+        "email": "elena.marchetti@example.com",
+        "phone": "3289876543",
+        "message": "Sarei interessata a fissare un appuntamento per vedere l'immobile.",
+        "real_estate_id": 23,
+        "created_at": "2024-09-05T17:40:00",
+        "updated_at": "2024-09-05T17:40:00"
+    },
+    {
+        "name": "Federica",
+        "surname": "Vitali",
+        "email": "federica.vitali@example.com",
+        "phone": "3208889999",
+        "message": "Quando posso visitare l'immobile?",
+        "real_estate_id": 24,
+        "created_at": "2024-10-10T14:20:00",
+        "updated_at": "2024-10-10T14:20:00"
+    },
+    {
+        "name": "Vincenzo",
+        "surname": "Mancini",
+        "email": "vincenzo.mancini@example.com",
+        "phone": "3321234567",
+        "message": "Sono molto interessato a questo immobile. Posso venire a visitarlo?",
+        "real_estate_id": 25,
+        "created_at": "2024-11-12T12:30:00",
+        "updated_at": "2024-11-12T12:30:00"
+    },
+    {
+        "name": "Roberta",
+        "surname": "Gatti",
+        "email": "roberta.gatti@example.com",
+        "phone": "3298765432",
+        "message": "Posso avere maggiori informazioni sull'immobile?",
+        "real_estate_id": 26,
+        "created_at": "2024-12-01T13:50:00",
+        "updated_at": "2024-12-01T13:50:00"
+    },
+    {
+        "name": "Angelo",
+        "surname": "D'Angelo",
+        "email": "angelo.dangelo@example.com",
+        "phone": "3365432109",
+        "message": "Mi interessa l'immobile, come posso fissare una visita?",
+        "real_estate_id": 27,
+        "created_at": "2024-01-18T10:00:00",
+        "updated_at": "2024-01-18T10:00:00"
+    },
+    {
+        "name": "Michele",
+        "surname": "Fabbri",
+        "email": "michele.fabbri@example.com",
+        "phone": "3352345678",
+        "message": "Posso venire a vedere l'immobile domani?",
+        "real_estate_id": 28,
+        "created_at": "2024-02-20T14:00:00",
+        "updated_at": "2024-02-20T14:00:00"
+    },
+    {
+        "name": "Claudia",
+        "surname": "Giorgi",
+        "email": "claudia.giorgi@example.com",
+        "phone": "3309988777",
+        "message": "L'immobile mi interessa molto, quando è possibile visitarlo?",
+        "real_estate_id": 29,
+        "created_at": "2024-03-03T11:50:00",
+        "updated_at": "2024-03-03T11:50:00"
+    },
+    {
+        "name": "Stefano",
+        "surname": "Palumbo",
+        "email": "stefano.palumbo@example.com",
+        "phone": "3335551234",
+        "message": "Sono interessato a vedere l'immobile, come posso organizzare la visita?",
+        "real_estate_id": 30,
+        "created_at": "2024-04-07T09:15:00",
+        "updated_at": "2024-04-07T09:15:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Martini",
+        "email": "lucia.martini@example.com",
+        "phone": "3281234567",
+        "message": "L'immobile sembra interessante, vorrei fissare una visita.",
+        "real_estate_id": 31,
+        "created_at": "2024-05-18T16:00:00",
+        "updated_at": "2024-05-18T16:00:00"
+    },
+    {
+        "name": "Alberto",
+        "surname": "Ricci",
+        "email": "alberto.ricci@example.com",
+        "phone": "3298765432",
+        "message": "Potrei avere più informazioni sull'immobile? Sono molto interessato.",
+        "real_estate_id": 32,
+        "created_at": "2024-06-12T09:30:00",
+        "updated_at": "2024-06-12T09:30:00"
+    },
+    {
+        "name": "Carlo",
+        "surname": "Cavalieri",
+        "email": "carlo.cavalieri@example.com",
+        "phone": "3289876543",
+        "message": "L'immobile mi sembra perfetto per le mie esigenze. Posso organizzare una visita?",
+        "real_estate_id": 33,
+        "created_at": "2024-07-20T15:20:00",
+        "updated_at": "2024-07-20T15:20:00"
+    },
+    {
+        "name": "Giuseppe",
+        "surname": "Pugliese",
+        "email": "giuseppe.pugliese@example.com",
+        "phone": "3312223333",
+        "message": "Mi interessa molto questa proprietà, quando posso venire a vederla?",
+        "real_estate_id": 34,
+        "created_at": "2024-08-01T17:40:00",
+        "updated_at": "2024-08-01T17:40:00"
+    },
+    {
+        "name": "Martina",
+        "surname": "Serra",
+        "email": "martina.serra@example.com",
+        "phone": "3201112233",
+        "message": "Sono molto interessata a questo immobile. Posso avere una visita?",
+        "real_estate_id": 35,
+        "created_at": "2024-08-15T10:10:00",
+        "updated_at": "2024-08-15T10:10:00"
+    },
+    {
+        "name": "Daniele",
+        "surname": "Costa",
+        "email": "daniele.costa@example.com",
+        "phone": "3382223444",
+        "message": "Posso venire a visitare l'immobile la prossima settimana?",
+        "real_estate_id": 36,
+        "created_at": "2024-09-05T14:30:00",
+        "updated_at": "2024-09-05T14:30:00"
+    },
+    {
+        "name": "Sara",
+        "surname": "Rossi",
+        "email": "sara.rossi@example.com",
+        "phone": "3398765431",
+        "message": "Vorrei sapere di più sull'immobile e sulla zona. Posso visitarlo?",
+        "real_estate_id": 37,
+        "created_at": "2024-10-20T12:00:00",
+        "updated_at": "2024-10-20T12:00:00"
+    },
+    {
+        "name": "Antonio",
+        "surname": "Baldini",
+        "email": "antonio.baldini@example.com",
+        "phone": "3241112233",
+        "message": "Sono interessato a questo immobile, quando posso fissare un appuntamento?",
+        "real_estate_id": 38,
+        "created_at": "2024-11-08T16:15:00",
+        "updated_at": "2024-11-08T16:15:00"
+    },
+    {
+        "name": "Paola",
+        "surname": "Bruni",
+        "email": "paola.bruni@example.com",
+        "phone": "3389998877",
+        "message": "Mi piacerebbe vedere l'immobile, quando posso venire?",
+        "real_estate_id": 39,
+        "created_at": "2024-12-02T10:00:00",
+        "updated_at": "2024-12-02T10:00:00"
+    },
+    {
+        "name": "Matteo",
+        "surname": "Mancuso",
+        "email": "matteo.mancuso@example.com",
+        "phone": "3335554321",
+        "message": "Sono interessato all'immobile. Quando è disponibile per una visita?",
+        "real_estate_id": 40,
+        "created_at": "2024-01-25T13:40:00",
+        "updated_at": "2024-01-25T13:40:00"
+    },
+    {
+        "name": "Stefano",
+        "surname": "Marconi",
+        "email": "stefano.marconi@example.com",
+        "phone": "3291112233",
+        "message": "L'immobile mi interessa molto, posso venire a vederlo questa settimana?",
+        "real_estate_id": 41,
+        "created_at": "2024-02-10T11:50:00",
+        "updated_at": "2024-02-10T11:50:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Bassi",
+        "email": "giovanni.bassi@example.com",
+        "phone": "3357777777",
+        "message": "Posso fissare una visita per l'immobile?",
+        "real_estate_id": 42,
+        "created_at": "2024-03-02T14:00:00",
+        "updated_at": "2024-03-02T14:00:00"
+    },
+    {
+        "name": "Valentina",
+        "surname": "Lombardi",
+        "email": "valentina.lombardi@example.com",
+        "phone": "3205432109",
+        "message": "Sono molto interessata. Quando posso venire a visitare l'immobile?",
+        "real_estate_id": 43,
+        "created_at": "2024-03-18T15:30:00",
+        "updated_at": "2024-03-18T15:30:00"
+    },
+    {
+        "name": "Francesca",
+        "surname": "Neri",
+        "email": "francesca.neri@example.com",
+        "phone": "3384536723",
+        "message": "L'immobile è ancora disponibile? Vorrei fissare una visita.",
+        "real_estate_id": 44,
+        "created_at": "2024-04-12T16:20:00",
+        "updated_at": "2024-04-12T16:20:00"
+    },
+    {
+        "name": "Riccardo",
+        "surname": "Santoro",
+        "email": "riccardo.santoro@example.com",
+        "phone": "3395556767",
+        "message": "Posso venire a visitare l'immobile nei prossimi giorni?",
+        "real_estate_id": 45,
+        "created_at": "2024-05-03T10:10:00",
+        "updated_at": "2024-05-03T10:10:00"
+    },
+    {
+        "name": "Chiara",
+        "surname": "Ferri",
+        "email": "chiara.ferri@example.com",
+        "phone": "3278889999",
+        "message": "Sono interessata all'immobile, posso fissare una visita questa settimana?",
+        "real_estate_id": 46,
+        "created_at": "2024-06-02T13:30:00",
+        "updated_at": "2024-06-02T13:30:00"
+    },
+    {
+        "name": "Roberto",
+        "surname": "Sorrentino",
+        "email": "roberto.sorrentino@example.com",
+        "phone": "3384567890",
+        "message": "Mi piacerebbe vedere l'immobile, quando posso visitarlo?",
+        "real_estate_id": 47,
+        "created_at": "2024-07-05T12:45:00",
+        "updated_at": "2024-07-05T12:45:00"
+    },
+    {
+        "name": "Elisabetta",
+        "surname": "Tirabassi",
+        "email": "elisabetta.tirabassi@example.com",
+        "phone": "3342221111",
+        "message": "L'immobile è ancora disponibile? Posso venire a vederlo?",
+        "real_estate_id": 48,
+        "created_at": "2024-08-01T10:00:00",
+        "updated_at": "2024-08-01T10:00:00"
+    },
+    {
+        "name": "Andrea",
+        "surname": "Conti",
+        "email": "andrea.conti@example.com",
+        "phone": "3288765432",
+        "message": "Posso visitare l'immobile domani?",
+        "real_estate_id": 49,
+        "created_at": "2024-09-13T11:00:00",
+        "updated_at": "2024-09-13T11:00:00"
+    },
+    {
+        "name": "Laura",
+        "surname": "Giordano",
+        "email": "laura.giordano@example.com",
+        "phone": "3334445555",
+        "message": "L'immobile è interessante, posso fissare una visita?",
+        "real_estate_id": 50,
+        "created_at": "2024-10-15T14:30:00",
+        "updated_at": "2024-10-15T14:30:00"
+    },
+    {
+        "name": "Giuseppe",
+        "surname": "Vitale",
+        "email": "giuseppe.vitale@example.com",
+        "phone": "3285557777",
+        "message": "Sono interessato a questa proprietà. Posso organizzare una visita?",
+        "real_estate_id": 1,
+        "created_at": "2024-01-15T09:45:00",
+        "updated_at": "2024-01-15T09:45:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Fabbri",
+        "email": "lucia.fabbri@example.com",
+        "phone": "3294445555",
+        "message": "Vorrei maggiori dettagli sull'immobile, in particolare riguardo il parcheggio.",
+        "real_estate_id": 2,
+        "created_at": "2024-02-20T11:15:00",
+        "updated_at": "2024-02-20T11:15:00"
+    },
+    {
+        "name": "Marco",
+        "surname": "Ferrari",
+        "email": "marco.ferrari@example.com",
+        "phone": "3203334444",
+        "message": "L'immobile è ancora disponibile? Posso venire a vederlo?",
+        "real_estate_id": 3,
+        "created_at": "2024-03-10T14:20:00",
+        "updated_at": "2024-03-10T14:20:00"
+    },
+    {
+        "name": "Elena",
+        "surname": "Rossi",
+        "email": "elena.rossi@example.com",
+        "phone": "3382223333",
+        "message": "Posso avere maggiori dettagli sull'immobile e sulle spese condominiali?",
+        "real_estate_id": 4,
+        "created_at": "2024-04-05T10:50:00",
+        "updated_at": "2024-04-05T10:50:00"
+    },
+    {
+        "name": "Antonio",
+        "surname": "Lombardi",
+        "email": "antonio.lombardi@example.com",
+        "phone": "3298889999",
+        "message": "Mi piacerebbe visitare l'immobile questa settimana, è disponibile?",
+        "real_estate_id": 5,
+        "created_at": "2024-05-12T12:00:00",
+        "updated_at": "2024-05-12T12:00:00"
+    },
+    {
+        "name": "Federica",
+        "surname": "Mancini",
+        "email": "federica.mancini@example.com",
+        "phone": "3274445555",
+        "message": "Sarei interessata a un appuntamento per visitare l'immobile.",
+        "real_estate_id": 6,
+        "created_at": "2024-06-02T13:30:00",
+        "updated_at": "2024-06-02T13:30:00"
+    },
+    {
+        "name": "Giorgio",
+        "surname": "Barbieri",
+        "email": "giorgio.barbieri@example.com",
+        "phone": "3202223333",
+        "message": "Posso avere maggiori informazioni sull'immobile? Vorrei visitarlo.",
+        "real_estate_id": 7,
+        "created_at": "2024-07-01T16:40:00",
+        "updated_at": "2024-07-01T16:40:00"
+    },
+    {
+        "name": "Paola",
+        "surname": "Gatti",
+        "email": "paola.gatti@example.com",
+        "phone": "3385557777",
+        "message": "Sono molto interessata a questa casa. Posso fissare un incontro?",
+        "real_estate_id": 8,
+        "created_at": "2024-08-10T11:10:00",
+        "updated_at": "2024-08-10T11:10:00"
+    },
+    {
+        "name": "Simone",
+        "surname": "Marini",
+        "email": "simone.marini@example.com",
+        "phone": "3394445555",
+        "message": "Vorrei sapere se l'immobile è disponibile per una visita la prossima settimana.",
+        "real_estate_id": 9,
+        "created_at": "2024-09-05T17:25:00",
+        "updated_at": "2024-09-05T17:25:00"
+    },
+    {
+        "name": "Elisabetta",
+        "surname": "Costa",
+        "email": "elisabetta.costa@example.com",
+        "phone": "3201112233",
+        "message": "Mi interessa molto l'immobile. Quando posso organizzare una visita?",
+        "real_estate_id": 10,
+        "created_at": "2024-10-20T09:00:00",
+        "updated_at": "2024-10-20T09:00:00"
+    },
+    {
+        "name": "Giovanni",
+        "surname": "Santoro",
+        "email": "giovanni.santoro@example.com",
+        "phone": "3346667777",
+        "message": "Posso venire a visitare l'immobile il prossimo fine settimana?",
+        "real_estate_id": 11,
+        "created_at": "2024-11-12T15:00:00",
+        "updated_at": "2024-11-12T15:00:00"
+    },
+    {
+        "name": "Francesco",
+        "surname": "Ricci",
+        "email": "francesco.ricci@example.com",
+        "phone": "3289990000",
+        "message": "Vorrei visitare l'immobile, quando è disponibile?",
+        "real_estate_id": 12,
+        "created_at": "2024-12-05T10:45:00",
+        "updated_at": "2024-12-05T10:45:00"
+    },
+    {
+        "name": "Chiara",
+        "surname": "Lombardo",
+        "email": "chiara.lombardo@example.com",
+        "phone": "3298887777",
+        "message": "Posso avere maggiori dettagli sul contratto di affitto?",
+        "real_estate_id": 13,
+        "created_at": "2024-01-25T14:30:00",
+        "updated_at": "2024-01-25T14:30:00"
+    },
+    {
+        "name": "Stefano",
+        "surname": "Bianchi",
+        "email": "stefano.bianchi@example.com",
+        "phone": "3387778888",
+        "message": "Mi piacerebbe avere un tour virtuale dell'immobile.",
+        "real_estate_id": 14,
+        "created_at": "2024-02-15T16:10:00",
+        "updated_at": "2024-02-15T16:10:00"
+    },
+    {
+        "name": "Alessandro",
+        "surname": "Giordano",
+        "email": "alessandro.giordano@example.com",
+        "phone": "3287778888",
+        "message": "Sono interessato a questa proprietà, quando posso visitarla?",
+        "real_estate_id": 15,
+        "created_at": "2024-03-12T13:00:00",
+        "updated_at": "2024-03-12T13:00:00"
+    },
+    {
+        "name": "Margherita",
+        "surname": "De Luca",
+        "email": "margherita.deluca@example.com",
+        "phone": "3205554444",
+        "message": "Posso venire a visitare l'immobile in un giorno a mia scelta?",
+        "real_estate_id": 16,
+        "created_at": "2024-04-01T09:30:00",
+        "updated_at": "2024-04-01T09:30:00"
+    },
+    {
+        "name": "Carmine",
+        "surname": "Sanna",
+        "email": "carmine.sanna@example.com",
+        "phone": "3201113333",
+        "message": "Mi piacerebbe visitare questo immobile. È possibile fissare un appuntamento?",
+        "real_estate_id": 17,
+        "created_at": "2024-05-08T10:00:00",
+        "updated_at": "2024-05-08T10:00:00"
+    },
+    {
+        "name": "Gabriele",
+        "surname": "Buzzi",
+        "email": "gabriele.buzzi@example.com",
+        "phone": "3387775555",
+        "message": "L'immobile è ancora disponibile? Posso fissare una visita?",
+        "real_estate_id": 18,
+        "created_at": "2024-06-10T14:50:00",
+        "updated_at": "2024-06-10T14:50:00"
+    },
+    {
+        "name": "Marta",
+        "surname": "Di Giovanni",
+        "email": "marta.digiovanni@example.com",
+        "phone": "3386664444",
+        "message": "Quando posso venire a vedere l'immobile?",
+        "real_estate_id": 19,
+        "created_at": "2024-07-15T15:30:00",
+        "updated_at": "2024-07-15T15:30:00"
+    },
+    {
+        "name": "Lucia",
+        "surname": "Giorgi",
+        "email": "lucia.giorgi@example.com",
+        "phone": "3203332222",
+        "message": "Sono molto interessata a questa casa, posso organizzare una visita?",
+        "real_estate_id": 20,
+        "created_at": "2024-08-20T16:00:00",
+        "updated_at": "2024-08-20T16:00:00"
+    }
+]

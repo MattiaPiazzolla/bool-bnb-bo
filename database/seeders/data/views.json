@@ -1,0 +1,950 @@
+[
+    {
+        "ip_address": "192.168.1.142",
+        "real_estate_id": 9,
+        "created_at": "2024-01-01T10:00:00",
+        "updated_at": "2024-01-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.143",
+        "real_estate_id": 9,
+        "created_at": "2024-03-01T10:00:00",
+        "updated_at": "2024-03-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.144",
+        "real_estate_id": 1,
+        "created_at": "2024-12-01T10:00:00",
+        "updated_at": "2024-12-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.145",
+        "real_estate_id": 1,
+        "created_at": "2024-11-01T10:00:00",
+        "updated_at": "2024-11-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.146",
+        "real_estate_id": 1,
+        "created_at": "2024-10-01T10:00:00",
+        "updated_at": "2024-10-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.147",
+        "real_estate_id": 1,
+        "created_at": "2024-09-01T10:00:00",
+        "updated_at": "2024-09-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.148",
+        "real_estate_id": 6,
+        "created_at": "2024-02-05T15:25:00",
+        "updated_at": "2024-02-05T15:25:00"
+    },
+    {
+        "ip_address": "192.168.1.149",
+        "real_estate_id": 7,
+        "created_at": "2024-02-10T12:40:00",
+        "updated_at": "2024-02-10T12:40:00"
+    },
+    {
+        "ip_address": "192.168.1.150",
+        "real_estate_id": 8,
+        "created_at": "2024-02-13T09:50:00",
+        "updated_at": "2024-02-13T09:50:00"
+    },
+    {
+        "ip_address": "192.168.1.151",
+        "real_estate_id": 9,
+        "created_at": "2024-02-15T13:00:00",
+        "updated_at": "2024-02-15T13:00:00"
+    },
+    {
+        "ip_address": "192.168.1.152",
+        "real_estate_id": 10,
+        "created_at": "2024-02-18T10:10:00",
+        "updated_at": "2024-02-18T10:10:00"
+    },
+    {
+        "ip_address": "192.168.1.153",
+        "real_estate_id": 11,
+        "created_at": "2024-03-01T16:25:00",
+        "updated_at": "2024-03-01T16:25:00"
+    },
+    {
+        "ip_address": "192.168.1.154",
+        "real_estate_id": 12,
+        "created_at": "2024-03-05T17:45:00",
+        "updated_at": "2024-03-05T17:45:00"
+    },
+    {
+        "ip_address": "192.168.1.155",
+        "real_estate_id": 13,
+        "created_at": "2024-03-08T14:10:00",
+        "updated_at": "2024-03-08T14:10:00"
+    },
+    {
+        "ip_address": "192.168.1.156",
+        "real_estate_id": 14,
+        "created_at": "2024-03-12T10:50:00",
+        "updated_at": "2024-03-12T10:50:00"
+    },
+    {
+        "ip_address": "192.168.1.157",
+        "real_estate_id": 15,
+        "created_at": "2024-03-15T13:00:00",
+        "updated_at": "2024-03-15T13:00:00"
+    },
+    {
+        "ip_address": "192.168.1.158",
+        "real_estate_id": 16,
+        "created_at": "2024-03-17T11:00:00",
+        "updated_at": "2024-03-17T11:00:00"
+    },
+    {
+        "ip_address": "192.168.1.159",
+        "real_estate_id": 17,
+        "created_at": "2024-03-20T12:10:00",
+        "updated_at": "2024-03-20T12:10:00"
+    },
+    {
+        "ip_address": "192.168.1.160",
+        "real_estate_id": 18,
+        "created_at": "2024-03-25T09:30:00",
+        "updated_at": "2024-03-25T09:30:00"
+    },
+    {
+        "ip_address": "192.168.1.161",
+        "real_estate_id": 19,
+        "created_at": "2024-04-01T10:00:00",
+        "updated_at": "2024-04-01T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.162",
+        "real_estate_id": 20,
+        "created_at": "2024-04-05T16:35:00",
+        "updated_at": "2024-04-05T16:35:00"
+    },
+    {
+        "ip_address": "192.168.1.163",
+        "real_estate_id": 21,
+        "created_at": "2024-04-08T14:40:00",
+        "updated_at": "2024-04-08T14:40:00"
+    },
+    {
+        "ip_address": "192.168.1.164",
+        "real_estate_id": 22,
+        "created_at": "2024-04-12T13:25:00",
+        "updated_at": "2024-04-12T13:25:00"
+    },
+    {
+        "ip_address": "192.168.1.165",
+        "real_estate_id": 23,
+        "created_at": "2024-04-15T11:30:00",
+        "updated_at": "2024-04-15T11:30:00"
+    },
+    {
+        "ip_address": "192.168.1.166",
+        "real_estate_id": 24,
+        "created_at": "2024-04-18T12:10:00",
+        "updated_at": "2024-04-18T12:10:00"
+    },
+    {
+        "ip_address": "192.168.1.167",
+        "real_estate_id": 25,
+        "created_at": "2024-04-20T14:25:00",
+        "updated_at": "2024-04-20T14:25:00"
+    },
+    {
+        "ip_address": "192.168.1.168",
+        "real_estate_id": 26,
+        "created_at": "2024-04-25T16:10:00",
+        "updated_at": "2024-04-25T16:10:00"
+    },
+    {
+        "ip_address": "192.168.1.169",
+        "real_estate_id": 27,
+        "created_at": "2024-04-30T09:35:00",
+        "updated_at": "2024-04-30T09:35:00"
+    },
+    {
+        "ip_address": "192.168.1.170",
+        "real_estate_id": 28,
+        "created_at": "2024-05-02T10:25:00",
+        "updated_at": "2024-05-02T10:25:00"
+    },
+    {
+        "ip_address": "192.168.1.171",
+        "real_estate_id": 29,
+        "created_at": "2024-05-05T11:55:00",
+        "updated_at": "2024-05-05T11:55:00"
+    },
+    {
+        "ip_address": "192.168.1.172",
+        "real_estate_id": 30,
+        "created_at": "2024-05-08T12:40:00",
+        "updated_at": "2024-05-08T12:40:00"
+    },
+    {
+        "ip_address": "192.168.1.173",
+        "real_estate_id": 31,
+        "created_at": "2024-05-12T14:15:00",
+        "updated_at": "2024-05-12T14:15:00"
+    },
+    {
+        "ip_address": "192.168.1.174",
+        "real_estate_id": 32,
+        "created_at": "2024-05-15T13:05:00",
+        "updated_at": "2024-05-15T13:05:00"
+    },
+    {
+        "ip_address": "192.168.1.175",
+        "real_estate_id": 33,
+        "created_at": "2024-05-20T12:20:00",
+        "updated_at": "2024-05-20T12:20:00"
+    },
+    {
+        "ip_address": "192.168.1.176",
+        "real_estate_id": 34,
+        "created_at": "2024-05-25T10:10:00",
+        "updated_at": "2024-05-25T10:10:00"
+    },
+    {
+        "ip_address": "192.168.1.177",
+        "real_estate_id": 35,
+        "created_at": "2024-06-01T14:30:00",
+        "updated_at": "2024-06-01T14:30:00"
+    },
+    {
+        "ip_address": "192.168.1.178",
+        "real_estate_id": 36,
+        "created_at": "2024-06-05T11:00:00",
+        "updated_at": "2024-06-05T11:00:00"
+    },
+    {
+        "ip_address": "192.168.1.179",
+        "real_estate_id": 37,
+        "created_at": "2024-06-10T12:35:00",
+        "updated_at": "2024-06-10T12:35:00"
+    },
+    {
+        "ip_address": "192.168.1.180",
+        "real_estate_id": 38,
+        "created_at": "2024-06-15T10:40:00",
+        "updated_at": "2024-06-15T10:40:00"
+    },
+    {
+        "ip_address": "192.168.1.181",
+        "real_estate_id": 39,
+        "created_at": "2024-06-20T13:00:00",
+        "updated_at": "2024-06-20T13:00:00"
+    },
+    {
+        "ip_address": "192.168.1.182",
+        "real_estate_id": 40,
+        "created_at": "2024-06-25T14:50:00",
+        "updated_at": "2024-06-25T14:50:00"
+    },
+    {
+        "ip_address": "192.168.1.183",
+        "real_estate_id": 41,
+        "created_at": "2024-07-01T09:55:00",
+        "updated_at": "2024-07-01T09:55:00"
+    },
+    {
+        "ip_address": "192.168.1.184",
+        "real_estate_id": 42,
+        "created_at": "2024-07-05T11:20:00",
+        "updated_at": "2024-07-05T11:20:00"
+    },
+    {
+        "ip_address": "192.168.1.185",
+        "real_estate_id": 43,
+        "created_at": "2024-07-10T12:10:00",
+        "updated_at": "2024-07-10T12:10:00"
+    },
+    {    
+        "ip_address": "192.168.1.186",
+        "real_estate_id": 44,
+        "created_at": "2024-07-15T13:30:00",
+        "updated_at": "2024-07-15T13:30:00"
+    },
+    {
+        "ip_address": "192.168.1.187",
+        "real_estate_id": 45,
+        "created_at": "2024-07-20T10:15:00",
+        "updated_at": "2024-07-20T10:15:00"
+    },
+    {
+        "ip_address": "192.168.1.188",
+        "real_estate_id": 46,
+        "created_at": "2024-07-25T14:40:00",
+        "updated_at": "2024-07-25T14:40:00"
+    },
+    {
+        "ip_address": "192.168.1.189",
+        "real_estate_id": 47,
+        "created_at": "2024-08-01T09:00:00",
+        "updated_at": "2024-08-01T09:00:00"
+    },
+    {
+        "ip_address": "192.168.1.190",
+        "real_estate_id": 48,
+        "created_at": "2024-08-05T11:50:00",
+        "updated_at": "2024-08-05T11:50:00"
+    },
+    {
+        "ip_address": "192.168.1.191",
+        "real_estate_id": 49,
+        "created_at": "2024-08-10T12:55:00",
+        "updated_at": "2024-08-10T12:55:00"
+    },
+    {
+        "ip_address": "192.168.1.192",
+        "real_estate_id": 50,
+        "created_at": "2024-08-15T13:10:00",
+        "updated_at": "2024-08-15T13:10:00"
+    },
+    {
+        "ip_address": "192.168.1.193",
+        "real_estate_id": 1,
+        "created_at": "2024-08-20T14:20:00",
+        "updated_at": "2024-08-20T14:20:00"
+    },
+    {
+        "ip_address": "192.168.1.194",
+        "real_estate_id": 2,
+        "created_at": "2024-08-25T10:30:00",
+        "updated_at": "2024-08-25T10:30:00"
+    },
+    {
+        "ip_address": "192.168.1.195",
+        "real_estate_id": 3,
+        "created_at": "2024-09-01T11:40:00",
+        "updated_at": "2024-09-01T11:40:00"
+    },
+    {
+        "ip_address": "192.168.1.196",
+        "real_estate_id": 4,
+        "created_at": "2024-09-05T12:50:00",
+        "updated_at": "2024-09-05T12:50:00"
+    },
+    {
+        "ip_address": "192.168.1.197",
+        "real_estate_id": 5,
+        "created_at": "2024-09-10T13:00:00",
+        "updated_at": "2024-09-10T13:00:00"
+    },
+    {
+        "ip_address": "192.168.1.198",
+        "real_estate_id": 6,
+        "created_at": "2024-09-15T14:10:00",
+        "updated_at": "2024-09-15T14:10:00"
+    },
+    {
+        "ip_address": "192.168.1.199",
+        "real_estate_id": 7,
+        "created_at": "2024-09-20T10:20:00",
+        "updated_at": "2024-09-20T10:20:00"
+    },
+    {
+        "ip_address": "192.168.1.200",
+        "real_estate_id": 8,
+        "created_at": "2024-09-25T11:30:00",
+        "updated_at": "2024-09-25T11:30:00"
+    },
+    {
+        "ip_address": "192.168.1.201",
+        "real_estate_id": 9,
+        "created_at": "2024-10-01T12:40:00",
+        "updated_at": "2024-10-01T12:40:00"
+    },
+    {
+        "ip_address": "192.168.1.202",
+        "real_estate_id": 10,
+        "created_at": "2024-10-05T13:50:00",
+        "updated_at": "2024-10-05T13:50:00"
+    },
+    {
+        "ip_address": "192.168.1.203",
+        "real_estate_id": 11,
+        "created_at": "2024-10-10T14:00:00",
+        "updated_at": "2024-10-10T14:00:00"
+    },
+    {
+        "ip_address": "192.168.1.204",
+        "real_estate_id": 12,
+        "created_at": "2024-10-15T15:10:00",
+        "updated_at": "2024-10-15T15:10:00"
+    },
+    {
+        "ip_address": "192.168.1.205",
+        "real_estate_id": 13,
+        "created_at": "2024-10-20T11:20:00",
+        "updated_at": "2024-10-20T11:20:00"
+    },
+    {
+        "ip_address": "192.168.1.206",
+        "real_estate_id": 14,
+        "created_at": "2024-10-25T12:30:00",
+        "updated_at": "2024-10-25T12:30:00"
+    },
+    {
+        "ip_address": "192.168.1.207",
+        "real_estate_id": 15,
+        "created_at": "2024-11-01T13:40:00",
+        "updated_at": "2024-11-01T13:40:00"
+    },
+    {
+        "ip_address": "192.168.1.208",
+        "real_estate_id": 16,
+        "created_at": "2024-11-05T14:50:00",
+        "updated_at": "2024-11-05T14:50:00"
+    },
+    {
+        "ip_address": "192.168.1.209",
+        "real_estate_id": 17,
+        "created_at": "2024-11-10T15:00:00",
+        "updated_at": "2024-11-10T15:00:00"
+    },
+    {
+        "ip_address": "192.168.1.210",
+        "real_estate_id": 18,
+        "created_at": "2024-11-15T16:10:00",
+        "updated_at": "2024-11-15T16:10:00"
+    },
+    {
+        "ip_address": "192.168.1.211",
+        "real_estate_id": 19,
+        "created_at": "2024-11-20T12:20:00",
+        "updated_at": "2024-11-20T12:20:00"
+    },
+    {
+        "ip_address": "192.168.1.212",
+        "real_estate_id": 20,
+        "created_at": "2024-11-25T13:30:00",
+        "updated_at": "2024-11-25T13:30:00"
+    },
+    {
+        "ip_address": "192.168.1.213",
+        "real_estate_id": 21,
+        "created_at": "2024-12-01T14:40:00",
+        "updated_at": "2024-12-01T14:40:00"
+    },
+    {
+        "ip_address": "192.168.1.214",
+        "real_estate_id": 22,
+        "created_at": "2024-12-05T15:50:00",
+        "updated_at": "2024-12-05T15:50:00"
+    },
+    {
+        "ip_address": "192.168.1.215",
+        "real_estate_id": 23,
+        "created_at": "2024-12-10T16:00:00",
+        "updated_at": "2024-12-10T16:00:00"
+    },
+    {
+        "ip_address": "192.168.1.216",
+        "real_estate_id": 24,
+        "created_at": "2024-12-15T17:10:00",
+        "updated_at": "2024-12-15T17:10:00"
+    },
+    {
+        "ip_address": "192.168.1.217",
+        "real_estate_id": 25,
+        "created_at": "2024-12-20T13:20:00",
+        "updated_at": "2024-12-20T13:20:00"
+    },
+    {
+        "ip_address": "192.168.1.218",
+        "real_estate_id": 26,
+        "created_at": "2024-12-25T14:30:00",
+        "updated_at": "2024-12-25T14:30:00"
+    },
+    {
+        "ip_address": "192.168.1.219",
+        "real_estate_id": 27,
+        "created_at": "2025-01-01T15:40:00",
+        "updated_at": "2025-01-01T15:40:00"
+    },
+    {
+        "ip_address": "192.168.1.220",
+        "real_estate_id": 28,
+        "created_at": "2025-01-05T16:50:00",
+        "updated_at": "2025-01-05T16:50:00"
+    },
+    {
+        "ip_address": "192.168.1.221",
+        "real_estate_id": 29,
+        "created_at": "2025-01-10T17:00:00",
+        "updated_at": "2025-01-10T17:00:00"
+    },
+    {
+        "ip_address": "192.168.1.222",
+        "real_estate_id": 30,
+        "created_at": "2025-01-15T18:10:00",
+        "updated_at": "2025-01-15T18:10:00"
+    },
+    {
+        "ip_address": "192.168.1.223",
+        "real_estate_id": 31,
+        "created_at": "2025-01-20T14:20:00",
+        "updated_at": "2025-01-20T14:20:00"
+    },
+    {
+        "ip_address": "192.168.1.224",
+        "real_estate_id": 32,
+        "created_at": "2025-01-25T15:30:00",
+        "updated_at": "2025-01-25T15:30:00"
+    },
+    {
+        "ip_address": "192.168.1.225",
+        "real_estate_id": 33,
+        "created_at": "2025-02-01T16:40:00",
+        "updated_at": "2025-02-01T16:40:00"
+    },
+    {
+        "ip_address": "192.168.1.226",
+        "real_estate_id": 34,
+        "created_at": "2025-02-05T17:50:00",
+        "updated_at": "2025-02-05T17:50:00"
+    },
+    {
+        "ip_address": "192.168.1.227",
+        "real_estate_id": 35,
+        "created_at": "2025-02-10T18:00:00",
+        "updated_at": "2025-02-10T18:00:00"
+    },
+    {
+        "ip_address": "192.168.1.228",
+        "real_estate_id": 36,
+        "created_at": "2025-02-15T19:10:00",
+        "updated_at": "2025-02-15T19:10:00"
+    },
+    {
+        "ip_address": "192.168.1.229",
+        "real_estate_id": 37,
+        "created_at": "2025-02-20T15:20:00",
+        "updated_at": "2025-02-20T15:20:00"
+    },
+    {
+        "ip_address": "192.168.1.230",
+        "real_estate_id": 38,
+        "created_at": "2025-02-25T16:30:00",
+        "updated_at": "2025-02-25T16:30:00"
+    },
+    {
+        "ip_address": "192.168.1.231",
+        "real_estate_id": 39,
+        "created_at": "2025-03-01T17:40:00",
+        "updated_at": "2025-03-01T17:40:00"
+    },
+    {
+        "ip_address": "192.168.1.232",
+        "real_estate_id": 40,
+        "created_at": "2025-03-05T18:50:00",
+        "updated_at": "2025-03-05T18:50:00"
+    },
+    {
+        "ip_address": "192.168.1.233",
+        "real_estate_id": 41,
+        "created_at": "2025-03-10T19:00:00",
+        "updated_at": "2025-03-10T19:00:00"
+    },
+    {
+        "ip_address": "192.168.1.234",
+        "real_estate_id": 42,
+        "created_at": "2025-03-15T20:10:00",
+        "updated_at": "2025-03-15T20:10:00"
+    },
+    {
+        "ip_address": "192.168.1.235",
+        "real_estate_id": 43,
+        "created_at": "2025-03-20T16:20:00",
+        "updated_at": "2025-03-20T16:20:00"
+    },
+    {
+        "ip_address": "192.168.1.236",
+        "real_estate_id": 44,
+        "created_at": "2025-03-25T17:30:00",
+        "updated_at": "2025-03-25T17:30:00"
+    },
+    {
+        "ip_address": "192.168.1.237",
+        "real_estate_id": 45,
+        "created_at": "2025-04-01T18:40:00",
+        "updated_at": "2025-04-01T18:40:00"
+    },
+    {
+        "ip_address": "192.168.1.238",
+        "real_estate_id": 46,
+        "created_at": "2025-04-05T19:50:00",
+        "updated_at": "2025-04-05T19:50:00"
+    },
+    {
+        "ip_address": "192.168.1.239",
+        "real_estate_id": 47,
+        "created_at": "2025-04-10T20:00:00",
+        "updated_at": "2025-04-10T20:00:00"
+    },
+    {
+        "ip_address": "192.168.1.240",
+        "real_estate_id": 48,
+        "created_at": "2025-04-15T21:10:00",
+        "updated_at": "2025-04-15T21:10:00"
+    },
+    {
+        "ip_address": "192.168.1.241",
+        "real_estate_id": 49,
+        "created_at": "2025-04-20T17:20:00",
+        "updated_at": "2025-04-20T17:20:00"
+    },
+    {
+        "ip_address": "192.168.1.242",
+        "real_estate_id": 50,
+        "created_at": "2025-04-25T18:30:00",
+        "updated_at": "2025-04-25T18:30:00"
+    },
+    {
+        "ip_address": "192.168.1.243",
+        "real_estate_id": 1,
+        "created_at": "2025-05-01T19:40:00",
+        "updated_at": "2025-05-01T19:40:00"
+    },
+    {
+        "ip_address": "192.168.1.244",
+        "real_estate_id": 2,
+        "created_at": "2025-05-05T20:50:00",
+        "updated_at": "2025-05-05T20:50:00"
+    },
+    {
+        "ip_address": "192.168.1.245",
+        "real_estate_id": 3,
+        "created_at": "2025-05-10T21:00:00",
+        "updated_at": "2025-05-10T21:00:00"
+    },
+    {
+        "ip_address": "192.168.1.246",
+        "real_estate_id": 4,
+        "created_at": "2025-05-15T22:10:00",
+        "updated_at": "2025-05-15T22:10:00"
+    },
+    {
+        "ip_address": "192.168.1.247",
+        "real_estate_id": 5,
+        "created_at": "2025-05-20T18:20:00",
+        "updated_at": "2025-05-20T18:20:00"
+    },
+    {
+        "ip_address": "192.168.1.248",
+        "real_estate_id": 6,
+        "created_at": "2025-05-25T19:30:00",
+        "updated_at": "2025-05-25T19:30:00"
+    },
+    {
+        "ip_address": "192.168.1.249",
+        "real_estate_id": 7,
+        "created_at": "2025-06-01T20:40:00",
+        "updated_at": "2025-06-01T20:40:00"
+    },
+    {
+        "ip_address": "192.168.1.250",
+        "real_estate_id": 8,
+        "created_at": "2025-06-05T21:50:00",
+        "updated_at": "2025-06-05T21:50:00"
+    },
+    {
+        "ip_address": "192.168.1.251",
+        "real_estate_id": 9,
+        "created_at": "2025-06-10T22:00:00",
+        "updated_at": "2025-06-10T22:00:00"
+    },
+    {
+        "ip_address": "192.168.1.252",
+        "real_estate_id": 10,
+        "created_at": "2025-06-15T23:10:00",
+        "updated_at": "2025-06-15T23:10:00"
+    },
+    {
+        "ip_address": "192.168.1.253",
+        "real_estate_id": 11,
+        "created_at": "2025-06-20T19:20:00",
+        "updated_at": "2025-06-20T19:20:00"
+    },
+    {
+        "ip_address": "192.168.1.254",
+        "real_estate_id": 12,
+        "created_at": "2025-06-25T20:30:00",
+        "updated_at": "2025-06-25T20:30:00"
+    },
+    {
+        "ip_address": "192.168.1.255",
+        "real_estate_id": 13,
+        "created_at": "2025-07-01T21:40:00",
+        "updated_at": "2025-07-01T21:40:00"
+    },
+    {
+        "ip_address": "192.168.1.256",
+        "real_estate_id": 14,
+        "created_at": "2025-07-05T22:50:00",
+        "updated_at": "2025-07-05T22:50:00"
+    },
+    {
+        "ip_address": "192.168.1.257",
+        "real_estate_id": 15,
+        "created_at": "2025-07-10T23:00:00",
+        "updated_at": "2025-07-10T23:00:00"
+    },
+    {
+        "ip_address": "192.168.1.258",
+        "real_estate_id": 16,
+        "created_at": "2025-07-15T00:10:00",
+        "updated_at": "2025-07-15T00:10:00"
+    },
+    {
+        "ip_address": "192.168.1.259",
+        "real_estate_id": 17,
+        "created_at": "2025-07-20T16:20:00",
+        "updated_at": "2025-07-20T16:20:00"
+    },
+    {    
+        "ip_address": "192.168.1.260",
+        "real_estate_id": 18,
+        "created_at": "2025-07-25T17:30:00",
+        "updated_at": "2025-07-25T17:30:00"
+    },
+    {
+        "ip_address": "192.168.1.261",
+        "real_estate_id": 19,
+        "created_at": "2025-08-01T18:40:00",
+        "updated_at": "2025-08-01T18:40:00"
+    },
+    {
+        "ip_address": "192.168.1.262",
+        "real_estate_id": 20,
+        "created_at": "2025-08-05T19:50:00",
+        "updated_at": "2025-08-05T19:50:00"
+    },
+    {
+        "ip_address": "192.168.1.263",
+        "real_estate_id": 21,
+        "created_at": "2025-08-10T20:00:00",
+        "updated_at": "2025-08-10T20:00:00"
+    },
+    {
+        "ip_address": "192.168.1.264",
+        "real_estate_id": 22,
+        "created_at": "2025-08-15T21:10:00",
+        "updated_at": "2025-08-15T21:10:00"
+    },
+    {
+        "ip_address": "192.168.1.265",
+        "real_estate_id": 23,
+        "created_at": "2025-08-20T17:20:00",
+        "updated_at": "2025-08-20T17:20:00"
+    },
+    {
+        "ip_address": "192.168.1.266",
+        "real_estate_id": 24,
+        "created_at": "2025-08-25T18:30:00",
+        "updated_at": "2025-08-25T18:30:00"
+    },
+    {
+        "ip_address": "192.168.1.267",
+        "real_estate_id": 25,
+        "created_at": "2025-09-01T19:40:00",
+        "updated_at": "2025-09-01T19:40:00"
+    },
+    {
+        "ip_address": "192.168.1.268",
+        "real_estate_id": 26,
+        "created_at": "2025-09-05T20:50:00",
+        "updated_at": "2025-09-05T20:50:00"
+    },
+    {
+        "ip_address": "192.168.1.269",
+        "real_estate_id": 27,
+        "created_at": "2025-09-10T21:00:00",
+        "updated_at": "2025-09-10T21:00:00"
+    },
+    {
+        "ip_address": "192.168.1.270",
+        "real_estate_id": 28,
+        "created_at": "2025-09-15T22:10:00",
+        "updated_at": "2025-09-15T22:10:00"
+    },
+    {
+        "ip_address": "192.168.1.271",
+        "real_estate_id": 29,
+        "created_at": "2025-09-20T18:20:00",
+        "updated_at": "2025-09-20T18:20:00"
+    },
+    {
+        "ip_address": "192.168.1.272",
+        "real_estate_id": 30,
+        "created_at": "2025-09-25T19:30:00",
+        "updated_at": "2025-09-25T19:30:00"
+    },
+    {
+        "ip_address": "192.168.1.273",
+        "real_estate_id": 31,
+        "created_at": "2025-10-01T20:40:00",
+        "updated_at": "2025-10-01T20:40:00"
+    },
+    {
+        "ip_address": "192.168.1.274",
+        "real_estate_id": 32,
+        "created_at": "2025-10-05T21:50:00",
+        "updated_at": "2025-10-05T21:50:00"
+    },
+    {
+        "ip_address": "192.168.1.275",
+        "real_estate_id": 33,
+        "created_at": "2025-10-10T22:00:00",
+        "updated_at": "2025-10-10T22:00:00"
+    },
+    {
+        "ip_address": "192.168.1.276",
+        "real_estate_id": 2,
+        "created_at": "2025-10-15T23:10:00",
+        "updated_at": "2025-10-15T23:10:00"
+    },
+    {
+        "ip_address": "192.168.1.277",
+        "real_estate_id": 2,
+        "created_at": "2025-10-20T00:20:00",
+        "updated_at": "2025-10-20T00:20:00"
+    },
+    {
+        "ip_address": "192.168.1.278",
+        "real_estate_id": 2,
+        "created_at": "2025-10-25T01:30:00",
+        "updated_at": "2025-10-25T01:30:00"
+    },
+    {
+        "ip_address": "192.168.1.279",
+        "real_estate_id": 2,
+        "created_at": "2025-11-01T02:40:00",
+        "updated_at": "2025-11-01T02:40:00"
+    },
+    {
+        "ip_address": "192.168.1.280",
+        "real_estate_id": 2,
+        "created_at": "2025-11-05T03:50:00",
+        "updated_at": "2025-11-05T03:50:00"
+    },
+    {
+        "ip_address": "192.168.1.281",
+        "real_estate_id": 2,
+        "created_at": "2025-11-10T04:00:00",
+        "updated_at": "2025-11-10T04:00:00"
+    },
+    {
+        "ip_address": "192.168.1.282",
+        "real_estate_id": 2,
+        "created_at": "2025-11-15T05:10:00",
+        "updated_at": "2025-11-15T05:10:00"
+    },
+    {
+        "ip_address": "192.168.1.283",
+        "real_estate_id": 2,
+        "created_at": "2025-11-20T06:20:00",
+        "updated_at": "2025-11-20T06:20:00"
+    },
+    {    
+        "ip_address": "192.168.1.284",
+        "real_estate_id": 2,
+        "created_at": "2025-11-25T07:30:00",
+        "updated_at": "2025-11-25T07:30:00"
+    },
+    {
+        "ip_address": "192.168.1.285",
+        "real_estate_id": 2,
+        "created_at": "2025-12-01T08:40:00",
+        "updated_at": "2025-12-01T08:40:00"
+    },
+    {
+        "ip_address": "192.168.1.286",
+        "real_estate_id": 2,
+        "created_at": "2025-12-05T09:50:00",
+        "updated_at": "2025-12-05T09:50:00"
+    },
+    {
+        "ip_address": "192.168.1.287",
+        "real_estate_id": 2,
+        "created_at": "2025-12-10T10:00:00",
+        "updated_at": "2025-12-10T10:00:00"
+    },
+    {
+        "ip_address": "192.168.1.288",
+        "real_estate_id": 2,
+        "created_at": "2025-12-15T11:10:00",
+        "updated_at": "2025-12-15T11:10:00"
+    },
+    {
+        "ip_address": "192.168.1.289",
+        "real_estate_id": 2,
+        "created_at": "2025-12-20T12:20:00",
+        "updated_at": "2025-12-20T12:20:00"
+    },
+    {
+        "ip_address": "192.168.1.290",
+        "real_estate_id": 3,
+        "created_at": "2025-12-25T13:30:00",
+        "updated_at": "2025-12-25T13:30:00"
+    },
+    {
+        "ip_address": "192.168.1.291",
+        "real_estate_id": 3,
+        "created_at": "2026-01-01T14:40:00",
+        "updated_at": "2026-01-01T14:40:00"
+    },
+    {
+        "ip_address": "192.168.1.292",
+        "real_estate_id": 3,
+        "created_at": "2026-01-05T15:50:00",
+        "updated_at": "2026-01-05T15:50:00"
+    },
+    {
+        "ip_address": "192.168.1.293",
+        "real_estate_id": 3,
+        "created_at": "2026-01-10T16:00:00",
+        "updated_at": "2026-01-10T16:00:00"
+    },
+    {
+        "ip_address": "192.168.1.294",
+        "real_estate_id": 3,
+        "created_at": "2026-01-15T17:10:00",
+        "updated_at": "2026-01-15T17:10:00"
+    },
+    {
+        "ip_address": "192.168.1.295",
+        "real_estate_id": 3,
+        "created_at": "2026-01-20T13:20:00",
+        "updated_at": "2026-01-20T13:20:00"
+    },
+    {
+        "ip_address": "192.168.1.296",
+        "real_estate_id": 4,
+        "created_at": "2026-01-25T14:30:00",
+        "updated_at": "2026-01-25T14:30:00"
+    },
+    {
+        "ip_address": "192.168.1.297",
+        "real_estate_id": 4,
+        "created_at": "2026-02-01T15:40:00",
+        "updated_at": "2026-02-01T15:40:00"
+    },
+    {
+        "ip_address": "192.168.1.298",
+        "real_estate_id": 4,
+        "created_at": "2026-02-05T16:50:00",
+        "updated_at": "2026-02-05T16:50:00"
+    },
+    {
+        "ip_address": "192.168.1.299",
+        "real_estate_id": 4,
+        "created_at": "2026-02-10T17:00:00",
+        "updated_at": "2026-02-10T17:00:00"
+    }
+]

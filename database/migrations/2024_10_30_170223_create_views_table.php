@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('views', function (Blueprint $table) {
             $table->id();
-            $table->string('ip_address', 15)->unique();
-            $table->integer('real_estate_id');
-
+            $table->string('ip_address', 45);  
+            $table->foreignId('real_estate_id')->constrained();  
             $table->timestamps();
+
+            // Aggiungiamo un vincolo per evitare duplicati su (ip_address, real_estate_id)
+            $table->unique(['ip_address', 'real_estate_id']);
         });
     }
 
