@@ -17,10 +17,10 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::whereHas('realEstate', function($query) {
+        $messages = Message::whereHas('realEstate', function ($query) {
             $query->where('user_id', Auth::id());
-        })->get();
-    
+        })->orderBy('created_at', 'desc')->get(); // Ordina per data di creazione, dal più recente al meno recente
+        
         return view('messages.index', compact('messages'));
     }
 
