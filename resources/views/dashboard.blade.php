@@ -50,6 +50,11 @@
                         <i class="bi bi-chat-left-dots-fill me-2"></i>
                         <span class="text-white">Messaggi</span>
                     </a>
+                    <a href="{{ route('admin.statistics.index') }}"
+                        class="d-flex side-cont p-2 mb-3  {{ request()->routeIs('admin.statistics.index') ? 'side-cont-alwayson' : '' }}">
+                        <i class="bi bi-clipboard-data me-2"></i>
+                        <span class="text-white">Statistiche</span>
+                    </a>
 
                 </ul>
             </div>
