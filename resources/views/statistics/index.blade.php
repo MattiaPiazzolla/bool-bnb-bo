@@ -57,19 +57,22 @@
         <div class="border-wow-custom">
             <div class="mt-5 col-12">
                 <h3 class="mb-5 text-center">Immobile con Maggior Successo</h3>
-                <div class="row">
-                    <div class="col-md-4 d-flex flex-column justify-content-between">
-                        <p><strong class="fs-3">{{ $topRealEstate->title }}</strong></p>
-                        <p>Visite Totali: {{ $topRealEstate->views->count() }}</p>
-                        <p>Messaggi Ricevuti: {{ $topRealEstate->messages->count() }}</p>
-                        <p>Sottoscrizioni Attive: {{ $topRealEstate->subscriptions->count() }}
-                        </p>
+                @if ($topRealEstate)
+                    <div class="row">
+                        <div class="col-md-4 d-flex flex-column justify-content-between">
+                            <p><strong class="fs-3">{{ $topRealEstate->title }}</strong></p>
+                            <p>Visite Totali: {{ $topRealEstate->views->count() }}</p>
+                            <p>Messaggi Ricevuti: {{ $topRealEstate->messages->count() }}</p>
+                            <p>Sottoscrizioni Attive: {{ $topRealEstate->subscriptions->count() }}</p>
+                        </div>
+                        <div class="col-md-8">
+                            <img src="{{ !empty($topRealEstate->portrait) ? asset('storage/' . $topRealEstate->portrait) : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
+                                class="img-fluid" alt="">
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <img src="{{ !empty($topRealEstate->portrait) ? asset('storage/' . $topRealEstate->portrait) : 'https://placehold.co/600x400?text=Immagine+non+disponibile' }}"
-                            class="img-fluid" alt="">
-                    </div>
-                </div>
+                @else
+                    <p class="text-center">Nessun dato disponibile per l'immobile con maggior successo.</p>
+                @endif
             </div>
         </div>
     </div>
