@@ -2,6 +2,7 @@
 
 return [
 
+    // Messaggi di validazione predefiniti
     'accepted' => 'Il campo :attribute deve essere accettato.',
     'accepted_if' => 'Il campo :attribute deve essere accettato quando :other è :value.',
     'active_url' => 'Il campo :attribute non è un URL valido.',
@@ -77,8 +78,11 @@ return [
 
     // Personalizzazione dei nomi degli attributi
     'attributes' => [
-        'email' => 'indirizzo email',
-        'password' => 'password',
-        // aggiungi altre traduzioni degli attributi qui se necessario
+        'name' => 'nome',
+        'surname' => 'cognome',
+        'email' => 'email',
+        'phone' => 'telefono',
+        'message' => 'messaggio',
+        'real_estate_id' => 'ID immobile',
     ],
 ];
