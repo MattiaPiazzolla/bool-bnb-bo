@@ -27,11 +27,11 @@
 
         <div class="container p-md-5">
             <div class="row bg-light p-3">
-            <div class="col-12 mb-3">
-                            <div class="alert alert-warning" role="alert">
-                                I campi contrassegnati con * sono obbligatori
-                            </div>
-                        </div>
+                <div class="col-12 mb-3">
+                    <div class="alert alert-warning" role="alert">
+                        I campi contrassegnati con * sono obbligatori
+                    </div>
+                </div>
                 <form action="{{ route('admin.RealEstates.update', $real_estate->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
@@ -43,9 +43,9 @@
                                 <label class="my-2 fw-bold" for="title">Titolo *</label>
                                 <input type="text" id="title" name="title" class="form-control"
                                     value="{{ old('title', $real_estate->title) }}" required>
-                                    <div id="title-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il titolo deve essere lungo almeno 3 caratteri.
-                                    </div>
+                                <div id="title-error" class="mt-3 alert alert-danger" style="display: none;" role="alert">
+                                    Il titolo deve essere lungo almeno 3 caratteri.
+                                </div>
                             </div>
                         </div>
 
@@ -54,9 +54,9 @@
                                 <label class="my-2 fw-bold" for="price">Prezzo *</label>
                                 <input type="number" min="0" id="price" name="price" class="form-control"
                                     value="{{ old('price', $real_estate->price) }}" required>
-                                    <div id="price-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il prezzo deve essere un numero positivo.
-                                    </div>
+                                <div id="price-error" class="mt-3 alert alert-danger" style="display: none;" role="alert">
+                                    Il prezzo deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
 
@@ -122,9 +122,9 @@
                                 <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
                                 <input type="number" min="1" max="10" id="rooms" name="rooms"
                                     class="form-control" value="{{ old('rooms', $real_estate->rooms) }}" required>
-                                    <div id="rooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il numero deve essere valido.
-                                    </div>
+                                <div id="rooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert">
+                                    Il numero deve essere valido.
+                                </div>
                             </div>
                         </div>
 
@@ -133,9 +133,10 @@
                                 <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
                                 <input type="number" id="bathrooms" min="1" max="10" name="bathrooms"
                                     class="form-control" value="{{ old('bathrooms', $real_estate->bathrooms) }}" required>
-                                    <div id="bathrooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il numero deve essere valido.
-                                    </div>
+                                <div id="bathrooms-error" class="mt-3 alert alert-danger" style="display: none;"
+                                    role="alert">
+                                    Il numero deve essere valido.
+                                </div>
                             </div>
                         </div>
 
@@ -144,9 +145,10 @@
                                 <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
                                 <input type="number" min="1" max="10" id="beds" name="beds"
                                     class="form-control" value="{{ old('beds', $real_estate->beds) }}" required>
-                                    <div id="beds-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il numero deve essere valido.
-                                    </div>
+                                <div id="beds-error" class="mt-3 alert alert-danger" style="display: none;"
+                                    role="alert">
+                                    Il numero deve essere valido.
+                                </div>
                             </div>
                         </div>
 
@@ -156,9 +158,10 @@
                                 <input type="number" min="20" max="1000" id="square_meter"
                                     name="square_meter" class="form-control"
                                     value="{{ old('square_meter', $real_estate->square_meter) }}" required>
-                                    <div id="square_meter-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il numero deve essere valido.
-                                    </div>
+                                <div id="square_meter-error" class="mt-3 alert alert-danger" style="display: none;"
+                                    role="alert">
+                                    Il numero deve essere valido.
+                                </div>
                             </div>
                         </div>
 
@@ -192,6 +195,13 @@
                             @endif
                         </div>
 
+                        <div class="col-12 mb-5">
+                            <div class="form-group">
+                                <label class="my-2 fw-bold" for="portrait">Galleria</label>
+                                <input type="file" name="images" class="form-control" accept="image/*" multiple>
+                            </div>
+                        </div>
+
 
                         <div class="form-group mb-5">
                             <label class="my-2 fw-bold" for="services">Servizi *</label>
@@ -210,9 +220,10 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div id="services-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Seleziona almeno un servizio.
-                                    </div>
+                            <div id="services-error" class="mt-3 alert alert-danger" style="display: none;"
+                                role="alert">
+                                Seleziona almeno un servizio.
+                            </div>
                         </div>
 
                         <input type="hidden" name="latitude" id="latitude"

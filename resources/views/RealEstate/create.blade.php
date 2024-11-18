@@ -34,9 +34,9 @@
                                 <label class="my-2 fw-bold" for="title">Titolo *</label>
                                 <input type="text" id="title" name="title" class="form-control"
                                     value="{{ old('title') }}" required>
-                                    <div id="title-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il titolo deve essere lungo almeno 3 caratteri.
-                                    </div>
+                                <div id="title-error" class="mt-3 alert alert-danger" style="display: none;" role="alert">
+                                    Il titolo deve essere lungo almeno 3 caratteri.
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
@@ -44,9 +44,9 @@
                                 <label class="my-2 fw-bold" for="price">Prezzo *</label>
                                 <input type="number" id="price" name="price" class="form-control"
                                     value="{{ old('price') }}" min="0" required>
-                                    <div id="price-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
-                                        Il prezzo deve essere un numero positivo.
-                                    </div>
+                                <div id="price-error" class="mt-3 alert alert-danger" style="display: none;" role="alert">
+                                    Il prezzo deve essere un numero positivo.
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6 col-xl-4 mb-3">
@@ -89,7 +89,8 @@
                                     <label class="my-2 fw-bold" for="rooms">Numero di Stanze</label>
                                     <input type="number" id="rooms" name="rooms" class="form-control"
                                         value="{{ old('rooms') }}" required min="0" max="10">
-                                        <div id="rooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                    <div id="rooms-error" class="mt-3 alert alert-danger" style="display: none;"
+                                        role="alert">
                                         Il numero deve essere valido.
                                     </div>
                                 </div>
@@ -100,7 +101,8 @@
                                     <label class="my-2 fw-bold" for="bathrooms">Numero di Bagni</label>
                                     <input type="number" min="1" default max="10" id="bathrooms"
                                         name="bathrooms" class="form-control" value="{{ old('bathrooms', 1) }}" required>
-                                        <div id="bathrooms-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                    <div id="bathrooms-error" class="mt-3 alert alert-danger" style="display: none;"
+                                        role="alert">
                                         Il numero deve essere valido.
                                     </div>
                                 </div>
@@ -111,7 +113,8 @@
                                     <label class="my-2 fw-bold" for="beds">Numero di Letti</label>
                                     <input type="number" min="1" max="10" id="beds" name="beds"
                                         class="form-control" value="{{ old('beds', 1) }}" required>
-                                        <div id="beds-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                    <div id="beds-error" class="mt-3 alert alert-danger" style="display: none;"
+                                        role="alert">
                                         Il numero deve essere valido.
                                     </div>
                                 </div>
@@ -123,7 +126,8 @@
                                     <input type="number" min="20" max="1000" id="square_meter"
                                         name="square_meter" class="form-control" value="{{ old('square_meter', 20) }}"
                                         required>
-                                    <div id="square_meter-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                    <div id="square_meter-error" class="mt-3 alert alert-danger" style="display: none;"
+                                        role="alert">
                                         Il numero deve essere valido.
                                     </div>
                                 </div>
@@ -151,6 +155,13 @@
                                 </div>
                             </div>
 
+                            <div class="col-12 mb-5">
+                                <div class="form-group">
+                                    <label class="my-2 fw-bold" for="portrait">Galleria</label>
+                                    <input type="file" name="images" class="form-control" accept="image/*" multiple>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="services">Servizi *</label>
                                 <div class="row">
@@ -167,7 +178,8 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    <div id="services-error" class="mt-3 alert alert-danger" style="display: none;" role="alert" >
+                                    <div id="services-error" class="mt-3 alert alert-danger" style="display: none;"
+                                        role="alert">
                                         Seleziona almeno un servizio.
                                     </div>
                                 </div>

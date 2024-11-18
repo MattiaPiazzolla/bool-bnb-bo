@@ -29,27 +29,28 @@
                             </div>
 
                             <div class="mb-4 row">
-                                <div class="d-flex">
-                                <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                                <div class="col-md-6">
-                                    <div class="passwd-wrap">
-                                        <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            required autocomplete="current-password">
-                                    </div>
-                                    <small id="passwordError" class="invalid-feedback"></small>
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <button type="button" id="showPassword" class="btn">
+                                <div class="d-flex flex-column flex-md-row">
+                                    <div class="col-12 col-md-4 d-flex align-items-center">
+                                        <label for="password" class="form-label text-md-right">{{ __('Password') }}</label>
+                                        <button type="button" id="showPassword" class="btn mb-1">
                                             <i class="bi-eye"></i>
                                         </button>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="passwd-wrap">
+                                            <input id="password" type="password"
+                                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                                required autocomplete="current-password">
+                                        </div>
+                                        <small id="passwordError" class="invalid-feedback"></small>
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="mb-4 row">

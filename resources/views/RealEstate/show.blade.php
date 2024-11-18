@@ -77,22 +77,19 @@
                 </div>
             </div>
 
-            <div class="row bg-white">
+            <div class="row">
                 <!--statistiche-->
-                <div class="col-sm-12 col-lg-7 p-3 d-flex flex-column">
-                    <div class="mb-2">
-                        <h1 class="me-3 mb-1">Statistiche</h1>
-                        <p>Qui puoi visualizzare l'andamento del tuo post. Attualmente questa sezione è in sviluppo. Vedrai
-                            soltanto il numero di visite e di messaggi ricevuti per questo immobile</p>
+                <div class="col-sm-12 col-md-6 p-3 d-flex flex-column">
+                    <div class="alert alert-primary" role="alert">
+                        <div class="d-flex flex-column gap-2">
+                            <span class="text-black">Numero di visite:
+                                <span>{{ $real_estate->views->count() }}</span></span>
+                            <span class="text-black">Numero di messaggi ricevuti:
+                                <span>{{ $real_estate->messages->count() }}</span></span>
+                            <span class="text-black">Sponsorizzazione attivate:<span>
+                                    {{ $real_estate->subscriptions->count() }}</span></span>
+                        </div>
                     </div>
-                    <div class="d-flex flex-column gap-2">
-                        <span class="text-black">Numero di visite: <span>{{ $real_estate->views->count() }}</span></span>
-                        <span class="text-black">Numero di messaggi ricevuti:
-                            <span>{{ $real_estate->messages->count() }}</span></span>
-                        <span class="text-black">Sponsorizzazione attivate:<span>
-                                {{ $real_estate->subscriptions->count() }}</span></span>
-                    </div>
-
                 </div>
             </div>
         </div>

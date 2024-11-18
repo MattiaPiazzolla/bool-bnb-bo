@@ -15,7 +15,8 @@
                     <div class="card-header">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}" id="registerForm" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register') }}" id="registerForm"
+                            enctype="multipart/form-data">
                             @csrf
 
                             <!-- Nome -->
@@ -95,12 +96,14 @@
 
                             <!-- Password -->
                             <div class="mb-4 row">
-                                <div class="d-flex">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}
-                                    *</label>
-                                    <button type="button" id="showPassword" class="btn">
-                                        <i class="bi-eye"></i>
-                                    </button>
+                                <div class="col-12 col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <label for="password" class="form-label text-md-right">{{ __('Password') }}
+                                            *</label>
+                                        <button type="button" id="showPassword" class="btn">
+                                            <i class="bi-eye"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="passwd-wrap">
@@ -118,13 +121,15 @@
 
                             <!-- Conferma Password -->
                             <div class="mb-4 row">
-                                <div class="d-flex">
-                                <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}
-                                    *</label>
-                                <button type="button" id="showPassword2" class="btn">
+                                <div class="col-12 col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <label for="password-confirm"
+                                            class="form-label text-md-right">{{ __('Conferma Password') }}
+                                            *</label>
+                                        <button type="button" id="showPassword2" class="btn mb-1">
                                             <i class="bi-eye"></i>
                                         </button>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
 
