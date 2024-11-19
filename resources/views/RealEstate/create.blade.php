@@ -155,13 +155,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-5">
-                                <div class="form-group">
-                                    <label class="my-2 fw-bold" for="portrait">Galleria</label>
-                                    <input type="file" name="images" class="form-control" accept="image/*" multiple>
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label class="my-2 fw-bold" for="services">Servizi *</label>
                                 <div class="row">
